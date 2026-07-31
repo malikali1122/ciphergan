@@ -100,7 +100,7 @@ class CipherCycleGANModel(CycleGANModel):
         # backward_D_* and optimize_parameters find the attributes they expect.
         BaseModel.__init__(self, opt)
 
-        self.loss_names = ["D_A", "G_A", "cycle_A", "D_B", "G_B", "cycle_B"]
+        self.loss_names = ["D_A", "G_A", "cycle_A", "D_B", "G_B", "cycle_B", "gp"]
         self.visual_names = []  # util.tensor2im cannot render token sequences
         self.model_names = ["G_A", "G_B", "D_A", "D_B"] if self.isTrain \
             else ["G_A", "G_B"]
@@ -177,6 +177,7 @@ class CipherCycleGANModel(CycleGANModel):
         pred_fake = netD(fake.detach())
         loss_D_fake = self.criterionGAN(pred_fake, False)
         loss_D = (loss_D_real + loss_D_fake) * 0.5
+        self.loss_gp = torch.zeros((), device=self.device)
 
         if self.opt.gan_mode == "wgangp" or getattr(self.opt, "use_gp", False):
             if real.shape != fake.shape or real.dtype != fake.dtype:

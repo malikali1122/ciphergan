@@ -45,7 +45,7 @@ ALPHA_a27="abcdefghijklmnopqrstuvwxyz "
 
 ARCH="--pointwise_G --matched_softness --straight_through --norm layer \
       --embed_dim 256 --ngf 128 --n_blocks_G 5 --ndf 32 --n_layers_D 5 --kw_D 15"
-OPT="--gan_mode lsgan --use_gp --lambda_gp 10 --lambda_A 1 --lambda_B 1 \
+OPT="--gan_mode lsgan --use_gp --lambda_gp ${LAMBDA_GP:-10} --lambda_A 1 --lambda_B 1 \
      --lr 2e-4 --beta1 0.0 --batch_size 64 --tau_start 0.5 --tau_end 0.1"
 EPOCHS="--n_epochs 40 --n_epochs_decay 10"
 
@@ -91,7 +91,7 @@ else
   DATA=${FRONTIER[$((J / 3))]}
 fi
 S=${SEEDS[$((I % 3))]}
-NAME="${DATA}_s${S}"
+NAME="${DATA}_s${S}_gp${LAMBDA_GP:-10}"
 
 echo "=== task $I : dataset=$DATA seed=$S ==="
 nvidia-smi --query-gpu=name --format=csv,noheader
