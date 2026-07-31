@@ -1,0 +1,15 @@
+# Core - required
+numpy
+torch
+torchvision
+dominate
+Pillow
+# Imported unconditionally by util/visualizer.py even though --use_wandb is
+# opt-in. Must be installed. Set WANDB_MODE=offline on compute nodes.
+wandb
+# Used by the repo's dataset download helpers only
+requests
+beautifulsoup4
+# Optional: matplotlib for the Phase 1 figure, nltk only if you use Brown
+matplotlib
+nltk
