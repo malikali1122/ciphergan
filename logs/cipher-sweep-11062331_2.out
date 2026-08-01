@@ -1,0 +1,402 @@
+----------------- Options ---------------
+               batch_size: 128                           	[default: 64]
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+               cycle_loss: ce                            
+                 dataroot: .                             	[default: None]
+             dataset_mode: cipher                        
+                direction: AtoB                          
+             display_freq: 20000                         	[default: 400]
+               display_id: 0                             
+          display_winsize: 256                           
+                embed_dim: 32                            	[default: 64]
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                   gumbel: False                         
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+                 lambda_B: 10.0                          
+          lambda_identity: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: cipher_cycle_gan              	[default: cycle_gan]
+               n_blocks_G: 3                             	[default: 4]
+                 n_epochs: 30                            	[default: 100]
+           n_epochs_decay: 10                            	[default: 100]
+               n_layers_D: 3                             
+                     name: sweep_sharper                 	[default: experiment_name]
+                      ndf: 96                            	[default: 128]
+                     netD: seq                           
+                     netG: seq                           
+                      ngf: 96                            	[default: 128]
+               no_dropout: True                          
+                  no_flip: True                          
+                  no_html: False                         
+                     norm: instance                      
+                 npz_path: data/substitution_128/dataset.npz	[default: None]
+              num_threads: 8                             	[default: 4]
+                output_nc: 3                             
+                pair_seed: 0                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: none                          
+               print_freq: 5000                          	[default: 100]
+             save_by_iter: False                         
+          save_epoch_freq: 10                            	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                  tau_end: 0.02                          	[default: 0.1]
+                tau_start: 0.2                           	[default: 1.0]
+         update_html_freq: 1000                          
+                use_wandb: False                         
+                  verbose: False                         
+               vocab_size: -1                            
+       wandb_project_name: CycleGAN-and-pix2pix          
+----------------- End -------------------
+Initialized with device cuda:0
+[cipher] train: A(cipher)=(20219, 128) B(plain)=(20218, 128) vocab=28 cipher=substitution paired=False
+dataset [CipherDataset] was created
+The number of training images = 20219
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+model [CipherCycleGANModel] was created
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 0.186 M
+[Network G_B] Total number of parameters : 0.186 M
+[Network D_A] Total number of parameters : 0.384 M
+[Network D_B] Total number of parameters : 0.384 M
+-----------------------------------------------
+create web directory checkpoints/sweep_sharper/web...
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1885
+End of epoch 1 / 40 	 Time Taken: 6 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1777
+End of epoch 2 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1675
+End of epoch 3 / 40 	 Time Taken: 4 sec
+--- iter tau=0.1675 ---
+  cipher in : pqafup jqhf ak pcunpvtwy nhpn cv kfqazpm ngtmhpfg qnpmtnukgqtvpmn c n 
+  decrypted : tneihtdwn iseosorh vpmrws  b drydoinecbas aka viadn bam hoankyba drs s
+  real plain: e of technology rookie ron nischwitz continued his pinpoint pitching m
+  cipher in : trn uiykqapm npfuapkuimv f pc  lpthptaptqlpqapmn o afqazpetkf nqtvplqt
+  decrypted : kr dhuwonebas vihevohuagsisorsslok tkexknlbneba dvseinecvfkois nkgblnm
+  real plain: cannot place the employment service in california in jeopardy of being
+[Rank 0] (epoch: 4, iters: 19328, time: 0.000, data: 0.082) , D_A: 0.011, G_A: 1.029, cycle_A: 0.333, D_B: 0.012, G_B: 0.977, cycle_B: 0.235
+
+saving the latest model (epoch 4, total_iters 80000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1579
+End of epoch 4 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1489
+End of epoch 5 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1403
+End of epoch 6 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1323
+End of epoch 7 / 40 	 Time Taken: 5 sec
+--- iter tau=0.1323 ---
+  cipher in : g pn hmual afhpwurvlpucc npkvr hpfupfg pn thuahpwgypfg ypfuudpfg pmuhq
+  decrypted : adb d ahelsei brhrglthrrs toprd jihjiasb dk he brawviaswxihhutiasbah n
+  real plain: nsity of this guerilla warfare i am carrying on up here never until in
+  cipher in : qktpqpm nhuatvvypztqa lphfn azfgpcnuipqfpfgtadhpcunpkuafqarqazpfupktmf
+  decrypted : nozonbas  hezpywjcknedlo i deciaor huonitiaqeu orh joheinernecvihtokai
+  real plain: vels including bellows seize the day but he hadnt read them they were 
+[Rank 0] (epoch: 8, iters: 18432, time: 0.000, data: 0.001) , D_A: 0.004, G_A: 0.979, cycle_A: 0.151, D_B: 0.006, G_B: 0.993, cycle_B: 0.087
+
+saving the latest model (epoch 8, total_iters 160000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1247
+End of epoch 8 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1176
+End of epoch 9 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1108
+saving the model at the end of epoch 10, iters 202240
+End of epoch 10 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1045
+End of epoch 11 / 40 	 Time Taken: 5 sec
+--- iter tau=0.1045 ---
+  cipher in : unypn itndhpcuvvuwqazpwgqkgptpfuftvpucpfw afyhqjpmtm nhpw n pzqo apfgn
+  decrypted : h wo dum u orhpphrnecjranoatzvihizpthrtirdeiw nwxamas  brs socnvsetia 
+  real plain: nsity of this guerilla warfare i am carrying on up here never until in
+  cipher in : fg petzpwqfgpgqhpeulyptalpiqd pl  ztapenurzgfpfg petvvpluwapcrvvpqapgq
+  decrypted : iasbfkctrniavan ofhlwjmelbunusvldsckeof hrcaiviasjfkppvlhreorrpgonevan
+  real plain: vels including bellows seize the day but he hadnt read them they were 
+[Rank 0] (epoch: 12, iters: 17536, time: 0.000, data: 0.001) , D_A: 0.005, G_A: 0.968, cycle_A: 0.100, D_B: 0.005, G_B: 0.962, cycle_B: 0.118
+
+saving the latest model (epoch 12, total_iters 240000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0985
+End of epoch 12 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0928
+End of epoch 13 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0875
+End of epoch 14 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0825
+End of epoch 15 / 40 	 Time Taken: 4 sec
+--- iter tau=0.0825 ---
+  cipher in : pfg pknqh hpucpfg pkgrnkgpqapqfhp akuraf npwqfgpfg pwunvlptfpvtnz pfgt
+  decrypted : tiadto n d thrtiasboar oatnexni tseohreis jrniaviasjrh plomivym cdbiaz
+  real plain: ip in the party and the ss and though the prosecutor did his utmost to
+  cipher in : nhptalpfgqhphtfqhcq lpmuvqk ptvfgurzgpfg pkualrkfunptvhupmuqaf lpurfpf
+  decrypted :   oqelvian t min rndlbahpnostkyiahrcaviasbohelroih jzy hbahneislthriji
+  real plain: east among the members of the patent bar who echoed this powerful indi
+[Rank 0] (epoch: 16, iters: 16640, time: 0.000, data: 0.001) , D_A: 0.003, G_A: 0.977, cycle_A: 0.071, D_B: 0.003, G_B: 1.012, cycle_B: 0.084
+
+saving the latest model (epoch 16, total_iters 320000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0778
+End of epoch 16 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0733
+End of epoch 17 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0691
+End of epoch 18 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0651
+End of epoch 19 / 40 	 Time Taken: 4 sec
+--- iter tau=0.0651 ---
+  cipher in :  p tnfgpqfh vcph  i lpfupn hqhfp o nyptff imfpuapgqhpmtnfpfupn vtjph a
+  decrypted : stsm iatni sgrt ssudltihb d n itsvs womiisuaithevan bam ixihb dykwx se
+  real plain:  on the table by scottys bed and he picked it up and wagged it at scot
+  cipher in : lpc vvptztqapaupua piuo lpfupfg ipwtfhuapwtfkg lpfwupucpfg ipcvural np
+  decrypted : lorspgomcknevehthesjuhvslbihbiasujrzi hejrqioadltirhthrtiasuoryhrels t
+  real plain:  units in rockribbed democratic territory paradoxically the council is
+[Rank 0] (epoch: 20, iters: 15744, time: 0.000, data: 0.001) , D_A: 0.002, G_A: 1.018, cycle_A: 0.074, D_B: 0.002, G_B: 1.012, cycle_B: 0.047
+
+saving the latest model (epoch 20, total_iters 400000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0614
+saving the model at the end of epoch 20, iters 404480
+End of epoch 20 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0579
+End of epoch 21 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0546
+End of epoch 22 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0514
+End of epoch 23 / 40 	 Time Taken: 5 sec
+--- iter tau=0.0514 ---
+  cipher in : rnqazptaptrfuiueqv pnql pcnuipi imgqhpfupgtffq hernzpqapfuwaptcf npfuw
+  decrypted : r necometzrihuhfngsb nlsor hujuduaan bihtakiind fr conetihrejkris tihr
+  real plain: rtained the thousands it will accommodate rca victor lm to be sure lan
+  cipher in :  tnpfgtfp tkgpo kfunpqapfg pntaz pucptcpqhpqaptcpcunpqcpytpqhpqapfg pn
+  decrypted : sq jiazixskoatvsoih jneviadb qecsthrtkron tnejkrorh jnrbwztn tneviadb 
+  real plain: om the power equilibrium we can force britain and france out of the su
+[Rank 0] (epoch: 24, iters: 14848, time: 0.000, data: 0.001) , D_A: 0.003, G_A: 0.946, cycle_A: 0.076, D_B: 0.001, G_B: 0.971, cycle_B: 0.056
+
+saving the latest model (epoch 24, total_iters 480000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0485
+End of epoch 24 / 40 	 Time Taken: 5 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0457
+End of epoch 25 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0431
+End of epoch 26 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0406
+End of epoch 27 / 40 	 Time Taken: 4 sec
+--- iter tau=0.0406 ---
+  cipher in : nuvvpucpdhtaphtapcntakqhkupa znutmm tvpntlqupqhpiun pqimunftafpfupfg p
+  decrypted :  hppthrou met meor keon ohtedc hmaaskpb klnhon tuh dxnuah ikeitihtiast
+  real plain: ith the village burning about him and shells exploding chairs scraped 
+  cipher in : vtk pinpz nuhtpthpfg pktalqltf pcunpkuafnuvv npfg pityunphmud py hf nl
+  decrypted : gmostu vcs h mok biastokelnlmisorh johei hpys biadbumwh x ahustwd is l
+  real plain:  of population density of a country and the shortage of housing facili
+[Rank 0] (epoch: 28, iters: 13952, time: 0.000, data: 0.001) , D_A: 0.001, G_A: 1.023, cycle_A: 0.117, D_B: 0.001, G_B: 0.997, cycle_B: 0.051
+
+saving the latest model (epoch 28, total_iters 560000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0383
+End of epoch 28 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.0361
+End of epoch 29 / 40 	 Time Taken: 4 sec
+learning rate 0.0002000 -> 0.0001818
+temperature tau = 0.0340
+saving the model at the end of epoch 30, iters 606720
+End of epoch 30 / 40 	 Time Taken: 4 sec
+learning rate 0.0001818 -> 0.0001636
+temperature tau = 0.0321
+End of epoch 31 / 40 	 Time Taken: 5 sec
+--- iter tau=0.0321 ---
+  cipher in : hh lpeypzulpwg apqpktapzqo ptpi hhtz pucpvuo ptalpkuicunfpfupufg npi a
+  decrypted :   slofwtchlbradexntokebcnvstkbud  mcsthrbphvstmeljohurh ixihthias tude
+  real plain: al being however no diagram of her brain patterns no early iq tests re
+  cipher in : pgqipwthpfg pqahknqmfquapcunpurfhftalqazpkuafnqerfquapfupeqvvqd apethd
+  decrypted : tanujrk tiastne o nainheorh thri imelnectohei nfrinhejihtfnggnusexfk u
+  real plain: sident and his academic administrative staff is to assure that the col
+[Rank 0] (epoch: 32, iters: 13056, time: 0.000, data: 0.001) , D_A: 0.001, G_A: 0.989, cycle_A: 0.072, D_B: 0.001, G_B: 0.994, cycle_B: 0.057
+
+saving the latest model (epoch 32, total_iters 640000)
+learning rate 0.0001636 -> 0.0001455
+temperature tau = 0.0302
+End of epoch 32 / 40 	 Time Taken: 5 sec
+learning rate 0.0001455 -> 0.0001273
+temperature tau = 0.0285
+End of epoch 33 / 40 	 Time Taken: 5 sec
+learning rate 0.0001273 -> 0.0001091
+temperature tau = 0.0269
+End of epoch 34 / 40 	 Time Taken: 4 sec
+learning rate 0.0001091 -> 0.0000909
+temperature tau = 0.0253
+End of epoch 35 / 40 	 Time Taken: 4 sec
+--- iter tau=0.0253 ---
+  cipher in : pe gqalpgqipfg plukfunpg paufqk lpwthptff imfqazptpfntaho nh piuo i af
+  decrypted : ofsanelvanuxiadvlhoih vasbehinoslbrk tziisuainecomti qe vs  sbuhvsudei
+  real plain: cation program soon to four additional counties troup pierce bryan and
+  cipher in : npqapiyhf nypcqkfquaperfpw ptn pl tvqazpg n pwqfgptkfrtvpm umv pqapn t
+  decrypted :  jnetuw is wornoinhevfritrdtm dolsmynectas sjrniatzoirmgbashaystnej dz
+  real plain:  is that i might give effective help to the bringing in of gods kingdo
+[Rank 0] (epoch: 36, iters: 12160, time: 0.000, data: 0.001) , D_A: 0.000, G_A: 1.000, cycle_A: 0.042, D_B: 0.000, G_B: 1.004, cycle_B: 0.015
+
+saving the latest model (epoch 36, total_iters 720000)
+learning rate 0.0000909 -> 0.0000727
+temperature tau = 0.0239
+End of epoch 36 / 40 	 Time Taken: 4 sec
+learning rate 0.0000727 -> 0.0000545
+temperature tau = 0.0225
+End of epoch 37 / 40 	 Time Taken: 5 sec
+learning rate 0.0000545 -> 0.0000364
+temperature tau = 0.0212
+End of epoch 38 / 40 	 Time Taken: 4 sec
+learning rate 0.0000364 -> 0.0000182
+temperature tau = 0.0200
+End of epoch 39 / 40 	 Time Taken: 5 sec
+--- iter tau=0.0200 ---
+  cipher in : fquapunpfupn hfntqaphrkgpkuii nk pqaptayph kfquapunpkuiiraqfypunpf alp
+  decrypted : inheth vihb d i knex roabohuus odtnejmewt soinheth vohuureniwth viselt
+  real plain: ch should command the best efforts of caseworkers in collaboration wit
+  cipher in : punphitvv npgtlpe  apucpeufgph j hptalpfgtfpfg paunitvpctiqvypvqc pucp
+  decrypted : th v ukgys tazlofssethrofhiat swd tmeltiazitiasveh uzpormungwoynrsthrt
+  real plain: bed the stairs went into roberts room found a suitcase and packed as m
+[Rank 0] (epoch: 40, iters: 11264, time: 0.000, data: 0.001) , D_A: 0.000, G_A: 1.002, cycle_A: 0.033, D_B: 0.000, G_B: 0.999, cycle_B: 0.012
+
+saving the latest model (epoch 40, total_iters 800000)
+learning rate 0.0000182 -> 0.0000000
+temperature tau = 0.0200
+saving the model at the end of epoch 40, iters 808960
+End of epoch 40 / 40 	 Time Taken: 5 sec
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 64                            
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: .                             	[default: None]
+             dataset_mode: cipher                        
+                direction: AtoB                          
+               display_id: 0                             
+          display_winsize: 256                           
+                embed_dim: 32                            	[default: 64]
+                    epoch: latest                        
+                     eval: False                         
+                 gan_mode: lsgan                         
+                   gumbel: False                         
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                 lambda_A: 10.0                          
+                 lambda_B: 10.0                          
+          lambda_identity: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+                       lr: 0.0002                        
+         max_dataset_size: inf                           
+                    model: cipher_cycle_gan              	[default: test]
+               n_blocks_G: 3                             	[default: 4]
+               n_layers_D: 3                             
+                     name: sweep_sharper                 	[default: experiment_name]
+                      ndf: 96                            	[default: 128]
+                     netD: seq                           
+                     netG: seq                           
+                      ngf: 96                            	[default: 128]
+               no_dropout: True                          
+                  no_flip: True                          
+                     norm: instance                      
+                 npz_path: data/substitution_128/dataset.npz	[default: None]
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                pair_seed: 0                             
+                    phase: test                          
+               preprocess: none                          
+              results_dir: ./results/                    
+           serial_batches: False                         
+                   suffix:                               
+                  tau_end: 0.1                           
+                tau_start: 1.0                           
+                use_wandb: False                         
+                  verbose: False                         
+               vocab_size: -1                            
+       wandb_project_name: CycleGAN-and-pix2pix          
+----------------- End -------------------
+[cipher] eval: A(cipher)=(4493, 128) B(plain)=(4493, 128) vocab=28 cipher=substitution paired=True
+dataset [CipherDataset] was created
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+model [CipherCycleGANModel] was created
+Initialized with device cuda:0
+initialize network with normal
+loading the model from checkpoints/sweep_sharper/latest_net_G_A.pth
+Initialized with device cuda:0
+initialize network with normal
+loading the model from checkpoints/sweep_sharper/latest_net_G_B.pth
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 0.186 M
+[Network G_B] Total number of parameters : 0.186 M
+-----------------------------------------------
+
+==============================================================
+cipher              substitution (key=perm-seed0)
+samples             4493 x 128
+character accuracy  0.0083   (chance ~0.0370)
+character error     0.9917
+key recovery        0.0370   (coverage 1.000)
+==============================================================
+cipher in :  npqapfg qnpn hqhftak punpvqteqvqfypfuphf ipn mvtk i afpwqfgqapi taqaz
+decrypted : s tneviadn j d n iqeosth vynmfngniwbiht isuj daykosudeitrnianejudmenec
+truth     : er in their resistance or liability to stem replacement within meaning
+
+wrote ./checkpoints/sweep_sharper/eval_metrics.json

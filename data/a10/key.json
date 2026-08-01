@@ -1,0 +1,23 @@
+{
+  "name": "substitution",
+  "key": "perm-seed0",
+  "period": 1,
+  "vocab_size": 11,
+  "separate_domains": false,
+  "domain_offset": 0,
+  "key_table": [
+    [
+      0,
+      5,
+      7,
+      3,
+      8,
+      4,
+      6,
+      10,
+      1,
+      9,
+      2
+    ]
+  ]
+}

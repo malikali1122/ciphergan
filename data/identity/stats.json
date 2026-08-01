@@ -1,0 +1,13 @@
+{
+  "unigram_profile_max_abs_diff": 0.0003145402611534204,
+  "unigram_profile_sym_kl_bits": 3.3864810058378644e-05,
+  "bigram_profile_sym_kl_bits": 0.000242102100346441,
+  "plain_entropy_bits": 4.111305993565564,
+  "cipher_entropy_bits": 4.110932342238836,
+  "plain_ioc": 0.07531700809513164,
+  "cipher_ioc": 0.07534044946021944,
+  "mutual_information_bits": 4.1105750354134765,
+  "cipher": "identity",
+  "key": "0",
+  "period": 1
+}

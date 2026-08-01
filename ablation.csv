@@ -1,0 +1,7 @@
+config,key_space_log10,cipher_ioc,cipher_entropy_bits,unigram_profile_sym_kl_bits,bigram_profile_sym_kl_bits,mutual_information_bits
+identity,0.0,0.07533,4.111,2e-05,0.000208,4.1095
+shift-3,1.41,0.07533,4.111,2e-05,0.000208,4.1095
+substitution,26.61,0.07533,4.111,2e-05,0.000208,4.1095
+vigenere-3,4.29,0.04809,4.5339,0.318671,0.801444,2.9485
+vigenere-7,10.02,0.03938,4.7109,0.919807,2.600338,1.904
+vigenere-15,21.47,0.0375,4.7457,1.265552,4.460263,0.8418
