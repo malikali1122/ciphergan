@@ -1,0 +1,1944 @@
+=== task 0 : dataset=a10 seed=1 ===
+NVIDIA A100-SXM4-80GB
+----------------- Options ---------------
+               batch_size: 64                            
+                    beta1: 0.0                           	[default: 0.5]
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+               cycle_loss: ce                            
+                 dataroot: .                             	[default: None]
+             dataset_mode: cipher                        
+                direction: AtoB                          
+             display_freq: 20000                         	[default: 400]
+               display_id: 0                             
+          display_winsize: 256                           
+                embed_dim: 256                           	[default: 64]
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                   gumbel: False                         
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                     kw_D: 15                            	[default: 4]
+                 lambda_A: 1.0                           	[default: 10.0]
+                 lambda_B: 1.0                           	[default: 10.0]
+                lambda_gp: 1.0                           	[default: 10.0]
+          lambda_identity: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         matched_softness: True                          	[default: False]
+         max_dataset_size: inf                           
+                    model: cipher_cycle_gan              	[default: cycle_gan]
+               n_blocks_G: 5                             	[default: 4]
+                 n_critic: 1                             
+                 n_epochs: 40                            	[default: 100]
+           n_epochs_decay: 10                            	[default: 100]
+               n_layers_D: 5                             	[default: 3]
+                     name: a10_s1_gp1                    	[default: experiment_name]
+                      ndf: 32                            	[default: 128]
+                     netD: seq                           
+                     netG: seq                           
+                      ngf: 128                           
+               no_dropout: True                          
+                  no_flip: True                          
+                  no_html: False                         
+                     norm: layer                         	[default: instance]
+                 npz_path: data/a10/dataset.npz          	[default: None]
+              num_threads: 8                             	[default: 4]
+                output_nc: 3                             
+                pair_seed: 1                             	[default: 0]
+                    phase: train                         
+              pointwise_G: True                          	[default: False]
+                pool_size: 50                            
+               preprocess: none                          
+               print_freq: 100                           
+         real_logit_scale: 5.0                           
+             save_by_iter: False                         
+          save_epoch_freq: 50                            	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+         straight_through: True                          	[default: False]
+                   suffix:                               
+                  tau_end: 0.1                           
+                tau_start: 0.5                           	[default: 1.0]
+         update_html_freq: 1000                          
+                   use_gp: True                          	[default: False]
+                use_wandb: False                         
+                  verbose: False                         
+               vocab_size: -1                            
+       wandb_project_name: CycleGAN-and-pix2pix          
+----------------- End -------------------
+Initialized with device cuda:0
+[cipher] train: A(cipher)=(21883, 64) B(plain)=(21883, 64) vocab=11 cipher=substitution paired=False
+dataset [CipherDataset] was created
+The number of training images = 21883
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+model [CipherCycleGANModel] was created
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 0.205 M
+[Network G_B] Total number of parameters : 0.205 M
+[Network D_A] Total number of parameters : 0.473 M
+[Network D_B] Total number of parameters : 0.473 M
+-----------------------------------------------
+create web directory checkpoints/a10_s1_gp1/web...
+[Rank 0] (epoch: 1, iters: 1600, time: 0.001, data: 0.057) , D_A: 0.770, G_A: 0.312, cycle_A: 0.715, D_B: 0.725, G_B: 0.755, cycle_B: 1.167, gp: 0.499
+
+[Rank 0] (epoch: 1, iters: 3200, time: 0.001, data: 0.001) , D_A: 0.586, G_A: 2.177, cycle_A: 0.754, D_B: 0.518, G_B: 0.936, cycle_B: 0.759, gp: 0.405
+
+[Rank 0] (epoch: 1, iters: 4800, time: 0.001, data: 0.001) , D_A: 0.569, G_A: 0.314, cycle_A: 0.710, D_B: 0.449, G_B: 1.025, cycle_B: 0.440, gp: 0.394
+
+[Rank 0] (epoch: 1, iters: 6400, time: 0.001, data: 0.001) , D_A: 0.433, G_A: 1.934, cycle_A: 0.461, D_B: 0.394, G_B: 0.922, cycle_B: 0.649, gp: 0.361
+
+[Rank 0] (epoch: 1, iters: 8000, time: 0.001, data: 0.001) , D_A: 0.478, G_A: 1.321, cycle_A: 0.577, D_B: 0.402, G_B: 0.993, cycle_B: 0.304, gp: 0.369
+
+[Rank 0] (epoch: 1, iters: 9600, time: 0.001, data: 0.001) , D_A: 0.334, G_A: 0.965, cycle_A: 0.558, D_B: 0.499, G_B: 1.453, cycle_B: 0.333, gp: 0.451
+
+[Rank 0] (epoch: 1, iters: 11200, time: 0.001, data: 0.001) , D_A: 0.325, G_A: 1.066, cycle_A: 0.565, D_B: 0.302, G_B: 0.671, cycle_B: 0.500, gp: 0.270
+
+[Rank 0] (epoch: 1, iters: 12800, time: 0.001, data: 0.001) , D_A: 0.385, G_A: 1.335, cycle_A: 0.300, D_B: 0.366, G_B: 1.060, cycle_B: 0.501, gp: 0.347
+
+[Rank 0] (epoch: 1, iters: 14400, time: 0.001, data: 0.001) , D_A: 0.360, G_A: 1.100, cycle_A: 0.325, D_B: 0.333, G_B: 1.124, cycle_B: 0.257, gp: 0.300
+
+[Rank 0] (epoch: 1, iters: 16000, time: 0.001, data: 0.001) , D_A: 0.300, G_A: 1.158, cycle_A: 0.545, D_B: 0.396, G_B: 1.150, cycle_B: 0.300, gp: 0.369
+
+[Rank 0] (epoch: 1, iters: 17600, time: 0.001, data: 0.002) , D_A: 0.320, G_A: 0.905, cycle_A: 0.302, D_B: 0.282, G_B: 0.886, cycle_B: 0.499, gp: 0.253
+
+[Rank 0] (epoch: 1, iters: 19200, time: 0.001, data: 0.001) , D_A: 0.369, G_A: 0.972, cycle_A: 0.286, D_B: 0.305, G_B: 1.388, cycle_B: 0.317, gp: 0.267
+
+[Rank 0] (epoch: 1, iters: 20800, time: 0.001, data: 0.001) , D_A: 0.442, G_A: 1.613, cycle_A: 0.334, D_B: 0.347, G_B: 2.254, cycle_B: 0.492, gp: 0.295
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.4838
+End of epoch 1 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 2, iters: 512, time: 0.001, data: 0.002) , D_A: 0.403, G_A: 0.548, cycle_A: 0.335, D_B: 0.388, G_B: 1.079, cycle_B: 0.260, gp: 0.364
+
+[Rank 0] (epoch: 2, iters: 2112, time: 0.001, data: 0.002) , D_A: 0.341, G_A: 1.377, cycle_A: 0.551, D_B: 0.332, G_B: 1.381, cycle_B: 0.275, gp: 0.304
+
+[Rank 0] (epoch: 2, iters: 3712, time: 0.001, data: 0.001) , D_A: 0.244, G_A: 1.168, cycle_A: 0.589, D_B: 0.246, G_B: 0.848, cycle_B: 0.292, gp: 0.214
+
+[Rank 0] (epoch: 2, iters: 5312, time: 0.001, data: 0.001) , D_A: 0.282, G_A: 1.201, cycle_A: 0.565, D_B: 0.287, G_B: 1.045, cycle_B: 0.286, gp: 0.272
+
+[Rank 0] (epoch: 2, iters: 6912, time: 0.001, data: 0.001) , D_A: 0.310, G_A: 1.171, cycle_A: 0.295, D_B: 0.319, G_B: 0.696, cycle_B: 0.500, gp: 0.183
+
+[Rank 0] (epoch: 2, iters: 8512, time: 0.001, data: 0.001) , D_A: 0.270, G_A: 0.940, cycle_A: 0.568, D_B: 0.275, G_B: 0.992, cycle_B: 0.265, gp: 0.265
+
+[Rank 0] (epoch: 2, iters: 10112, time: 0.001, data: 0.001) , D_A: 0.303, G_A: 0.880, cycle_A: 0.277, D_B: 0.393, G_B: 0.872, cycle_B: 0.269, gp: 0.381
+
+[Rank 0] (epoch: 2, iters: 11712, time: 0.001, data: 0.001) , D_A: 0.392, G_A: 0.987, cycle_A: 0.302, D_B: 0.284, G_B: 1.130, cycle_B: 0.495, gp: 0.273
+
+[Rank 0] (epoch: 2, iters: 13312, time: 0.001, data: 0.001) , D_A: 0.348, G_A: 0.519, cycle_A: 0.331, D_B: 0.382, G_B: 0.814, cycle_B: 0.504, gp: 0.370
+
+[Rank 0] (epoch: 2, iters: 14912, time: 0.001, data: 0.001) , D_A: 0.223, G_A: 1.020, cycle_A: 0.616, D_B: 0.281, G_B: 0.802, cycle_B: 0.280, gp: 0.269
+
+[Rank 0] (epoch: 2, iters: 16512, time: 0.001, data: 0.001) , D_A: 0.277, G_A: 1.122, cycle_A: 0.300, D_B: 0.236, G_B: 0.925, cycle_B: 0.275, gp: 0.223
+
+--- iter tau=0.4838 ---
+  cipher in : bieddbcebehbeebdbibieddbibhi beebcaiebaihebiibadbedbcebebibcaedb
+  decrypted :  fd   hd da dd   f fd   f afg dd hifd ifad ff i  d  hd d f hid  
+  real plain: e dide fea f a cea hca i beiee ha hee a hee eii i e f d eed g fa
+  cipher in : ddfdbaebadbdebcae dbaicabhdidbadbddbedbfciebehbddigdbebiebgdeibf
+  decrypted :      id i   d hidg  ifhi a f  i     d   hfd da   fa  d fd a df  
+  real plain: ega hi affai i de ad he e ab i ie a a ig hi hig i age fahe h ied
+[Rank 0] (epoch: 2, iters: 18112, time: 0.001, data: 0.001) , D_A: 0.267, G_A: 1.226, cycle_A: 0.281, D_B: 0.245, G_B: 1.089, cycle_B: 0.486, gp: 0.232
+
+saving the latest model (epoch 2, total_iters 40000)
+[Rank 0] (epoch: 2, iters: 19712, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 0.955, cycle_A: 0.266, D_B: 0.367, G_B: 1.015, cycle_B: 0.288, gp: 0.352
+
+[Rank 0] (epoch: 2, iters: 21312, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 0.976, cycle_A: 0.594, D_B: 0.237, G_B: 0.851, cycle_B: 0.471, gp: 0.227
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.4682
+End of epoch 2 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 3, iters: 1024, time: 0.001, data: 0.001) , D_A: 0.235, G_A: 1.345, cycle_A: 0.612, D_B: 0.283, G_B: 0.742, cycle_B: 0.476, gp: 0.266
+
+[Rank 0] (epoch: 3, iters: 2624, time: 0.001, data: 0.001) , D_A: 0.290, G_A: 0.587, cycle_A: 0.289, D_B: 0.303, G_B: 0.816, cycle_B: 0.280, gp: 0.291
+
+[Rank 0] (epoch: 3, iters: 4224, time: 0.001, data: 0.001) , D_A: 0.336, G_A: 0.823, cycle_A: 0.314, D_B: 0.342, G_B: 0.961, cycle_B: 0.256, gp: 0.332
+
+[Rank 0] (epoch: 3, iters: 5824, time: 0.001, data: 0.001) , D_A: 0.353, G_A: 0.701, cycle_A: 0.284, D_B: 0.270, G_B: 0.877, cycle_B: 0.265, gp: 0.262
+
+[Rank 0] (epoch: 3, iters: 7424, time: 0.001, data: 0.001) , D_A: 0.247, G_A: 0.857, cycle_A: 0.312, D_B: 0.224, G_B: 1.140, cycle_B: 0.273, gp: 0.207
+
+[Rank 0] (epoch: 3, iters: 9024, time: 0.001, data: 0.001) , D_A: 0.260, G_A: 1.047, cycle_A: 0.667, D_B: 0.223, G_B: 0.894, cycle_B: 0.268, gp: 0.215
+
+[Rank 0] (epoch: 3, iters: 10624, time: 0.001, data: 0.001) , D_A: 0.213, G_A: 0.898, cycle_A: 0.322, D_B: 0.183, G_B: 0.969, cycle_B: 0.257, gp: 0.176
+
+[Rank 0] (epoch: 3, iters: 12224, time: 0.001, data: 0.001) , D_A: 0.291, G_A: 1.066, cycle_A: 0.642, D_B: 0.376, G_B: 0.967, cycle_B: 0.272, gp: 0.356
+
+[Rank 0] (epoch: 3, iters: 13824, time: 0.001, data: 0.001) , D_A: 0.183, G_A: 0.960, cycle_A: 0.300, D_B: 0.272, G_B: 0.975, cycle_B: 0.260, gp: 0.265
+
+[Rank 0] (epoch: 3, iters: 15424, time: 0.001, data: 0.001) , D_A: 0.257, G_A: 0.850, cycle_A: 0.288, D_B: 0.312, G_B: 0.920, cycle_B: 0.255, gp: 0.305
+
+[Rank 0] (epoch: 3, iters: 17024, time: 0.001, data: 0.001) , D_A: 0.351, G_A: 0.898, cycle_A: 0.257, D_B: 0.256, G_B: 1.021, cycle_B: 0.268, gp: 0.249
+
+[Rank 0] (epoch: 3, iters: 18624, time: 0.001, data: 0.001) , D_A: 0.291, G_A: 1.271, cycle_A: 0.249, D_B: 0.233, G_B: 1.088, cycle_B: 0.304, gp: 0.224
+
+[Rank 0] (epoch: 3, iters: 20224, time: 0.001, data: 0.001) , D_A: 0.370, G_A: 1.168, cycle_A: 0.257, D_B: 0.277, G_B: 0.988, cycle_B: 0.264, gp: 0.265
+
+[Rank 0] (epoch: 3, iters: 21824, time: 0.001, data: 0.001) , D_A: 0.220, G_A: 1.101, cycle_A: 0.287, D_B: 0.333, G_B: 1.362, cycle_B: 0.260, gp: 0.312
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.4531
+End of epoch 3 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 4, iters: 1536, time: 0.001, data: 0.001) , D_A: 0.214, G_A: 1.178, cycle_A: 0.717, D_B: 0.257, G_B: 0.924, cycle_B: 0.266, gp: 0.248
+
+[Rank 0] (epoch: 4, iters: 3136, time: 0.001, data: 0.001) , D_A: 0.220, G_A: 1.110, cycle_A: 0.234, D_B: 0.299, G_B: 0.997, cycle_B: 0.260, gp: 0.291
+
+[Rank 0] (epoch: 4, iters: 4736, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 0.943, cycle_A: 0.239, D_B: 0.325, G_B: 1.246, cycle_B: 0.257, gp: 0.315
+
+[Rank 0] (epoch: 4, iters: 6336, time: 0.001, data: 0.001) , D_A: 0.173, G_A: 0.990, cycle_A: 0.261, D_B: 0.265, G_B: 0.920, cycle_B: 0.259, gp: 0.257
+
+[Rank 0] (epoch: 4, iters: 7936, time: 0.001, data: 0.001) , D_A: 0.294, G_A: 0.936, cycle_A: 0.808, D_B: 0.269, G_B: 0.906, cycle_B: 0.269, gp: 0.257
+
+[Rank 0] (epoch: 4, iters: 9536, time: 0.001, data: 0.001) , D_A: 0.343, G_A: 1.316, cycle_A: 0.806, D_B: 0.234, G_B: 1.275, cycle_B: 0.274, gp: 0.228
+
+[Rank 0] (epoch: 4, iters: 11136, time: 0.001, data: 0.001) , D_A: 0.220, G_A: 1.141, cycle_A: 0.255, D_B: 0.340, G_B: 1.027, cycle_B: 0.258, gp: 0.334
+
+[Rank 0] (epoch: 4, iters: 12736, time: 0.001, data: 0.001) , D_A: 0.290, G_A: 1.226, cycle_A: 0.243, D_B: 0.240, G_B: 1.094, cycle_B: 0.282, gp: 0.233
+
+--- iter tau=0.4531 ---
+  cipher in : gdbidhbdei bfbgdefebadbdihdbie edhbebdbcbaebfbchci bgidbebadbgde
+  decrypted : a ef ae dfge ea d dei e fa efdgd aede eheide ehahfgeaf edei ea d
+  real plain: ea be ia he fi e f he abbed igh iei idicaig ha he adica ieediae 
+  cipher in : gbedbaebaddbabaedbaehbebdffdcbadbddbfbddbabhihbddidcdbadbaebe ba
+  decrypted : aed eidei  eieid eidaede    hei e  e e  eieafae  f h ei eidedgei
+  real plain:  b i gie he cbied e he abii ae feigh affic aa f he e cea ad he a
+[Rank 0] (epoch: 4, iters: 14336, time: 0.001, data: 0.001) , D_A: 0.270, G_A: 0.957, cycle_A: 0.259, D_B: 0.306, G_B: 0.999, cycle_B: 0.248, gp: 0.300
+
+saving the latest model (epoch 4, total_iters 80000)
+[Rank 0] (epoch: 4, iters: 15936, time: 0.001, data: 0.002) , D_A: 0.239, G_A: 0.996, cycle_A: 0.256, D_B: 0.261, G_B: 1.131, cycle_B: 0.246, gp: 0.253
+
+[Rank 0] (epoch: 4, iters: 17536, time: 0.001, data: 0.001) , D_A: 0.261, G_A: 0.997, cycle_A: 0.245, D_B: 0.277, G_B: 0.873, cycle_B: 0.267, gp: 0.267
+
+[Rank 0] (epoch: 4, iters: 19136, time: 0.001, data: 0.001) , D_A: 0.260, G_A: 0.966, cycle_A: 0.240, D_B: 0.345, G_B: 0.971, cycle_B: 0.251, gp: 0.340
+
+[Rank 0] (epoch: 4, iters: 20736, time: 0.001, data: 0.001) , D_A: 0.264, G_A: 1.063, cycle_A: 0.882, D_B: 0.218, G_B: 0.928, cycle_B: 0.271, gp: 0.213
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.4384
+End of epoch 4 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 5, iters: 448, time: 0.001, data: 0.001) , D_A: 0.308, G_A: 1.027, cycle_A: 0.262, D_B: 0.182, G_B: 1.031, cycle_B: 0.257, gp: 0.178
+
+[Rank 0] (epoch: 5, iters: 2048, time: 0.001, data: 0.000) , D_A: 0.243, G_A: 0.938, cycle_A: 0.238, D_B: 0.203, G_B: 0.978, cycle_B: 0.258, gp: 0.193
+
+[Rank 0] (epoch: 5, iters: 3648, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 1.006, cycle_A: 0.241, D_B: 0.224, G_B: 1.068, cycle_B: 0.267, gp: 0.220
+
+[Rank 0] (epoch: 5, iters: 5248, time: 0.001, data: 0.001) , D_A: 0.263, G_A: 0.969, cycle_A: 0.239, D_B: 0.320, G_B: 0.998, cycle_B: 0.264, gp: 0.316
+
+[Rank 0] (epoch: 5, iters: 6848, time: 0.001, data: 0.001) , D_A: 0.296, G_A: 0.845, cycle_A: 0.223, D_B: 0.269, G_B: 0.892, cycle_B: 0.263, gp: 0.264
+
+[Rank 0] (epoch: 5, iters: 8448, time: 0.001, data: 0.001) , D_A: 0.293, G_A: 1.078, cycle_A: 0.242, D_B: 0.265, G_B: 1.000, cycle_B: 0.253, gp: 0.260
+
+[Rank 0] (epoch: 5, iters: 10048, time: 0.001, data: 0.001) , D_A: 0.301, G_A: 0.989, cycle_A: 0.237, D_B: 0.400, G_B: 2.134, cycle_B: 0.258, gp: 0.262
+
+[Rank 0] (epoch: 5, iters: 11648, time: 0.001, data: 0.001) , D_A: 0.626, G_A: 0.581, cycle_A: 1.411, D_B: 0.629, G_B: 0.862, cycle_B: 1.574, gp: 0.527
+
+[Rank 0] (epoch: 5, iters: 13248, time: 0.001, data: 0.001) , D_A: 0.392, G_A: 0.922, cycle_A: 0.791, D_B: 0.470, G_B: 1.319, cycle_B: 0.466, gp: 0.420
+
+[Rank 0] (epoch: 5, iters: 14848, time: 0.001, data: 0.001) , D_A: 0.430, G_A: 0.566, cycle_A: 0.511, D_B: 0.364, G_B: 0.890, cycle_B: 0.331, gp: 0.346
+
+[Rank 0] (epoch: 5, iters: 16448, time: 0.001, data: 0.001) , D_A: 0.264, G_A: 0.967, cycle_A: 0.414, D_B: 0.269, G_B: 1.013, cycle_B: 0.331, gp: 0.259
+
+[Rank 0] (epoch: 5, iters: 18048, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 0.985, cycle_A: 0.417, D_B: 0.263, G_B: 1.015, cycle_B: 0.324, gp: 0.256
+
+[Rank 0] (epoch: 5, iters: 19648, time: 0.001, data: 0.001) , D_A: 0.221, G_A: 0.991, cycle_A: 0.376, D_B: 0.268, G_B: 0.889, cycle_B: 0.346, gp: 0.259
+
+[Rank 0] (epoch: 5, iters: 21248, time: 0.001, data: 0.001) , D_A: 0.259, G_A: 0.924, cycle_A: 0.394, D_B: 0.280, G_B: 1.068, cycle_B: 0.329, gp: 0.273
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.4243
+End of epoch 5 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 6, iters: 960, time: 0.001, data: 0.001) , D_A: 0.295, G_A: 0.933, cycle_A: 0.382, D_B: 0.259, G_B: 0.977, cycle_B: 0.327, gp: 0.254
+
+[Rank 0] (epoch: 6, iters: 2560, time: 0.001, data: 0.001) , D_A: 0.293, G_A: 1.012, cycle_A: 0.410, D_B: 0.314, G_B: 1.127, cycle_B: 0.342, gp: 0.307
+
+[Rank 0] (epoch: 6, iters: 4160, time: 0.001, data: 0.001) , D_A: 0.364, G_A: 0.957, cycle_A: 0.407, D_B: 0.519, G_B: 1.441, cycle_B: 0.323, gp: 0.353
+
+[Rank 0] (epoch: 6, iters: 5760, time: 0.001, data: 0.001) , D_A: 0.221, G_A: 0.955, cycle_A: 0.406, D_B: 0.258, G_B: 1.118, cycle_B: 0.322, gp: 0.250
+
+[Rank 0] (epoch: 6, iters: 7360, time: 0.001, data: 0.001) , D_A: 0.309, G_A: 1.003, cycle_A: 0.383, D_B: 0.239, G_B: 0.926, cycle_B: 0.314, gp: 0.233
+
+[Rank 0] (epoch: 6, iters: 8960, time: 0.001, data: 0.001) , D_A: 0.251, G_A: 1.048, cycle_A: 0.371, D_B: 0.221, G_B: 0.908, cycle_B: 0.334, gp: 0.213
+
+--- iter tau=0.4243 ---
+  cipher in : ehdbibieddbdc idhbadbabgdcedbfbadbhdhiceibgbgdcedbfbadbfdcbib de
+  decrypted : d  eaead  e hga  ei eie  hd e ei e   ahdae e  hd e ei e  heaeg d
+  real plain:  cac ec ca i beig ade ce a e bai ca ae aded a heeea bai i he iee
+  cipher in : bibibhbedbhdciibebgdddbadbcadidbddbibfecbecidbfbaidfbebghdbfbibg
+  decrypted : eaeae ed e  haaede    ei ehi a e  eae dhedha e eia  ede   e eae 
+  real plain:  cbe aed e ce caed cbe f ddge ddge cai eed ddge eed he fig bead 
+[Rank 0] (epoch: 6, iters: 10560, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 0.984, cycle_A: 0.404, D_B: 0.281, G_B: 1.076, cycle_B: 0.322, gp: 0.277
+
+saving the latest model (epoch 6, total_iters 120000)
+[Rank 0] (epoch: 6, iters: 12160, time: 0.001, data: 0.001) , D_A: 0.300, G_A: 0.996, cycle_A: 0.376, D_B: 0.303, G_B: 0.991, cycle_B: 0.305, gp: 0.297
+
+[Rank 0] (epoch: 6, iters: 13760, time: 0.001, data: 0.001) , D_A: 0.235, G_A: 0.995, cycle_A: 0.384, D_B: 0.327, G_B: 1.008, cycle_B: 0.343, gp: 0.323
+
+[Rank 0] (epoch: 6, iters: 15360, time: 0.001, data: 0.001) , D_A: 0.355, G_A: 0.928, cycle_A: 0.380, D_B: 0.250, G_B: 0.920, cycle_B: 0.347, gp: 0.244
+
+[Rank 0] (epoch: 6, iters: 16960, time: 0.001, data: 0.001) , D_A: 0.316, G_A: 0.987, cycle_A: 0.387, D_B: 0.362, G_B: 1.133, cycle_B: 0.319, gp: 0.357
+
+[Rank 0] (epoch: 6, iters: 18560, time: 0.001, data: 0.001) , D_A: 0.305, G_A: 0.949, cycle_A: 0.399, D_B: 0.335, G_B: 0.947, cycle_B: 0.328, gp: 0.330
+
+[Rank 0] (epoch: 6, iters: 20160, time: 0.001, data: 0.001) , D_A: 0.304, G_A: 1.001, cycle_A: 0.373, D_B: 0.233, G_B: 1.021, cycle_B: 0.320, gp: 0.229
+
+[Rank 0] (epoch: 6, iters: 21760, time: 0.001, data: 0.001) , D_A: 0.217, G_A: 1.006, cycle_A: 0.379, D_B: 0.190, G_B: 0.985, cycle_B: 0.314, gp: 0.187
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.4106
+End of epoch 6 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 7, iters: 1472, time: 0.001, data: 0.001) , D_A: 0.274, G_A: 0.944, cycle_A: 0.393, D_B: 0.296, G_B: 1.062, cycle_B: 0.368, gp: 0.290
+
+[Rank 0] (epoch: 7, iters: 3072, time: 0.001, data: 0.001) , D_A: 0.226, G_A: 1.043, cycle_A: 0.402, D_B: 0.179, G_B: 1.023, cycle_B: 0.377, gp: 0.176
+
+[Rank 0] (epoch: 7, iters: 4672, time: 0.001, data: 0.001) , D_A: 0.293, G_A: 0.889, cycle_A: 0.393, D_B: 0.264, G_B: 0.961, cycle_B: 0.334, gp: 0.259
+
+[Rank 0] (epoch: 7, iters: 6272, time: 0.001, data: 0.001) , D_A: 0.176, G_A: 1.060, cycle_A: 0.398, D_B: 0.254, G_B: 1.046, cycle_B: 0.354, gp: 0.250
+
+[Rank 0] (epoch: 7, iters: 7872, time: 0.001, data: 0.001) , D_A: 0.235, G_A: 0.972, cycle_A: 0.387, D_B: 0.246, G_B: 0.978, cycle_B: 0.354, gp: 0.242
+
+[Rank 0] (epoch: 7, iters: 9472, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.941, cycle_A: 0.387, D_B: 0.198, G_B: 1.060, cycle_B: 0.352, gp: 0.194
+
+[Rank 0] (epoch: 7, iters: 11072, time: 0.001, data: 0.001) , D_A: 0.191, G_A: 0.901, cycle_A: 0.382, D_B: 0.250, G_B: 0.943, cycle_B: 0.416, gp: 0.246
+
+[Rank 0] (epoch: 7, iters: 12672, time: 0.001, data: 0.001) , D_A: 0.240, G_A: 0.952, cycle_A: 0.384, D_B: 0.255, G_B: 0.941, cycle_B: 0.352, gp: 0.249
+
+[Rank 0] (epoch: 7, iters: 14272, time: 0.001, data: 0.001) , D_A: 0.228, G_A: 0.883, cycle_A: 0.388, D_B: 0.294, G_B: 1.034, cycle_B: 0.333, gp: 0.288
+
+[Rank 0] (epoch: 7, iters: 15872, time: 0.001, data: 0.001) , D_A: 0.240, G_A: 0.992, cycle_A: 0.388, D_B: 0.233, G_B: 0.942, cycle_B: 0.341, gp: 0.229
+
+[Rank 0] (epoch: 7, iters: 17472, time: 0.001, data: 0.001) , D_A: 0.183, G_A: 0.970, cycle_A: 0.378, D_B: 0.277, G_B: 1.040, cycle_B: 0.362, gp: 0.273
+
+[Rank 0] (epoch: 7, iters: 19072, time: 0.001, data: 0.001) , D_A: 0.275, G_A: 0.999, cycle_A: 0.399, D_B: 0.242, G_B: 0.975, cycle_B: 0.340, gp: 0.235
+
+[Rank 0] (epoch: 7, iters: 20672, time: 0.001, data: 0.001) , D_A: 0.235, G_A: 1.021, cycle_A: 0.405, D_B: 0.257, G_B: 1.015, cycle_B: 0.358, gp: 0.252
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3973
+End of epoch 7 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 8, iters: 384, time: 0.001, data: 0.001) , D_A: 0.272, G_A: 0.880, cycle_A: 0.369, D_B: 0.245, G_B: 1.004, cycle_B: 0.358, gp: 0.242
+
+[Rank 0] (epoch: 8, iters: 1984, time: 0.001, data: 0.000) , D_A: 0.278, G_A: 1.027, cycle_A: 0.389, D_B: 0.204, G_B: 0.989, cycle_B: 0.343, gp: 0.200
+
+[Rank 0] (epoch: 8, iters: 3584, time: 0.001, data: 0.001) , D_A: 0.192, G_A: 1.047, cycle_A: 0.389, D_B: 0.249, G_B: 1.027, cycle_B: 0.351, gp: 0.246
+
+[Rank 0] (epoch: 8, iters: 5184, time: 0.001, data: 0.001) , D_A: 0.255, G_A: 1.039, cycle_A: 0.394, D_B: 0.292, G_B: 1.019, cycle_B: 0.353, gp: 0.288
+
+--- iter tau=0.3973 ---
+  cipher in : db  dbeb  dbaebebdfdhdfiiibddbifbdbcebdhicbibfdbcdbdbfbadbgibcci
+  decrypted :  egg edegg eidede      aaae  ea e ehde  aheae  eh e e ei e aehha
+  real plain: ch i eea ciie i baia e he g bead diceed ha i hiadehia i eceied b
+  cipher in : dedbehbaibehhbfidi behbeci bgdbebdbebihi bebei b hbidbfbebadbddb
+  decrypted :  d ed eiaed  e a aged edhage  ede edea agededageg ea e edei e  e
+  real plain:  head f he ci ahe a fce he ae ae hafbhe hei i aee a eced b he ee
+[Rank 0] (epoch: 8, iters: 6784, time: 0.001, data: 0.001) , D_A: 0.315, G_A: 0.986, cycle_A: 0.395, D_B: 0.201, G_B: 0.953, cycle_B: 0.356, gp: 0.196
+
+saving the latest model (epoch 8, total_iters 160000)
+[Rank 0] (epoch: 8, iters: 8384, time: 0.001, data: 0.001) , D_A: 0.358, G_A: 1.006, cycle_A: 0.355, D_B: 0.278, G_B: 1.168, cycle_B: 0.356, gp: 0.271
+
+[Rank 0] (epoch: 8, iters: 9984, time: 0.001, data: 0.001) , D_A: 0.239, G_A: 1.095, cycle_A: 0.396, D_B: 0.222, G_B: 0.968, cycle_B: 0.388, gp: 0.218
+
+[Rank 0] (epoch: 8, iters: 11584, time: 0.001, data: 0.001) , D_A: 0.213, G_A: 1.016, cycle_A: 0.417, D_B: 0.353, G_B: 1.782, cycle_B: 0.370, gp: 0.273
+
+[Rank 0] (epoch: 8, iters: 13184, time: 0.001, data: 0.001) , D_A: 0.261, G_A: 0.971, cycle_A: 0.389, D_B: 0.216, G_B: 1.000, cycle_B: 0.372, gp: 0.211
+
+[Rank 0] (epoch: 8, iters: 14784, time: 0.001, data: 0.001) , D_A: 0.408, G_A: 1.010, cycle_A: 0.397, D_B: 0.192, G_B: 0.992, cycle_B: 0.369, gp: 0.189
+
+[Rank 0] (epoch: 8, iters: 16384, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 0.952, cycle_A: 0.388, D_B: 0.221, G_B: 0.996, cycle_B: 0.373, gp: 0.217
+
+[Rank 0] (epoch: 8, iters: 17984, time: 0.001, data: 0.001) , D_A: 0.243, G_A: 1.158, cycle_A: 0.393, D_B: 0.285, G_B: 0.929, cycle_B: 0.375, gp: 0.279
+
+[Rank 0] (epoch: 8, iters: 19584, time: 0.001, data: 0.001) , D_A: 0.336, G_A: 0.951, cycle_A: 0.385, D_B: 0.285, G_B: 1.099, cycle_B: 0.406, gp: 0.279
+
+[Rank 0] (epoch: 8, iters: 21184, time: 0.001, data: 0.001) , D_A: 0.261, G_A: 1.053, cycle_A: 0.397, D_B: 0.256, G_B: 0.951, cycle_B: 0.385, gp: 0.252
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3845
+End of epoch 8 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 9, iters: 896, time: 0.001, data: 0.001) , D_A: 0.209, G_A: 0.984, cycle_A: 0.404, D_B: 0.174, G_B: 1.051, cycle_B: 0.377, gp: 0.171
+
+[Rank 0] (epoch: 9, iters: 2496, time: 0.001, data: 0.000) , D_A: 0.186, G_A: 0.959, cycle_A: 0.386, D_B: 0.220, G_B: 0.991, cycle_B: 0.368, gp: 0.217
+
+[Rank 0] (epoch: 9, iters: 4096, time: 0.001, data: 0.001) , D_A: 0.327, G_A: 1.015, cycle_A: 0.381, D_B: 0.283, G_B: 1.176, cycle_B: 0.390, gp: 0.273
+
+[Rank 0] (epoch: 9, iters: 5696, time: 0.001, data: 0.001) , D_A: 0.198, G_A: 1.014, cycle_A: 0.383, D_B: 0.302, G_B: 0.995, cycle_B: 0.403, gp: 0.298
+
+[Rank 0] (epoch: 9, iters: 7296, time: 0.001, data: 0.001) , D_A: 0.248, G_A: 0.996, cycle_A: 0.388, D_B: 0.209, G_B: 0.991, cycle_B: 0.386, gp: 0.205
+
+[Rank 0] (epoch: 9, iters: 8896, time: 0.001, data: 0.001) , D_A: 0.259, G_A: 0.983, cycle_A: 0.394, D_B: 0.247, G_B: 1.002, cycle_B: 0.402, gp: 0.244
+
+[Rank 0] (epoch: 9, iters: 10496, time: 0.001, data: 0.001) , D_A: 0.234, G_A: 1.353, cycle_A: 0.360, D_B: 0.294, G_B: 1.000, cycle_B: 0.395, gp: 0.290
+
+[Rank 0] (epoch: 9, iters: 12096, time: 0.001, data: 0.001) , D_A: 0.162, G_A: 0.887, cycle_A: 0.400, D_B: 0.283, G_B: 0.970, cycle_B: 0.369, gp: 0.276
+
+[Rank 0] (epoch: 9, iters: 13696, time: 0.001, data: 0.001) , D_A: 0.278, G_A: 1.016, cycle_A: 0.379, D_B: 0.136, G_B: 0.878, cycle_B: 0.384, gp: 0.130
+
+[Rank 0] (epoch: 9, iters: 15296, time: 0.001, data: 0.001) , D_A: 0.145, G_A: 0.961, cycle_A: 0.406, D_B: 0.206, G_B: 1.066, cycle_B: 0.384, gp: 0.202
+
+[Rank 0] (epoch: 9, iters: 16896, time: 0.001, data: 0.001) , D_A: 0.191, G_A: 1.295, cycle_A: 0.418, D_B: 0.212, G_B: 1.158, cycle_B: 0.375, gp: 0.206
+
+[Rank 0] (epoch: 9, iters: 18496, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 1.050, cycle_A: 0.368, D_B: 0.264, G_B: 0.985, cycle_B: 0.372, gp: 0.258
+
+[Rank 0] (epoch: 9, iters: 20096, time: 0.001, data: 0.001) , D_A: 0.116, G_A: 1.002, cycle_A: 0.374, D_B: 0.296, G_B: 0.917, cycle_B: 0.376, gp: 0.291
+
+[Rank 0] (epoch: 9, iters: 21696, time: 0.001, data: 0.001) , D_A: 0.233, G_A: 1.088, cycle_A: 0.371, D_B: 0.197, G_B: 0.909, cycle_B: 0.391, gp: 0.193
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3720
+End of epoch 9 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 10, iters: 1408, time: 0.001, data: 0.001) , D_A: 0.170, G_A: 1.046, cycle_A: 0.408, D_B: 0.190, G_B: 1.025, cycle_B: 0.346, gp: 0.184
+
+--- iter tau=0.3720 ---
+  cipher in : adbebiidhbgbebhdd eibfbhgdbiiebabedhbaibdcdbabdeabhbee dbibaebib
+  decrypted : i edeaa  e ede   gdae e   eaadeied  eiae h eie die eddg eaeideae
+  real plain: biia ia ad he ecd he e ad af ha eee he babiiie f cce ad faie eie
+  cipher in : gebfbadbaidbadb bhdebibdi badbdchbfbebi biebehee dbadbdbeb ehbdb
+  decrypted :  de ei eia ei ege  deae agei e h e edeageaded ddg ei e edegd e e
+  real plain: de f id ha if he deai ha ha ii ad aide ee e ca be dead if e ee e
+[Rank 0] (epoch: 10, iters: 3008, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 1.001, cycle_A: 0.372, D_B: 0.253, G_B: 0.933, cycle_B: 0.398, gp: 0.250
+
+saving the latest model (epoch 10, total_iters 200000)
+[Rank 0] (epoch: 10, iters: 4608, time: 0.001, data: 0.001) , D_A: 0.318, G_A: 1.016, cycle_A: 0.381, D_B: 0.277, G_B: 1.022, cycle_B: 0.391, gp: 0.273
+
+[Rank 0] (epoch: 10, iters: 6208, time: 0.001, data: 0.001) , D_A: 0.215, G_A: 0.958, cycle_A: 0.387, D_B: 0.195, G_B: 0.949, cycle_B: 0.377, gp: 0.193
+
+[Rank 0] (epoch: 10, iters: 7808, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 1.096, cycle_A: 0.389, D_B: 0.281, G_B: 0.953, cycle_B: 0.361, gp: 0.279
+
+[Rank 0] (epoch: 10, iters: 9408, time: 0.001, data: 0.001) , D_A: 0.354, G_A: 0.752, cycle_A: 0.379, D_B: 0.228, G_B: 1.023, cycle_B: 0.377, gp: 0.223
+
+[Rank 0] (epoch: 10, iters: 11008, time: 0.001, data: 0.001) , D_A: 0.212, G_A: 1.085, cycle_A: 0.370, D_B: 0.229, G_B: 1.003, cycle_B: 0.398, gp: 0.226
+
+[Rank 0] (epoch: 10, iters: 12608, time: 0.001, data: 0.001) , D_A: 0.217, G_A: 1.111, cycle_A: 0.371, D_B: 0.228, G_B: 0.975, cycle_B: 0.380, gp: 0.225
+
+[Rank 0] (epoch: 10, iters: 14208, time: 0.001, data: 0.001) , D_A: 0.276, G_A: 0.901, cycle_A: 0.403, D_B: 0.267, G_B: 1.009, cycle_B: 0.396, gp: 0.263
+
+[Rank 0] (epoch: 10, iters: 15808, time: 0.001, data: 0.001) , D_A: 0.313, G_A: 0.992, cycle_A: 0.385, D_B: 0.302, G_B: 1.010, cycle_B: 0.374, gp: 0.298
+
+[Rank 0] (epoch: 10, iters: 17408, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.982, cycle_A: 0.384, D_B: 0.189, G_B: 0.969, cycle_B: 0.371, gp: 0.186
+
+[Rank 0] (epoch: 10, iters: 19008, time: 0.001, data: 0.001) , D_A: 0.288, G_A: 1.070, cycle_A: 0.394, D_B: 0.304, G_B: 1.013, cycle_B: 0.379, gp: 0.299
+
+[Rank 0] (epoch: 10, iters: 20608, time: 0.001, data: 0.001) , D_A: 0.222, G_A: 1.058, cycle_A: 0.395, D_B: 0.140, G_B: 1.015, cycle_B: 0.392, gp: 0.136
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3600
+End of epoch 10 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 11, iters: 320, time: 0.001, data: 0.001) , D_A: 0.239, G_A: 1.005, cycle_A: 0.381, D_B: 0.253, G_B: 1.052, cycle_B: 0.382, gp: 0.250
+
+[Rank 0] (epoch: 11, iters: 1920, time: 0.001, data: 0.001) , D_A: 0.207, G_A: 1.011, cycle_A: 0.390, D_B: 0.215, G_B: 1.060, cycle_B: 0.379, gp: 0.212
+
+[Rank 0] (epoch: 11, iters: 3520, time: 0.001, data: 0.001) , D_A: 0.272, G_A: 0.925, cycle_A: 0.365, D_B: 0.189, G_B: 0.991, cycle_B: 0.378, gp: 0.186
+
+[Rank 0] (epoch: 11, iters: 5120, time: 0.001, data: 0.001) , D_A: 0.204, G_A: 1.042, cycle_A: 0.354, D_B: 0.225, G_B: 0.987, cycle_B: 0.374, gp: 0.221
+
+[Rank 0] (epoch: 11, iters: 6720, time: 0.001, data: 0.001) , D_A: 0.287, G_A: 1.061, cycle_A: 0.372, D_B: 0.140, G_B: 0.997, cycle_B: 0.386, gp: 0.138
+
+[Rank 0] (epoch: 11, iters: 8320, time: 0.001, data: 0.001) , D_A: 0.213, G_A: 0.987, cycle_A: 0.372, D_B: 0.222, G_B: 1.005, cycle_B: 0.383, gp: 0.218
+
+[Rank 0] (epoch: 11, iters: 9920, time: 0.001, data: 0.001) , D_A: 0.365, G_A: 0.563, cycle_A: 0.378, D_B: 0.263, G_B: 1.144, cycle_B: 0.394, gp: 0.253
+
+[Rank 0] (epoch: 11, iters: 11520, time: 0.001, data: 0.001) , D_A: 0.236, G_A: 1.010, cycle_A: 0.353, D_B: 0.200, G_B: 1.073, cycle_B: 0.389, gp: 0.195
+
+[Rank 0] (epoch: 11, iters: 13120, time: 0.001, data: 0.001) , D_A: 0.157, G_A: 0.966, cycle_A: 0.378, D_B: 0.179, G_B: 0.973, cycle_B: 0.382, gp: 0.176
+
+[Rank 0] (epoch: 11, iters: 14720, time: 0.001, data: 0.001) , D_A: 0.239, G_A: 1.002, cycle_A: 0.371, D_B: 0.183, G_B: 0.974, cycle_B: 0.360, gp: 0.181
+
+[Rank 0] (epoch: 11, iters: 16320, time: 0.001, data: 0.001) , D_A: 0.210, G_A: 0.981, cycle_A: 0.378, D_B: 0.303, G_B: 0.965, cycle_B: 0.369, gp: 0.301
+
+[Rank 0] (epoch: 11, iters: 17920, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 1.043, cycle_A: 0.395, D_B: 0.311, G_B: 1.050, cycle_B: 0.368, gp: 0.306
+
+[Rank 0] (epoch: 11, iters: 19520, time: 0.001, data: 0.001) , D_A: 0.266, G_A: 0.959, cycle_A: 0.375, D_B: 0.278, G_B: 0.976, cycle_B: 0.368, gp: 0.275
+
+--- iter tau=0.3600 ---
+  cipher in : bhdbdcceibdbebabaebgbaebdbdi badbebibaebdbebaebibddiebdbegbiebae
+  decrypted : e  e hhdae edeieide eide e agei edeaeide edeideae  ade ed eadeid
+  real plain: h e f g ha ad ih e ahe aid hee ae hig i e ab hi a ae aig hich he
+  cipher in : hbeihbibibaei baibgegbddhbebehbfebe eibgdebehbibibaei bdghbaebde
+  decrypted :  eda eaeaeidageiae d e   eded e dedgdae  ded eaeaeidage   eide d
+  real plain: i he acie caia f aa ad i i ca cee i ag ih aa a ched b he a ad i 
+[Rank 0] (epoch: 11, iters: 21120, time: 0.001, data: 0.001) , D_A: 0.248, G_A: 1.015, cycle_A: 0.392, D_B: 0.324, G_B: 0.908, cycle_B: 0.366, gp: 0.319
+
+saving the latest model (epoch 11, total_iters 240000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3484
+End of epoch 11 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 12, iters: 832, time: 0.001, data: 0.001) , D_A: 0.196, G_A: 0.956, cycle_A: 0.374, D_B: 0.188, G_B: 1.029, cycle_B: 0.381, gp: 0.186
+
+[Rank 0] (epoch: 12, iters: 2432, time: 0.001, data: 0.000) , D_A: 0.194, G_A: 0.994, cycle_A: 0.395, D_B: 0.169, G_B: 1.012, cycle_B: 0.371, gp: 0.167
+
+[Rank 0] (epoch: 12, iters: 4032, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 1.028, cycle_A: 0.381, D_B: 0.247, G_B: 0.946, cycle_B: 0.407, gp: 0.244
+
+[Rank 0] (epoch: 12, iters: 5632, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 0.962, cycle_A: 0.394, D_B: 0.218, G_B: 1.044, cycle_B: 0.350, gp: 0.216
+
+[Rank 0] (epoch: 12, iters: 7232, time: 0.001, data: 0.001) , D_A: 0.151, G_A: 0.979, cycle_A: 0.394, D_B: 0.229, G_B: 0.995, cycle_B: 0.358, gp: 0.226
+
+[Rank 0] (epoch: 12, iters: 8832, time: 0.001, data: 0.001) , D_A: 0.188, G_A: 0.979, cycle_A: 0.368, D_B: 0.221, G_B: 1.047, cycle_B: 0.364, gp: 0.218
+
+[Rank 0] (epoch: 12, iters: 10432, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 0.981, cycle_A: 0.383, D_B: 0.267, G_B: 1.060, cycle_B: 0.397, gp: 0.264
+
+[Rank 0] (epoch: 12, iters: 12032, time: 0.001, data: 0.001) , D_A: 0.287, G_A: 1.016, cycle_A: 0.376, D_B: 0.249, G_B: 1.125, cycle_B: 0.356, gp: 0.242
+
+[Rank 0] (epoch: 12, iters: 13632, time: 0.001, data: 0.001) , D_A: 0.272, G_A: 0.927, cycle_A: 0.371, D_B: 0.206, G_B: 1.039, cycle_B: 0.365, gp: 0.200
+
+[Rank 0] (epoch: 12, iters: 15232, time: 0.001, data: 0.001) , D_A: 0.213, G_A: 0.950, cycle_A: 0.372, D_B: 0.246, G_B: 1.174, cycle_B: 0.375, gp: 0.241
+
+[Rank 0] (epoch: 12, iters: 16832, time: 0.001, data: 0.001) , D_A: 0.161, G_A: 0.993, cycle_A: 0.362, D_B: 0.173, G_B: 0.974, cycle_B: 0.398, gp: 0.171
+
+[Rank 0] (epoch: 12, iters: 18432, time: 0.001, data: 0.001) , D_A: 0.213, G_A: 0.983, cycle_A: 0.374, D_B: 0.352, G_B: 0.967, cycle_B: 0.379, gp: 0.348
+
+[Rank 0] (epoch: 12, iters: 20032, time: 0.001, data: 0.001) , D_A: 0.233, G_A: 0.974, cycle_A: 0.374, D_B: 0.256, G_B: 0.951, cycle_B: 0.379, gp: 0.253
+
+[Rank 0] (epoch: 12, iters: 21632, time: 0.001, data: 0.001) , D_A: 0.225, G_A: 0.969, cycle_A: 0.360, D_B: 0.283, G_B: 0.952, cycle_B: 0.360, gp: 0.281
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3371
+End of epoch 12 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 13, iters: 1344, time: 0.001, data: 0.001) , D_A: 0.209, G_A: 0.990, cycle_A: 0.372, D_B: 0.303, G_B: 0.983, cycle_B: 0.357, gp: 0.301
+
+[Rank 0] (epoch: 13, iters: 2944, time: 0.001, data: 0.001) , D_A: 0.202, G_A: 0.990, cycle_A: 0.381, D_B: 0.222, G_B: 0.985, cycle_B: 0.372, gp: 0.220
+
+[Rank 0] (epoch: 13, iters: 4544, time: 0.001, data: 0.001) , D_A: 0.169, G_A: 1.020, cycle_A: 0.400, D_B: 0.177, G_B: 0.875, cycle_B: 0.365, gp: 0.164
+
+[Rank 0] (epoch: 13, iters: 6144, time: 0.001, data: 0.001) , D_A: 0.193, G_A: 1.004, cycle_A: 0.364, D_B: 0.244, G_B: 1.007, cycle_B: 0.365, gp: 0.240
+
+[Rank 0] (epoch: 13, iters: 7744, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 0.951, cycle_A: 0.360, D_B: 0.170, G_B: 0.961, cycle_B: 0.361, gp: 0.168
+
+[Rank 0] (epoch: 13, iters: 9344, time: 0.001, data: 0.001) , D_A: 0.268, G_A: 1.027, cycle_A: 0.378, D_B: 0.201, G_B: 1.103, cycle_B: 0.378, gp: 0.195
+
+[Rank 0] (epoch: 13, iters: 10944, time: 0.001, data: 0.001) , D_A: 0.198, G_A: 1.001, cycle_A: 0.377, D_B: 0.243, G_B: 1.042, cycle_B: 0.364, gp: 0.239
+
+[Rank 0] (epoch: 13, iters: 12544, time: 0.001, data: 0.001) , D_A: 0.301, G_A: 0.947, cycle_A: 0.380, D_B: 0.200, G_B: 1.142, cycle_B: 0.366, gp: 0.190
+
+[Rank 0] (epoch: 13, iters: 14144, time: 0.001, data: 0.001) , D_A: 0.195, G_A: 0.974, cycle_A: 0.382, D_B: 0.210, G_B: 0.934, cycle_B: 0.355, gp: 0.195
+
+[Rank 0] (epoch: 13, iters: 15744, time: 0.001, data: 0.001) , D_A: 0.253, G_A: 0.965, cycle_A: 0.385, D_B: 0.270, G_B: 1.021, cycle_B: 0.362, gp: 0.267
+
+--- iter tau=0.3371 ---
+  cipher in : ibfbcb dbihbfbaebibi abidbcgihdbhbaebedbebdibi abcgihdbchbhbdiad
+  decrypted : ae eheg ea e eideaeagiea eh a  e eided ede aeagieh a  eh e e ai 
+  real plain: f he a ab da he hafiei diaee f he ai be f he aea a ab ad he bigh
+  cipher in :  bibi abgecbibadbcbidb badbidbfbehbfeibebibgdi bhdgedhbadbadbi b
+  decrypted : geaeagie dheaei ehea egei ea e ed e daedeae  age   d  ei ei eage
+  real plain:  aig ab a ecei ad ee hi e a cded b decaig he ecei be a aiica e a
+[Rank 0] (epoch: 13, iters: 17344, time: 0.001, data: 0.001) , D_A: 0.254, G_A: 0.967, cycle_A: 0.382, D_B: 0.197, G_B: 0.991, cycle_B: 0.358, gp: 0.194
+
+saving the latest model (epoch 13, total_iters 280000)
+[Rank 0] (epoch: 13, iters: 18944, time: 0.001, data: 0.001) , D_A: 0.233, G_A: 0.934, cycle_A: 0.373, D_B: 0.288, G_B: 0.980, cycle_B: 0.363, gp: 0.286
+
+[Rank 0] (epoch: 13, iters: 20544, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 1.023, cycle_A: 0.398, D_B: 0.208, G_B: 1.053, cycle_B: 0.398, gp: 0.205
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3262
+End of epoch 13 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 14, iters: 256, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 0.958, cycle_A: 0.397, D_B: 0.210, G_B: 0.954, cycle_B: 0.360, gp: 0.207
+
+[Rank 0] (epoch: 14, iters: 1856, time: 0.001, data: 0.002) , D_A: 0.165, G_A: 1.383, cycle_A: 0.377, D_B: 0.262, G_B: 0.999, cycle_B: 0.367, gp: 0.260
+
+[Rank 0] (epoch: 14, iters: 3456, time: 0.001, data: 0.001) , D_A: 0.182, G_A: 1.026, cycle_A: 0.373, D_B: 0.224, G_B: 0.970, cycle_B: 0.378, gp: 0.222
+
+[Rank 0] (epoch: 14, iters: 5056, time: 0.001, data: 0.001) , D_A: 0.184, G_A: 0.982, cycle_A: 0.366, D_B: 0.239, G_B: 0.991, cycle_B: 0.354, gp: 0.237
+
+[Rank 0] (epoch: 14, iters: 6656, time: 0.001, data: 0.001) , D_A: 0.206, G_A: 1.123, cycle_A: 0.371, D_B: 0.246, G_B: 0.887, cycle_B: 0.363, gp: 0.244
+
+[Rank 0] (epoch: 14, iters: 8256, time: 0.001, data: 0.001) , D_A: 0.279, G_A: 0.987, cycle_A: 0.360, D_B: 0.175, G_B: 0.987, cycle_B: 0.383, gp: 0.173
+
+[Rank 0] (epoch: 14, iters: 9856, time: 0.001, data: 0.001) , D_A: 0.217, G_A: 0.982, cycle_A: 0.365, D_B: 0.174, G_B: 0.976, cycle_B: 0.380, gp: 0.171
+
+[Rank 0] (epoch: 14, iters: 11456, time: 0.001, data: 0.001) , D_A: 0.248, G_A: 1.016, cycle_A: 0.352, D_B: 0.154, G_B: 0.973, cycle_B: 0.371, gp: 0.151
+
+[Rank 0] (epoch: 14, iters: 13056, time: 0.001, data: 0.001) , D_A: 0.294, G_A: 0.923, cycle_A: 0.369, D_B: 0.214, G_B: 1.042, cycle_B: 0.379, gp: 0.211
+
+[Rank 0] (epoch: 14, iters: 14656, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 1.003, cycle_A: 0.358, D_B: 0.265, G_B: 1.000, cycle_B: 0.377, gp: 0.263
+
+[Rank 0] (epoch: 14, iters: 16256, time: 0.001, data: 0.001) , D_A: 0.202, G_A: 0.988, cycle_A: 0.365, D_B: 0.249, G_B: 0.991, cycle_B: 0.366, gp: 0.247
+
+[Rank 0] (epoch: 14, iters: 17856, time: 0.001, data: 0.001) , D_A: 0.281, G_A: 0.989, cycle_A: 0.355, D_B: 0.273, G_B: 0.983, cycle_B: 0.377, gp: 0.271
+
+[Rank 0] (epoch: 14, iters: 19456, time: 0.001, data: 0.001) , D_A: 0.221, G_A: 1.002, cycle_A: 0.371, D_B: 0.209, G_B: 1.050, cycle_B: 0.357, gp: 0.206
+
+[Rank 0] (epoch: 14, iters: 21056, time: 0.001, data: 0.001) , D_A: 0.221, G_A: 1.014, cycle_A: 0.343, D_B: 0.247, G_B: 1.037, cycle_B: 0.393, gp: 0.243
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3157
+End of epoch 14 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 15, iters: 768, time: 0.001, data: 0.001) , D_A: 0.237, G_A: 1.008, cycle_A: 0.340, D_B: 0.270, G_B: 0.931, cycle_B: 0.361, gp: 0.266
+
+[Rank 0] (epoch: 15, iters: 2368, time: 0.001, data: 0.000) , D_A: 0.184, G_A: 0.991, cycle_A: 0.364, D_B: 0.275, G_B: 0.993, cycle_B: 0.356, gp: 0.272
+
+[Rank 0] (epoch: 15, iters: 3968, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.980, cycle_A: 0.366, D_B: 0.159, G_B: 1.018, cycle_B: 0.386, gp: 0.157
+
+[Rank 0] (epoch: 15, iters: 5568, time: 0.001, data: 0.001) , D_A: 0.214, G_A: 0.974, cycle_A: 0.356, D_B: 0.225, G_B: 0.966, cycle_B: 0.367, gp: 0.222
+
+[Rank 0] (epoch: 15, iters: 7168, time: 0.001, data: 0.001) , D_A: 0.121, G_A: 1.013, cycle_A: 0.374, D_B: 0.204, G_B: 1.019, cycle_B: 0.365, gp: 0.201
+
+[Rank 0] (epoch: 15, iters: 8768, time: 0.001, data: 0.001) , D_A: 0.203, G_A: 0.998, cycle_A: 0.364, D_B: 0.297, G_B: 0.938, cycle_B: 0.358, gp: 0.293
+
+[Rank 0] (epoch: 15, iters: 10368, time: 0.001, data: 0.001) , D_A: 0.176, G_A: 0.992, cycle_A: 0.355, D_B: 0.282, G_B: 0.989, cycle_B: 0.375, gp: 0.279
+
+[Rank 0] (epoch: 15, iters: 11968, time: 0.001, data: 0.001) , D_A: 0.282, G_A: 1.005, cycle_A: 0.366, D_B: 0.141, G_B: 0.997, cycle_B: 0.354, gp: 0.139
+
+--- iter tau=0.3157 ---
+  cipher in : baebaddbgdiddabibaibahbdiabgbaedbddei bifdbabddbf dbaebebcaeibib
+  decrypted : eidei  e  a  ieaeiaei e aie eid e  dagea  eie  e g eidedehidaeae
+  real plain: age f egac hee a a aica ae i f d i hi aea ice a ee age f egac a 
+  cipher in : cibeccdecdbfbaidfbebebebfbhdibhiidbdcdhbgdbcddhbibebebabdehdbadb
+  decrypted : haedhh dh e eia  ededede e  ae aa e h  e  eh   eaededeie d  ei e
+  real plain:  deegai h i aed he ieeeh ea ei f he feeai cfeece he fe f a a age
+[Rank 0] (epoch: 15, iters: 13568, time: 0.001, data: 0.001) , D_A: 0.198, G_A: 1.004, cycle_A: 0.355, D_B: 0.194, G_B: 1.028, cycle_B: 0.373, gp: 0.190
+
+saving the latest model (epoch 15, total_iters 320000)
+[Rank 0] (epoch: 15, iters: 15168, time: 0.001, data: 0.001) , D_A: 0.187, G_A: 0.976, cycle_A: 0.380, D_B: 0.317, G_B: 1.000, cycle_B: 0.398, gp: 0.315
+
+[Rank 0] (epoch: 15, iters: 16768, time: 0.001, data: 0.001) , D_A: 0.268, G_A: 1.020, cycle_A: 0.377, D_B: 0.251, G_B: 0.979, cycle_B: 0.350, gp: 0.249
+
+[Rank 0] (epoch: 15, iters: 18368, time: 0.001, data: 0.001) , D_A: 0.248, G_A: 0.986, cycle_A: 0.374, D_B: 0.280, G_B: 0.979, cycle_B: 0.365, gp: 0.277
+
+[Rank 0] (epoch: 15, iters: 19968, time: 0.001, data: 0.001) , D_A: 0.263, G_A: 1.017, cycle_A: 0.381, D_B: 0.153, G_B: 1.052, cycle_B: 0.371, gp: 0.151
+
+[Rank 0] (epoch: 15, iters: 21568, time: 0.001, data: 0.001) , D_A: 0.305, G_A: 0.988, cycle_A: 0.371, D_B: 0.163, G_B: 0.975, cycle_B: 0.361, gp: 0.160
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.3055
+End of epoch 15 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 16, iters: 1280, time: 0.001, data: 0.001) , D_A: 0.248, G_A: 0.991, cycle_A: 0.389, D_B: 0.221, G_B: 1.046, cycle_B: 0.349, gp: 0.218
+
+[Rank 0] (epoch: 16, iters: 2880, time: 0.001, data: 0.003) , D_A: 0.282, G_A: 0.974, cycle_A: 0.379, D_B: 0.294, G_B: 1.050, cycle_B: 0.366, gp: 0.292
+
+[Rank 0] (epoch: 16, iters: 4480, time: 0.001, data: 0.001) , D_A: 0.391, G_A: 1.022, cycle_A: 0.374, D_B: 0.281, G_B: 0.997, cycle_B: 0.370, gp: 0.279
+
+[Rank 0] (epoch: 16, iters: 6080, time: 0.001, data: 0.001) , D_A: 0.239, G_A: 0.967, cycle_A: 0.397, D_B: 0.197, G_B: 1.024, cycle_B: 0.376, gp: 0.195
+
+[Rank 0] (epoch: 16, iters: 7680, time: 0.001, data: 0.001) , D_A: 0.274, G_A: 0.973, cycle_A: 0.384, D_B: 0.694, G_B: 0.422, cycle_B: 0.367, gp: 0.538
+
+[Rank 0] (epoch: 16, iters: 9280, time: 0.001, data: 0.001) , D_A: 0.260, G_A: 0.965, cycle_A: 0.373, D_B: 0.161, G_B: 0.980, cycle_B: 0.369, gp: 0.158
+
+[Rank 0] (epoch: 16, iters: 10880, time: 0.001, data: 0.001) , D_A: 0.172, G_A: 0.932, cycle_A: 0.362, D_B: 0.206, G_B: 0.956, cycle_B: 0.370, gp: 0.203
+
+[Rank 0] (epoch: 16, iters: 12480, time: 0.001, data: 0.001) , D_A: 0.205, G_A: 1.008, cycle_A: 0.375, D_B: 0.236, G_B: 0.999, cycle_B: 0.365, gp: 0.233
+
+[Rank 0] (epoch: 16, iters: 14080, time: 0.001, data: 0.001) , D_A: 0.283, G_A: 1.024, cycle_A: 0.361, D_B: 0.208, G_B: 0.952, cycle_B: 0.362, gp: 0.204
+
+[Rank 0] (epoch: 16, iters: 15680, time: 0.001, data: 0.001) , D_A: 0.326, G_A: 1.133, cycle_A: 0.355, D_B: 0.253, G_B: 1.011, cycle_B: 0.388, gp: 0.249
+
+[Rank 0] (epoch: 16, iters: 17280, time: 0.001, data: 0.002) , D_A: 0.277, G_A: 0.961, cycle_A: 0.354, D_B: 0.190, G_B: 1.008, cycle_B: 0.371, gp: 0.187
+
+[Rank 0] (epoch: 16, iters: 18880, time: 0.001, data: 0.001) , D_A: 0.302, G_A: 0.973, cycle_A: 0.367, D_B: 0.243, G_B: 0.926, cycle_B: 0.366, gp: 0.238
+
+[Rank 0] (epoch: 16, iters: 20480, time: 0.001, data: 0.001) , D_A: 0.261, G_A: 1.003, cycle_A: 0.359, D_B: 0.226, G_B: 0.976, cycle_B: 0.371, gp: 0.223
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2956
+End of epoch 16 / 50 	 Time Taken: 21 sec
+[Rank 0] (epoch: 17, iters: 192, time: 0.001, data: 0.002) , D_A: 0.141, G_A: 0.989, cycle_A: 0.365, D_B: 0.221, G_B: 0.950, cycle_B: 0.359, gp: 0.219
+
+[Rank 0] (epoch: 17, iters: 1792, time: 0.001, data: 0.000) , D_A: 0.157, G_A: 1.007, cycle_A: 0.374, D_B: 0.210, G_B: 1.008, cycle_B: 0.368, gp: 0.207
+
+[Rank 0] (epoch: 17, iters: 3392, time: 0.001, data: 0.001) , D_A: 0.286, G_A: 0.940, cycle_A: 0.362, D_B: 0.204, G_B: 0.986, cycle_B: 0.382, gp: 0.202
+
+[Rank 0] (epoch: 17, iters: 4992, time: 0.001, data: 0.001) , D_A: 0.140, G_A: 1.022, cycle_A: 0.365, D_B: 0.165, G_B: 0.982, cycle_B: 0.377, gp: 0.162
+
+[Rank 0] (epoch: 17, iters: 6592, time: 0.001, data: 0.001) , D_A: 0.220, G_A: 0.970, cycle_A: 0.351, D_B: 0.263, G_B: 0.993, cycle_B: 0.359, gp: 0.260
+
+[Rank 0] (epoch: 17, iters: 8192, time: 0.001, data: 0.001) , D_A: 0.322, G_A: 0.988, cycle_A: 0.368, D_B: 0.194, G_B: 0.991, cycle_B: 0.366, gp: 0.191
+
+--- iter tau=0.2956 ---
+  cipher in : ihbceei behbadeibadbedbfbadbddcibebgabebebddidbibicdedhbiicebeic
+  decrypted : a chddagcd ci daci cd c ci c  hacdc icdcdc  a cacah d  caahdcdah
+  real plain: ce ad hee he had he fi hig f ae hee a f a ab he be f edcai i aei
+  cipher in : adbicdei beiadhbfidbhdbcaegdbdbibdbidbibebdihdbaebebdchbefdbaehb
+  decrypted : i cah dagcdai  c a c  chid  c cac ca cacdc a  cidcdc h cd  cid c
+  real plain:  degee deede a e e haed e f eigi beief ad cici he eigi eefce eaf
+[Rank 0] (epoch: 17, iters: 9792, time: 0.001, data: 0.001) , D_A: 0.226, G_A: 0.395, cycle_A: 0.367, D_B: 0.258, G_B: 1.014, cycle_B: 0.388, gp: 0.255
+
+saving the latest model (epoch 17, total_iters 360000)
+[Rank 0] (epoch: 17, iters: 11392, time: 0.001, data: 0.001) , D_A: 0.202, G_A: 0.967, cycle_A: 0.354, D_B: 0.194, G_B: 0.963, cycle_B: 0.367, gp: 0.191
+
+[Rank 0] (epoch: 17, iters: 12992, time: 0.001, data: 0.001) , D_A: 0.135, G_A: 0.980, cycle_A: 0.357, D_B: 0.189, G_B: 0.911, cycle_B: 0.355, gp: 0.186
+
+[Rank 0] (epoch: 17, iters: 14592, time: 0.001, data: 0.001) , D_A: 0.260, G_A: 1.014, cycle_A: 0.347, D_B: 0.223, G_B: 0.976, cycle_B: 0.354, gp: 0.221
+
+[Rank 0] (epoch: 17, iters: 16192, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 0.906, cycle_A: 0.357, D_B: 0.256, G_B: 0.894, cycle_B: 0.374, gp: 0.254
+
+[Rank 0] (epoch: 17, iters: 17792, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 0.976, cycle_A: 0.381, D_B: 0.230, G_B: 1.119, cycle_B: 0.377, gp: 0.222
+
+[Rank 0] (epoch: 17, iters: 19392, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.961, cycle_A: 0.377, D_B: 0.224, G_B: 0.993, cycle_B: 0.371, gp: 0.222
+
+[Rank 0] (epoch: 17, iters: 20992, time: 0.001, data: 0.001) , D_A: 0.241, G_A: 0.997, cycle_A: 0.378, D_B: 0.237, G_B: 0.960, cycle_B: 0.379, gp: 0.234
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2861
+End of epoch 17 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 18, iters: 704, time: 0.001, data: 0.001) , D_A: 0.214, G_A: 1.006, cycle_A: 0.399, D_B: 0.266, G_B: 0.973, cycle_B: 0.386, gp: 0.263
+
+[Rank 0] (epoch: 18, iters: 2304, time: 0.001, data: 0.000) , D_A: 0.161, G_A: 1.017, cycle_A: 0.387, D_B: 0.217, G_B: 1.001, cycle_B: 0.393, gp: 0.214
+
+[Rank 0] (epoch: 18, iters: 3904, time: 0.001, data: 0.001) , D_A: 0.224, G_A: 0.971, cycle_A: 0.382, D_B: 0.221, G_B: 0.992, cycle_B: 0.377, gp: 0.218
+
+[Rank 0] (epoch: 18, iters: 5504, time: 0.001, data: 0.001) , D_A: 0.178, G_A: 1.001, cycle_A: 0.380, D_B: 0.225, G_B: 0.971, cycle_B: 0.350, gp: 0.222
+
+[Rank 0] (epoch: 18, iters: 7104, time: 0.001, data: 0.001) , D_A: 0.205, G_A: 0.977, cycle_A: 0.384, D_B: 0.278, G_B: 0.961, cycle_B: 0.365, gp: 0.274
+
+[Rank 0] (epoch: 18, iters: 8704, time: 0.001, data: 0.001) , D_A: 0.311, G_A: 0.974, cycle_A: 0.388, D_B: 0.169, G_B: 0.980, cycle_B: 0.355, gp: 0.167
+
+[Rank 0] (epoch: 18, iters: 10304, time: 0.001, data: 0.001) , D_A: 0.237, G_A: 0.985, cycle_A: 0.368, D_B: 0.240, G_B: 1.014, cycle_B: 0.389, gp: 0.238
+
+[Rank 0] (epoch: 18, iters: 11904, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 1.014, cycle_A: 0.375, D_B: 0.236, G_B: 0.986, cycle_B: 0.363, gp: 0.233
+
+[Rank 0] (epoch: 18, iters: 13504, time: 0.001, data: 0.001) , D_A: 0.194, G_A: 0.963, cycle_A: 0.377, D_B: 0.161, G_B: 0.980, cycle_B: 0.386, gp: 0.157
+
+[Rank 0] (epoch: 18, iters: 15104, time: 0.001, data: 0.001) , D_A: 0.374, G_A: 1.238, cycle_A: 0.374, D_B: 0.298, G_B: 0.980, cycle_B: 0.394, gp: 0.294
+
+[Rank 0] (epoch: 18, iters: 16704, time: 0.001, data: 0.001) , D_A: 0.217, G_A: 1.011, cycle_A: 0.362, D_B: 0.249, G_B: 1.000, cycle_B: 0.388, gp: 0.247
+
+[Rank 0] (epoch: 18, iters: 18304, time: 0.001, data: 0.001) , D_A: 0.266, G_A: 1.002, cycle_A: 0.373, D_B: 0.186, G_B: 1.057, cycle_B: 0.386, gp: 0.182
+
+[Rank 0] (epoch: 18, iters: 19904, time: 0.001, data: 0.001) , D_A: 0.171, G_A: 0.985, cycle_A: 0.352, D_B: 0.184, G_B: 0.976, cycle_B: 0.381, gp: 0.181
+
+[Rank 0] (epoch: 18, iters: 21504, time: 0.001, data: 0.001) , D_A: 0.159, G_A: 0.993, cycle_A: 0.373, D_B: 0.238, G_B: 0.997, cycle_B: 0.379, gp: 0.236
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2768
+End of epoch 18 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 19, iters: 1216, time: 0.001, data: 0.001) , D_A: 0.232, G_A: 1.274, cycle_A: 0.370, D_B: 0.124, G_B: 1.058, cycle_B: 0.365, gp: 0.121
+
+[Rank 0] (epoch: 19, iters: 2816, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 0.959, cycle_A: 0.372, D_B: 0.277, G_B: 0.996, cycle_B: 0.374, gp: 0.275
+
+[Rank 0] (epoch: 19, iters: 4416, time: 0.001, data: 0.001) , D_A: 0.142, G_A: 1.047, cycle_A: 0.373, D_B: 0.181, G_B: 0.981, cycle_B: 0.383, gp: 0.178
+
+--- iter tau=0.2768 ---
+  cipher in : ecdbfbidibgbaddbe eibceeidbgdcaebedbeci behbdbhbibebcedbaebdedbf
+  decrypted : dh e ea ae ei  edgdaehdda e  hided edhaged e e eaedehd eide d e 
+  real plain:  a ide adeae ae f iec ad gade d ae ca be fieed f ha e b aie fae 
+  cipher in : ehbfdi baedbdddhbicdei bddbdei bfbadbdidbihbibdcdbdebicdedhbdffi
+  decrypted : d e  ageid e    eah dage  e dage ei e a ea eae h e deah d  e   a
+  real plain: ffic chace ad a hi he hebe aed i a fa dbe a beedig adai geie eig
+[Rank 0] (epoch: 19, iters: 6016, time: 0.001, data: 0.001) , D_A: 0.202, G_A: 0.910, cycle_A: 0.359, D_B: 0.314, G_B: 1.004, cycle_B: 0.377, gp: 0.311
+
+saving the latest model (epoch 19, total_iters 400000)
+[Rank 0] (epoch: 19, iters: 7616, time: 0.001, data: 0.001) , D_A: 0.216, G_A: 0.957, cycle_A: 0.364, D_B: 0.211, G_B: 1.018, cycle_B: 0.387, gp: 0.208
+
+[Rank 0] (epoch: 19, iters: 9216, time: 0.001, data: 0.001) , D_A: 0.187, G_A: 0.971, cycle_A: 0.358, D_B: 0.262, G_B: 0.985, cycle_B: 0.378, gp: 0.259
+
+[Rank 0] (epoch: 19, iters: 10816, time: 0.001, data: 0.001) , D_A: 0.229, G_A: 0.926, cycle_A: 0.367, D_B: 0.126, G_B: 1.000, cycle_B: 0.373, gp: 0.124
+
+[Rank 0] (epoch: 19, iters: 12416, time: 0.001, data: 0.001) , D_A: 0.296, G_A: 0.901, cycle_A: 0.361, D_B: 0.303, G_B: 0.898, cycle_B: 0.397, gp: 0.300
+
+[Rank 0] (epoch: 19, iters: 14016, time: 0.001, data: 0.001) , D_A: 0.310, G_A: 0.958, cycle_A: 0.361, D_B: 0.274, G_B: 0.976, cycle_B: 0.362, gp: 0.271
+
+[Rank 0] (epoch: 19, iters: 15616, time: 0.001, data: 0.001) , D_A: 0.219, G_A: 0.981, cycle_A: 0.367, D_B: 0.283, G_B: 0.973, cycle_B: 0.378, gp: 0.279
+
+[Rank 0] (epoch: 19, iters: 17216, time: 0.001, data: 0.001) , D_A: 0.317, G_A: 0.981, cycle_A: 0.357, D_B: 0.150, G_B: 1.042, cycle_B: 0.381, gp: 0.147
+
+[Rank 0] (epoch: 19, iters: 18816, time: 0.001, data: 0.001) , D_A: 0.212, G_A: 0.968, cycle_A: 0.362, D_B: 0.213, G_B: 0.968, cycle_B: 0.390, gp: 0.210
+
+[Rank 0] (epoch: 19, iters: 20416, time: 0.001, data: 0.001) , D_A: 0.204, G_A: 1.025, cycle_A: 0.350, D_B: 0.222, G_B: 0.986, cycle_B: 0.394, gp: 0.219
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2679
+End of epoch 19 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 20, iters: 128, time: 0.001, data: 0.001) , D_A: 0.235, G_A: 1.009, cycle_A: 0.365, D_B: 0.089, G_B: 1.005, cycle_B: 0.378, gp: 0.087
+
+[Rank 0] (epoch: 20, iters: 1728, time: 0.001, data: 0.000) , D_A: 0.226, G_A: 1.088, cycle_A: 0.364, D_B: 0.201, G_B: 0.945, cycle_B: 0.380, gp: 0.198
+
+[Rank 0] (epoch: 20, iters: 3328, time: 0.001, data: 0.001) , D_A: 0.184, G_A: 0.968, cycle_A: 0.376, D_B: 0.201, G_B: 0.974, cycle_B: 0.369, gp: 0.199
+
+[Rank 0] (epoch: 20, iters: 4928, time: 0.001, data: 0.001) , D_A: 0.215, G_A: 0.997, cycle_A: 0.377, D_B: 0.181, G_B: 0.936, cycle_B: 0.373, gp: 0.178
+
+[Rank 0] (epoch: 20, iters: 6528, time: 0.001, data: 0.001) , D_A: 0.278, G_A: 1.010, cycle_A: 0.348, D_B: 0.224, G_B: 0.966, cycle_B: 0.377, gp: 0.222
+
+[Rank 0] (epoch: 20, iters: 8128, time: 0.001, data: 0.001) , D_A: 0.271, G_A: 1.396, cycle_A: 0.350, D_B: 0.242, G_B: 0.985, cycle_B: 0.366, gp: 0.240
+
+[Rank 0] (epoch: 20, iters: 9728, time: 0.001, data: 0.001) , D_A: 0.158, G_A: 1.009, cycle_A: 0.374, D_B: 0.274, G_B: 1.031, cycle_B: 0.370, gp: 0.272
+
+[Rank 0] (epoch: 20, iters: 11328, time: 0.001, data: 0.001) , D_A: 0.218, G_A: 0.928, cycle_A: 0.351, D_B: 0.253, G_B: 1.017, cycle_B: 0.363, gp: 0.250
+
+[Rank 0] (epoch: 20, iters: 12928, time: 0.001, data: 0.001) , D_A: 0.198, G_A: 0.970, cycle_A: 0.360, D_B: 0.150, G_B: 1.037, cycle_B: 0.364, gp: 0.145
+
+[Rank 0] (epoch: 20, iters: 14528, time: 0.001, data: 0.001) , D_A: 0.228, G_A: 0.990, cycle_A: 0.358, D_B: 0.190, G_B: 1.118, cycle_B: 0.366, gp: 0.187
+
+[Rank 0] (epoch: 20, iters: 16128, time: 0.001, data: 0.001) , D_A: 0.179, G_A: 0.931, cycle_A: 0.353, D_B: 0.218, G_B: 1.028, cycle_B: 0.389, gp: 0.215
+
+[Rank 0] (epoch: 20, iters: 17728, time: 0.001, data: 0.001) , D_A: 0.175, G_A: 0.944, cycle_A: 0.344, D_B: 0.101, G_B: 0.902, cycle_B: 0.387, gp: 0.096
+
+[Rank 0] (epoch: 20, iters: 19328, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 1.059, cycle_A: 0.368, D_B: 0.181, G_B: 0.994, cycle_B: 0.380, gp: 0.178
+
+[Rank 0] (epoch: 20, iters: 20928, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 0.975, cycle_A: 0.347, D_B: 0.207, G_B: 1.038, cycle_B: 0.376, gp: 0.202
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2592
+End of epoch 20 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 21, iters: 640, time: 0.001, data: 0.001) , D_A: 0.191, G_A: 0.919, cycle_A: 0.361, D_B: 0.252, G_B: 0.983, cycle_B: 0.394, gp: 0.249
+
+--- iter tau=0.2592 ---
+  cipher in : fehbiabidibefdbebadbaehbcdbdebdiebibehbaehbgddbicdbdcdbfbdbdebec
+  decrypted :  d eaiea aed  edei eid eh e de adeaed eid e   eah e h e e e dedh
+  real plain: hi ca cee f he efig a a feae f he a i be a eeai b e bece cee ach
+  cipher in : ibeadbdffdcbhicddhbibadbe dbcdfficidbfbadebhiffibdhi bdeedbi dbf
+  decrypted : aedi e    he ah   eaei edg eh   aha e ei de a  ae  age dd eag e 
+  real plain:  i he eedae fie ad caif i be he he f he e be d had ad hi bide he
+[Rank 0] (epoch: 21, iters: 2240, time: 0.001, data: 0.000) , D_A: 0.204, G_A: 0.938, cycle_A: 0.346, D_B: 0.191, G_B: 1.006, cycle_B: 0.386, gp: 0.188
+
+saving the latest model (epoch 21, total_iters 440000)
+[Rank 0] (epoch: 21, iters: 3840, time: 0.001, data: 0.001) , D_A: 0.225, G_A: 1.204, cycle_A: 0.364, D_B: 0.160, G_B: 0.953, cycle_B: 0.386, gp: 0.158
+
+[Rank 0] (epoch: 21, iters: 5440, time: 0.001, data: 0.001) , D_A: 0.203, G_A: 0.957, cycle_A: 0.378, D_B: 0.211, G_B: 0.945, cycle_B: 0.371, gp: 0.209
+
+[Rank 0] (epoch: 21, iters: 7040, time: 0.001, data: 0.002) , D_A: 0.154, G_A: 1.058, cycle_A: 0.351, D_B: 0.263, G_B: 0.968, cycle_B: 0.394, gp: 0.262
+
+[Rank 0] (epoch: 21, iters: 8640, time: 0.001, data: 0.001) , D_A: 0.142, G_A: 0.932, cycle_A: 0.352, D_B: 0.191, G_B: 0.998, cycle_B: 0.387, gp: 0.189
+
+[Rank 0] (epoch: 21, iters: 10240, time: 0.001, data: 0.001) , D_A: 0.133, G_A: 1.101, cycle_A: 0.376, D_B: 0.270, G_B: 1.007, cycle_B: 0.376, gp: 0.266
+
+[Rank 0] (epoch: 21, iters: 11840, time: 0.001, data: 0.001) , D_A: 0.301, G_A: 0.793, cycle_A: 0.350, D_B: 0.288, G_B: 0.924, cycle_B: 0.381, gp: 0.285
+
+[Rank 0] (epoch: 21, iters: 13440, time: 0.001, data: 0.001) , D_A: 0.146, G_A: 0.967, cycle_A: 0.375, D_B: 0.270, G_B: 0.930, cycle_B: 0.403, gp: 0.267
+
+[Rank 0] (epoch: 21, iters: 15040, time: 0.001, data: 0.001) , D_A: 0.307, G_A: 0.890, cycle_A: 0.392, D_B: 0.171, G_B: 0.932, cycle_B: 0.385, gp: 0.168
+
+[Rank 0] (epoch: 21, iters: 16640, time: 0.001, data: 0.001) , D_A: 0.152, G_A: 1.022, cycle_A: 0.369, D_B: 0.273, G_B: 0.980, cycle_B: 0.396, gp: 0.271
+
+[Rank 0] (epoch: 21, iters: 18240, time: 0.001, data: 0.001) , D_A: 0.295, G_A: 1.007, cycle_A: 0.362, D_B: 0.246, G_B: 1.128, cycle_B: 0.386, gp: 0.238
+
+[Rank 0] (epoch: 21, iters: 19840, time: 0.001, data: 0.001) , D_A: 0.207, G_A: 1.034, cycle_A: 0.376, D_B: 0.243, G_B: 0.996, cycle_B: 0.380, gp: 0.241
+
+[Rank 0] (epoch: 21, iters: 21440, time: 0.001, data: 0.001) , D_A: 0.226, G_A: 1.012, cycle_A: 0.350, D_B: 0.212, G_B: 0.945, cycle_B: 0.388, gp: 0.210
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2508
+End of epoch 21 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 22, iters: 1152, time: 0.001, data: 0.001) , D_A: 0.253, G_A: 1.039, cycle_A: 0.382, D_B: 0.167, G_B: 1.014, cycle_B: 0.370, gp: 0.165
+
+[Rank 0] (epoch: 22, iters: 2752, time: 0.001, data: 0.001) , D_A: 0.320, G_A: 1.033, cycle_A: 0.373, D_B: 0.287, G_B: 1.012, cycle_B: 0.393, gp: 0.285
+
+[Rank 0] (epoch: 22, iters: 4352, time: 0.001, data: 0.001) , D_A: 0.284, G_A: 1.066, cycle_A: 0.362, D_B: 0.256, G_B: 0.987, cycle_B: 0.387, gp: 0.254
+
+[Rank 0] (epoch: 22, iters: 5952, time: 0.001, data: 0.001) , D_A: 0.178, G_A: 0.994, cycle_A: 0.363, D_B: 0.103, G_B: 0.965, cycle_B: 0.389, gp: 0.100
+
+[Rank 0] (epoch: 22, iters: 7552, time: 0.001, data: 0.001) , D_A: 0.236, G_A: 1.009, cycle_A: 0.371, D_B: 0.135, G_B: 1.024, cycle_B: 0.385, gp: 0.132
+
+[Rank 0] (epoch: 22, iters: 9152, time: 0.001, data: 0.001) , D_A: 0.217, G_A: 1.127, cycle_A: 0.370, D_B: 0.168, G_B: 1.024, cycle_B: 0.350, gp: 0.165
+
+[Rank 0] (epoch: 22, iters: 10752, time: 0.001, data: 0.001) , D_A: 0.200, G_A: 1.016, cycle_A: 0.348, D_B: 0.360, G_B: 1.051, cycle_B: 0.374, gp: 0.355
+
+[Rank 0] (epoch: 22, iters: 12352, time: 0.001, data: 0.001) , D_A: 0.220, G_A: 0.939, cycle_A: 0.368, D_B: 0.265, G_B: 1.064, cycle_B: 0.370, gp: 0.262
+
+[Rank 0] (epoch: 22, iters: 13952, time: 0.001, data: 0.001) , D_A: 0.202, G_A: 1.009, cycle_A: 0.349, D_B: 0.195, G_B: 1.013, cycle_B: 0.363, gp: 0.192
+
+[Rank 0] (epoch: 22, iters: 15552, time: 0.001, data: 0.001) , D_A: 0.230, G_A: 0.900, cycle_A: 0.367, D_B: 0.233, G_B: 0.917, cycle_B: 0.376, gp: 0.229
+
+[Rank 0] (epoch: 22, iters: 17152, time: 0.001, data: 0.001) , D_A: 0.171, G_A: 1.003, cycle_A: 0.342, D_B: 0.232, G_B: 1.043, cycle_B: 0.389, gp: 0.229
+
+[Rank 0] (epoch: 22, iters: 18752, time: 0.001, data: 0.001) , D_A: 0.385, G_A: 0.048, cycle_A: 0.355, D_B: 0.282, G_B: 1.073, cycle_B: 0.379, gp: 0.279
+
+--- iter tau=0.2508 ---
+  cipher in : dbfebebebehbdbibebibebaebaedbhdedhbadbabfbebhbdgbadb dbibifbdbdd
+  decrypted :  c dcdcdcd c cacdcacdcidcid c  d  ci cic cdc c  ci cg caca c c  
+  real plain: aig aeia ch f hi ha bee eieed b hie ad b abe deee ab hae bee dic
+  cipher in : dbfbcii baibicfi ddhbceddbibeeebiabadbadfbfbdbdbibibebgdbadbcae 
+  decrypted :  c chaagciacah ag   chd  cacdddcaici ci  c c c cacacdc  ci chidg
+  real plain:  a ied i ae iig f he beafa abe a g b i hi ee hffig i f he iche i
+[Rank 0] (epoch: 22, iters: 20352, time: 0.001, data: 0.001) , D_A: 0.222, G_A: 0.967, cycle_A: 0.360, D_B: 0.228, G_B: 1.097, cycle_B: 0.354, gp: 0.226
+
+saving the latest model (epoch 22, total_iters 480000)
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2427
+End of epoch 22 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 23, iters: 64, time: 0.001, data: 0.001) , D_A: 0.195, G_A: 0.956, cycle_A: 0.352, D_B: 0.272, G_B: 0.983, cycle_B: 0.359, gp: 0.267
+
+[Rank 0] (epoch: 23, iters: 1664, time: 0.001, data: 0.001) , D_A: 0.197, G_A: 1.004, cycle_A: 0.355, D_B: 0.109, G_B: 1.063, cycle_B: 0.360, gp: 0.106
+
+[Rank 0] (epoch: 23, iters: 3264, time: 0.001, data: 0.001) , D_A: 0.280, G_A: 0.954, cycle_A: 0.371, D_B: 0.253, G_B: 0.957, cycle_B: 0.325, gp: 0.250
+
+[Rank 0] (epoch: 23, iters: 4864, time: 0.001, data: 0.001) , D_A: 0.173, G_A: 0.966, cycle_A: 0.366, D_B: 0.313, G_B: 1.053, cycle_B: 0.328, gp: 0.309
+
+[Rank 0] (epoch: 23, iters: 6464, time: 0.001, data: 0.001) , D_A: 0.136, G_A: 0.973, cycle_A: 0.359, D_B: 0.202, G_B: 1.020, cycle_B: 0.330, gp: 0.200
+
+[Rank 0] (epoch: 23, iters: 8064, time: 0.001, data: 0.001) , D_A: 0.214, G_A: 0.997, cycle_A: 0.358, D_B: 0.252, G_B: 1.064, cycle_B: 0.324, gp: 0.247
+
+[Rank 0] (epoch: 23, iters: 9664, time: 0.001, data: 0.001) , D_A: 0.536, G_A: 0.709, cycle_A: 1.252, D_B: 0.430, G_B: 0.713, cycle_B: 1.159, gp: 0.358
+
+[Rank 0] (epoch: 23, iters: 11264, time: 0.001, data: 0.001) , D_A: 0.359, G_A: 1.043, cycle_A: 0.282, D_B: 0.635, G_B: 0.966, cycle_B: 0.342, gp: 0.617
+
+[Rank 0] (epoch: 23, iters: 12864, time: 0.001, data: 0.001) , D_A: 0.355, G_A: 0.956, cycle_A: 0.270, D_B: 0.480, G_B: 0.680, cycle_B: 0.324, gp: 0.444
+
+[Rank 0] (epoch: 23, iters: 14464, time: 0.001, data: 0.001) , D_A: 0.348, G_A: 0.984, cycle_A: 0.280, D_B: 0.476, G_B: 1.524, cycle_B: 0.322, gp: 0.414
+
+[Rank 0] (epoch: 23, iters: 16064, time: 0.001, data: 0.001) , D_A: 0.354, G_A: 0.958, cycle_A: 0.274, D_B: 0.455, G_B: 0.942, cycle_B: 0.324, gp: 0.435
+
+[Rank 0] (epoch: 23, iters: 17664, time: 0.001, data: 0.001) , D_A: 0.241, G_A: 0.848, cycle_A: 0.238, D_B: 0.382, G_B: 1.065, cycle_B: 0.336, gp: 0.369
+
+[Rank 0] (epoch: 23, iters: 19264, time: 0.001, data: 0.001) , D_A: 0.337, G_A: 1.055, cycle_A: 0.256, D_B: 0.442, G_B: 0.983, cycle_B: 0.329, gp: 0.430
+
+[Rank 0] (epoch: 23, iters: 20864, time: 0.001, data: 0.001) , D_A: 0.340, G_A: 0.942, cycle_A: 0.239, D_B: 0.413, G_B: 0.980, cycle_B: 0.336, gp: 0.401
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2349
+End of epoch 23 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 24, iters: 576, time: 0.001, data: 0.001) , D_A: 0.234, G_A: 1.028, cycle_A: 0.243, D_B: 0.423, G_B: 1.022, cycle_B: 0.335, gp: 0.412
+
+[Rank 0] (epoch: 24, iters: 2176, time: 0.001, data: 0.000) , D_A: 0.315, G_A: 0.976, cycle_A: 0.295, D_B: 0.396, G_B: 1.092, cycle_B: 0.332, gp: 0.386
+
+[Rank 0] (epoch: 24, iters: 3776, time: 0.001, data: 0.001) , D_A: 0.203, G_A: 0.957, cycle_A: 0.281, D_B: 1.270, G_B: 0.611, cycle_B: 0.327, gp: 1.228
+
+[Rank 0] (epoch: 24, iters: 5376, time: 0.001, data: 0.001) , D_A: 0.331, G_A: 1.043, cycle_A: 0.274, D_B: 0.329, G_B: 1.126, cycle_B: 0.331, gp: 0.312
+
+[Rank 0] (epoch: 24, iters: 6976, time: 0.001, data: 0.001) , D_A: 0.212, G_A: 0.952, cycle_A: 0.252, D_B: 0.380, G_B: 0.877, cycle_B: 0.332, gp: 0.364
+
+[Rank 0] (epoch: 24, iters: 8576, time: 0.001, data: 0.001) , D_A: 0.170, G_A: 1.044, cycle_A: 0.223, D_B: 0.405, G_B: 1.000, cycle_B: 0.324, gp: 0.396
+
+[Rank 0] (epoch: 24, iters: 10176, time: 0.001, data: 0.001) , D_A: 0.345, G_A: 0.987, cycle_A: 0.249, D_B: 0.426, G_B: 0.961, cycle_B: 0.334, gp: 0.416
+
+[Rank 0] (epoch: 24, iters: 11776, time: 0.001, data: 0.001) , D_A: 0.202, G_A: 1.041, cycle_A: 0.284, D_B: 0.399, G_B: 1.001, cycle_B: 0.355, gp: 0.392
+
+[Rank 0] (epoch: 24, iters: 13376, time: 0.001, data: 0.001) , D_A: 0.210, G_A: 1.021, cycle_A: 0.269, D_B: 0.298, G_B: 0.946, cycle_B: 0.359, gp: 0.290
+
+[Rank 0] (epoch: 24, iters: 14976, time: 0.001, data: 0.001) , D_A: 0.271, G_A: 0.933, cycle_A: 0.266, D_B: 0.393, G_B: 0.975, cycle_B: 0.336, gp: 0.385
+
+--- iter tau=0.2349 ---
+  cipher in : hdbddidbadbhdbcedbddbgedhbaddicebdiedbfbadbcdibdfficidcbfbidicbd
+  decrypted : h e  f ei eh ehd e  eed hei  fhde fd e ei eh fe   fhf he ef fhe 
+  real plain: e a he ic ed i cafe cie ib eaig he cciece b aig ca f he deie be 
+  cipher in : dbcegibadbaehbfi abadbgibfbdcheidbhbibadbdbfbdibabgdihddbehbddib
+  decrypted :  ehdefei eidhe fgiei eefe e hhdf ehefei e e e feiee fh  edhe  fe
+  real plain: ee hgh he bd accdig ai ee aig b ea f he e i ad e i f he cha eeci
+[Rank 0] (epoch: 24, iters: 16576, time: 0.001, data: 0.001) , D_A: 0.323, G_A: 0.991, cycle_A: 0.234, D_B: 0.307, G_B: 0.952, cycle_B: 0.386, gp: 0.301
+
+saving the latest model (epoch 24, total_iters 520000)
+[Rank 0] (epoch: 24, iters: 18176, time: 0.001, data: 0.001) , D_A: 0.261, G_A: 0.965, cycle_A: 0.237, D_B: 0.377, G_B: 1.004, cycle_B: 0.364, gp: 0.370
+
+[Rank 0] (epoch: 24, iters: 19776, time: 0.001, data: 0.001) , D_A: 0.339, G_A: 1.011, cycle_A: 0.224, D_B: 0.295, G_B: 1.156, cycle_B: 0.358, gp: 0.276
+
+[Rank 0] (epoch: 24, iters: 21376, time: 0.001, data: 0.001) , D_A: 0.281, G_A: 1.028, cycle_A: 0.268, D_B: 0.289, G_B: 0.998, cycle_B: 0.331, gp: 0.283
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2273
+End of epoch 24 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 25, iters: 1088, time: 0.001, data: 0.001) , D_A: 0.292, G_A: 0.926, cycle_A: 0.266, D_B: 0.338, G_B: 1.049, cycle_B: 0.316, gp: 0.332
+
+[Rank 0] (epoch: 25, iters: 2688, time: 0.001, data: 0.001) , D_A: 0.235, G_A: 0.977, cycle_A: 0.238, D_B: 0.338, G_B: 1.199, cycle_B: 0.335, gp: 0.326
+
+[Rank 0] (epoch: 25, iters: 4288, time: 0.001, data: 0.001) , D_A: 0.181, G_A: 0.962, cycle_A: 0.211, D_B: 0.469, G_B: 1.017, cycle_B: 0.335, gp: 0.465
+
+[Rank 0] (epoch: 25, iters: 5888, time: 0.001, data: 0.002) , D_A: 0.314, G_A: 1.037, cycle_A: 0.237, D_B: 0.427, G_B: 1.007, cycle_B: 0.331, gp: 0.421
+
+[Rank 0] (epoch: 25, iters: 7488, time: 0.001, data: 0.001) , D_A: 0.191, G_A: 0.989, cycle_A: 0.263, D_B: 0.370, G_B: 1.018, cycle_B: 0.332, gp: 0.366
+
+[Rank 0] (epoch: 25, iters: 9088, time: 0.001, data: 0.001) , D_A: 0.224, G_A: 0.998, cycle_A: 0.253, D_B: 0.240, G_B: 1.004, cycle_B: 0.316, gp: 0.236
+
+[Rank 0] (epoch: 25, iters: 10688, time: 0.001, data: 0.001) , D_A: 0.167, G_A: 0.922, cycle_A: 0.269, D_B: 0.355, G_B: 0.973, cycle_B: 0.328, gp: 0.351
+
+[Rank 0] (epoch: 25, iters: 12288, time: 0.001, data: 0.001) , D_A: 0.276, G_A: 0.992, cycle_A: 0.267, D_B: 0.431, G_B: 1.062, cycle_B: 0.322, gp: 0.425
+
+[Rank 0] (epoch: 25, iters: 13888, time: 0.001, data: 0.001) , D_A: 0.244, G_A: 0.990, cycle_A: 0.271, D_B: 0.314, G_B: 1.012, cycle_B: 0.318, gp: 0.310
+
+[Rank 0] (epoch: 25, iters: 15488, time: 0.001, data: 0.001) , D_A: 0.178, G_A: 0.971, cycle_A: 0.238, D_B: 0.330, G_B: 0.945, cycle_B: 0.323, gp: 0.323
+
+[Rank 0] (epoch: 25, iters: 17088, time: 0.001, data: 0.001) , D_A: 0.352, G_A: 0.981, cycle_A: 0.267, D_B: 0.276, G_B: 1.029, cycle_B: 0.326, gp: 0.271
+
+[Rank 0] (epoch: 25, iters: 18688, time: 0.001, data: 0.001) , D_A: 0.204, G_A: 0.985, cycle_A: 0.237, D_B: 0.371, G_B: 0.992, cycle_B: 0.355, gp: 0.368
+
+[Rank 0] (epoch: 25, iters: 20288, time: 0.001, data: 0.001) , D_A: 0.265, G_A: 1.034, cycle_A: 0.247, D_B: 0.247, G_B: 0.984, cycle_B: 0.348, gp: 0.242
+
+[Rank 0] (epoch: 25, iters: 21888, time: 0.001, data: 0.001) , D_A: 0.290, G_A: 1.001, cycle_A: 0.224, D_B: 0.300, G_B: 0.952, cycle_B: 0.363, gp: 0.294
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2200
+End of epoch 25 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 26, iters: 1600, time: 0.001, data: 0.110) , D_A: 0.195, G_A: 0.943, cycle_A: 0.244, D_B: 0.452, G_B: 1.276, cycle_B: 0.345, gp: 0.426
+
+[Rank 0] (epoch: 26, iters: 3200, time: 0.001, data: 0.001) , D_A: 0.275, G_A: 1.059, cycle_A: 0.258, D_B: 0.277, G_B: 0.949, cycle_B: 0.352, gp: 0.272
+
+[Rank 0] (epoch: 26, iters: 4800, time: 0.001, data: 0.001) , D_A: 0.304, G_A: 1.007, cycle_A: 0.277, D_B: 0.307, G_B: 0.813, cycle_B: 0.330, gp: 0.276
+
+[Rank 0] (epoch: 26, iters: 6400, time: 0.001, data: 0.001) , D_A: 0.289, G_A: 0.990, cycle_A: 0.276, D_B: 0.260, G_B: 0.990, cycle_B: 0.327, gp: 0.246
+
+[Rank 0] (epoch: 26, iters: 8000, time: 0.001, data: 0.002) , D_A: 0.256, G_A: 0.992, cycle_A: 0.266, D_B: 0.509, G_B: 1.016, cycle_B: 0.329, gp: 0.498
+
+[Rank 0] (epoch: 26, iters: 9600, time: 0.001, data: 0.001) , D_A: 0.224, G_A: 1.023, cycle_A: 0.219, D_B: 0.294, G_B: 0.885, cycle_B: 0.338, gp: 0.281
+
+[Rank 0] (epoch: 26, iters: 11200, time: 0.001, data: 0.001) , D_A: 0.246, G_A: 0.939, cycle_A: 0.213, D_B: 0.276, G_B: 0.990, cycle_B: 0.329, gp: 0.270
+
+--- iter tau=0.2200 ---
+  cipher in : bchbaedbdhcdhbadbaibchiibadbaehbddbebfdbddbe b ba abadbcbadbfeii
+  decrypted : chhcid c hh hci ciachhaaci cidhc  cdc  c  cdgcgcigici chci c daa
+  real plain:  aid e a he ee ha he a ad he he ab e ed he cee ai ad cgaed i f f
+  cipher in : bfbadbdbe dbebabadbcdeibegdbgdddbdbe dbehbcdibe dbebehbaebgdddbd
+  decrypted : c ci c cdg cdcici ch dacde ce   c cdg cdhch acdg cdcdhcidce   c 
+  real plain: deeed ad e ef cieie eehee iica iefeece i afica ad aia ad ee i ai
+[Rank 0] (epoch: 26, iters: 12800, time: 0.001, data: 0.001) , D_A: 0.197, G_A: 0.935, cycle_A: 0.250, D_B: 0.207, G_B: 0.937, cycle_B: 0.331, gp: 0.202
+
+saving the latest model (epoch 26, total_iters 560000)
+[Rank 0] (epoch: 26, iters: 14400, time: 0.001, data: 0.001) , D_A: 0.263, G_A: 0.951, cycle_A: 0.230, D_B: 0.259, G_B: 0.932, cycle_B: 0.324, gp: 0.253
+
+[Rank 0] (epoch: 26, iters: 16000, time: 0.001, data: 0.001) , D_A: 0.212, G_A: 1.061, cycle_A: 0.267, D_B: 0.403, G_B: 0.636, cycle_B: 0.323, gp: 0.396
+
+[Rank 0] (epoch: 26, iters: 17600, time: 0.001, data: 0.001) , D_A: 0.197, G_A: 1.026, cycle_A: 0.252, D_B: 0.470, G_B: 1.161, cycle_B: 0.330, gp: 0.446
+
+[Rank 0] (epoch: 26, iters: 19200, time: 0.001, data: 0.001) , D_A: 0.280, G_A: 0.921, cycle_A: 0.243, D_B: 0.321, G_B: 0.720, cycle_B: 0.326, gp: 0.306
+
+[Rank 0] (epoch: 26, iters: 20800, time: 0.001, data: 0.001) , D_A: 0.270, G_A: 0.874, cycle_A: 0.231, D_B: 0.409, G_B: 0.644, cycle_B: 0.334, gp: 0.335
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2129
+End of epoch 26 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 27, iters: 512, time: 0.001, data: 0.001) , D_A: 0.195, G_A: 1.040, cycle_A: 0.224, D_B: 0.255, G_B: 0.988, cycle_B: 0.344, gp: 0.249
+
+[Rank 0] (epoch: 27, iters: 2112, time: 0.001, data: 0.000) , D_A: 0.207, G_A: 0.963, cycle_A: 0.265, D_B: 0.319, G_B: 0.843, cycle_B: 0.335, gp: 0.286
+
+[Rank 0] (epoch: 27, iters: 3712, time: 0.001, data: 0.001) , D_A: 0.136, G_A: 1.006, cycle_A: 0.221, D_B: 0.255, G_B: 0.471, cycle_B: 0.331, gp: 0.248
+
+[Rank 0] (epoch: 27, iters: 5312, time: 0.001, data: 0.001) , D_A: 0.302, G_A: 0.997, cycle_A: 0.278, D_B: 0.209, G_B: 0.925, cycle_B: 0.328, gp: 0.190
+
+[Rank 0] (epoch: 27, iters: 6912, time: 0.001, data: 0.001) , D_A: 0.224, G_A: 1.030, cycle_A: 0.242, D_B: 0.358, G_B: 0.927, cycle_B: 0.328, gp: 0.345
+
+[Rank 0] (epoch: 27, iters: 8512, time: 0.001, data: 0.001) , D_A: 0.312, G_A: 0.976, cycle_A: 0.273, D_B: 0.468, G_B: 0.599, cycle_B: 0.319, gp: 0.360
+
+[Rank 0] (epoch: 27, iters: 10112, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 0.995, cycle_A: 0.263, D_B: 0.331, G_B: 0.770, cycle_B: 0.330, gp: 0.309
+
+[Rank 0] (epoch: 27, iters: 11712, time: 0.001, data: 0.001) , D_A: 0.309, G_A: 0.987, cycle_A: 0.246, D_B: 0.370, G_B: 0.966, cycle_B: 0.330, gp: 0.365
+
+[Rank 0] (epoch: 27, iters: 13312, time: 0.001, data: 0.001) , D_A: 0.294, G_A: 0.859, cycle_A: 0.265, D_B: 0.296, G_B: 1.068, cycle_B: 0.322, gp: 0.290
+
+[Rank 0] (epoch: 27, iters: 14912, time: 0.001, data: 0.001) , D_A: 0.153, G_A: 0.943, cycle_A: 0.271, D_B: 0.499, G_B: 1.064, cycle_B: 0.333, gp: 0.487
+
+[Rank 0] (epoch: 27, iters: 16512, time: 0.001, data: 0.001) , D_A: 0.288, G_A: 0.779, cycle_A: 0.227, D_B: 0.277, G_B: 0.782, cycle_B: 0.393, gp: 0.260
+
+[Rank 0] (epoch: 27, iters: 18112, time: 0.001, data: 0.001) , D_A: 0.240, G_A: 0.981, cycle_A: 0.268, D_B: 0.340, G_B: 1.179, cycle_B: 0.355, gp: 0.328
+
+[Rank 0] (epoch: 27, iters: 19712, time: 0.001, data: 0.001) , D_A: 0.194, G_A: 0.934, cycle_A: 0.253, D_B: 0.313, G_B: 0.994, cycle_B: 0.357, gp: 0.296
+
+[Rank 0] (epoch: 27, iters: 21312, time: 0.001, data: 0.001) , D_A: 0.188, G_A: 0.957, cycle_A: 0.261, D_B: 0.185, G_B: 0.920, cycle_B: 0.346, gp: 0.179
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.2060
+End of epoch 27 / 50 	 Time Taken: 18 sec
+[Rank 0] (epoch: 28, iters: 1024, time: 0.001, data: 0.001) , D_A: 0.247, G_A: 0.957, cycle_A: 0.255, D_B: 0.275, G_B: 1.091, cycle_B: 0.347, gp: 0.268
+
+[Rank 0] (epoch: 28, iters: 2624, time: 0.001, data: 0.000) , D_A: 0.238, G_A: 0.999, cycle_A: 0.237, D_B: 0.414, G_B: 0.827, cycle_B: 0.349, gp: 0.393
+
+[Rank 0] (epoch: 28, iters: 4224, time: 0.001, data: 0.001) , D_A: 0.216, G_A: 0.996, cycle_A: 0.244, D_B: 0.415, G_B: 0.984, cycle_B: 0.341, gp: 0.394
+
+[Rank 0] (epoch: 28, iters: 5824, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.968, cycle_A: 0.230, D_B: 0.269, G_B: 0.844, cycle_B: 0.338, gp: 0.252
+
+[Rank 0] (epoch: 28, iters: 7424, time: 0.001, data: 0.001) , D_A: 0.188, G_A: 0.961, cycle_A: 0.275, D_B: 0.260, G_B: 0.769, cycle_B: 0.355, gp: 0.250
+
+--- iter tau=0.2060 ---
+  cipher in : dbedhbehbebadbedbidbidhbebaebdibadbebccibfbeb i bddbfbeghibaieba
+  decrypted :  ed hedhedei ed ea ea hedeide aei edehhae edegage  e edehaeiadei
+  real plain:  ae f aga ceic dece hi i he cae i de hi f a ee f biaic igi biig 
+  cipher in : baehbcdebadb ebadbhiebcedbibadbgcadbabadbadbgadbcgbadbci begdbia
+  decrypted : eidheh dei egdei ehadehd eaei eehi eiei ei eei eheei ehagede eai
+  real plain: he ee e f he ee i die befe he ie i e faig e eeie dieae he i eege
+[Rank 0] (epoch: 28, iters: 9024, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 1.005, cycle_A: 0.223, D_B: 0.201, G_B: 0.826, cycle_B: 0.359, gp: 0.191
+
+saving the latest model (epoch 28, total_iters 600000)
+[Rank 0] (epoch: 28, iters: 10624, time: 0.001, data: 0.001) , D_A: 0.229, G_A: 0.967, cycle_A: 0.256, D_B: 0.299, G_B: 0.902, cycle_B: 0.342, gp: 0.293
+
+[Rank 0] (epoch: 28, iters: 12224, time: 0.001, data: 0.001) , D_A: 0.203, G_A: 1.026, cycle_A: 0.242, D_B: 0.313, G_B: 0.889, cycle_B: 0.350, gp: 0.299
+
+[Rank 0] (epoch: 28, iters: 13824, time: 0.001, data: 0.001) , D_A: 0.278, G_A: 0.977, cycle_A: 0.219, D_B: 0.423, G_B: 1.073, cycle_B: 0.363, gp: 0.416
+
+[Rank 0] (epoch: 28, iters: 15424, time: 0.001, data: 0.001) , D_A: 0.322, G_A: 0.858, cycle_A: 0.271, D_B: 0.271, G_B: 1.030, cycle_B: 0.335, gp: 0.262
+
+[Rank 0] (epoch: 28, iters: 17024, time: 0.001, data: 0.001) , D_A: 0.267, G_A: 1.025, cycle_A: 0.256, D_B: 0.289, G_B: 1.053, cycle_B: 0.338, gp: 0.278
+
+[Rank 0] (epoch: 28, iters: 18624, time: 0.001, data: 0.001) , D_A: 0.164, G_A: 1.020, cycle_A: 0.246, D_B: 0.457, G_B: 1.065, cycle_B: 0.353, gp: 0.446
+
+[Rank 0] (epoch: 28, iters: 20224, time: 0.001, data: 0.001) , D_A: 0.322, G_A: 1.004, cycle_A: 0.226, D_B: 0.257, G_B: 0.991, cycle_B: 0.352, gp: 0.248
+
+[Rank 0] (epoch: 28, iters: 21824, time: 0.001, data: 0.001) , D_A: 0.274, G_A: 1.013, cycle_A: 0.249, D_B: 0.330, G_B: 1.028, cycle_B: 0.343, gp: 0.324
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1993
+End of epoch 28 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 29, iters: 1536, time: 0.001, data: 0.001) , D_A: 0.298, G_A: 0.907, cycle_A: 0.250, D_B: 0.272, G_B: 0.959, cycle_B: 0.339, gp: 0.265
+
+[Rank 0] (epoch: 29, iters: 3136, time: 0.001, data: 0.001) , D_A: 0.290, G_A: 0.980, cycle_A: 0.255, D_B: 0.282, G_B: 0.989, cycle_B: 0.329, gp: 0.278
+
+[Rank 0] (epoch: 29, iters: 4736, time: 0.001, data: 0.001) , D_A: 0.250, G_A: 0.988, cycle_A: 0.270, D_B: 0.256, G_B: 0.913, cycle_B: 0.342, gp: 0.242
+
+[Rank 0] (epoch: 29, iters: 6336, time: 0.001, data: 0.001) , D_A: 0.288, G_A: 0.950, cycle_A: 0.251, D_B: 0.131, G_B: 0.898, cycle_B: 0.351, gp: 0.120
+
+[Rank 0] (epoch: 29, iters: 7936, time: 0.001, data: 0.001) , D_A: 0.242, G_A: 1.014, cycle_A: 0.228, D_B: 0.194, G_B: 0.989, cycle_B: 0.339, gp: 0.186
+
+[Rank 0] (epoch: 29, iters: 9536, time: 0.001, data: 0.001) , D_A: 0.266, G_A: 1.000, cycle_A: 0.271, D_B: 0.297, G_B: 0.943, cycle_B: 0.343, gp: 0.291
+
+[Rank 0] (epoch: 29, iters: 11136, time: 0.001, data: 0.001) , D_A: 0.193, G_A: 1.058, cycle_A: 0.232, D_B: 0.618, G_B: 1.791, cycle_B: 0.328, gp: 0.352
+
+[Rank 0] (epoch: 29, iters: 12736, time: 0.001, data: 0.001) , D_A: 0.234, G_A: 1.044, cycle_A: 0.261, D_B: 0.286, G_B: 0.921, cycle_B: 0.332, gp: 0.272
+
+[Rank 0] (epoch: 29, iters: 14336, time: 0.001, data: 0.001) , D_A: 0.211, G_A: 1.122, cycle_A: 0.244, D_B: 0.229, G_B: 0.924, cycle_B: 0.318, gp: 0.215
+
+[Rank 0] (epoch: 29, iters: 15936, time: 0.001, data: 0.001) , D_A: 0.269, G_A: 0.962, cycle_A: 0.264, D_B: 0.310, G_B: 1.081, cycle_B: 0.323, gp: 0.301
+
+[Rank 0] (epoch: 29, iters: 17536, time: 0.001, data: 0.001) , D_A: 0.191, G_A: 0.986, cycle_A: 0.257, D_B: 0.321, G_B: 0.854, cycle_B: 0.331, gp: 0.316
+
+[Rank 0] (epoch: 29, iters: 19136, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 0.997, cycle_A: 0.279, D_B: 0.461, G_B: 0.974, cycle_B: 0.325, gp: 0.454
+
+[Rank 0] (epoch: 29, iters: 20736, time: 0.001, data: 0.001) , D_A: 0.254, G_A: 1.148, cycle_A: 0.232, D_B: 0.343, G_B: 0.879, cycle_B: 0.332, gp: 0.334
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1929
+End of epoch 29 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 30, iters: 448, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 1.029, cycle_A: 0.255, D_B: 0.241, G_B: 0.993, cycle_B: 0.323, gp: 0.230
+
+[Rank 0] (epoch: 30, iters: 2048, time: 0.001, data: 0.003) , D_A: 0.257, G_A: 1.018, cycle_A: 0.249, D_B: 0.300, G_B: 0.900, cycle_B: 0.325, gp: 0.295
+
+[Rank 0] (epoch: 30, iters: 3648, time: 0.001, data: 0.001) , D_A: 0.291, G_A: 0.982, cycle_A: 0.221, D_B: 0.251, G_B: 0.938, cycle_B: 0.330, gp: 0.246
+
+--- iter tau=0.1929 ---
+  cipher in : bgddbddhbibdedbaebadbdeb ddicabcabciddbibcihdi behhiibebdebdbddd
+  decrypted : ee  e  heae d eidei e deg  ahiehieha  eaehah agedhhaaede de e   
+  real plain: id e daggig he ae i a big ae i i he aid i gig e eebd h big a ae 
+  cipher in : cdbibadbeibaddbchbai bibebcdbdi abfbebhidbadbhebi bibi abaedbgdb
+  decrypted : h eaei edaei  ehheiageaedeh e agie edeha ei ehdeageaeagieid ee e
+  real plain: b afe ea i fced he eiig a ead fhig adi i he e fachie i headed b 
+[Rank 0] (epoch: 30, iters: 5248, time: 0.001, data: 0.001) , D_A: 0.232, G_A: 0.941, cycle_A: 0.240, D_B: 0.292, G_B: 0.996, cycle_B: 0.331, gp: 0.283
+
+saving the latest model (epoch 30, total_iters 640000)
+[Rank 0] (epoch: 30, iters: 6848, time: 0.001, data: 0.001) , D_A: 0.264, G_A: 0.922, cycle_A: 0.277, D_B: 0.220, G_B: 1.005, cycle_B: 0.328, gp: 0.210
+
+[Rank 0] (epoch: 30, iters: 8448, time: 0.001, data: 0.001) , D_A: 0.173, G_A: 0.998, cycle_A: 0.259, D_B: 0.216, G_B: 0.994, cycle_B: 0.321, gp: 0.209
+
+[Rank 0] (epoch: 30, iters: 10048, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 1.023, cycle_A: 0.225, D_B: 0.266, G_B: 0.932, cycle_B: 0.332, gp: 0.256
+
+[Rank 0] (epoch: 30, iters: 11648, time: 0.001, data: 0.001) , D_A: 0.204, G_A: 0.984, cycle_A: 0.230, D_B: 0.170, G_B: 0.997, cycle_B: 0.332, gp: 0.162
+
+[Rank 0] (epoch: 30, iters: 13248, time: 0.001, data: 0.001) , D_A: 0.255, G_A: 1.023, cycle_A: 0.258, D_B: 0.499, G_B: 0.994, cycle_B: 0.322, gp: 0.492
+
+[Rank 0] (epoch: 30, iters: 14848, time: 0.001, data: 0.001) , D_A: 0.251, G_A: 0.998, cycle_A: 0.261, D_B: 0.363, G_B: 1.063, cycle_B: 0.321, gp: 0.347
+
+[Rank 0] (epoch: 30, iters: 16448, time: 0.001, data: 0.001) , D_A: 0.217, G_A: 0.958, cycle_A: 0.235, D_B: 0.182, G_B: 1.058, cycle_B: 0.331, gp: 0.173
+
+[Rank 0] (epoch: 30, iters: 18048, time: 0.001, data: 0.001) , D_A: 0.261, G_A: 0.990, cycle_A: 0.257, D_B: 0.300, G_B: 1.004, cycle_B: 0.337, gp: 0.288
+
+[Rank 0] (epoch: 30, iters: 19648, time: 0.001, data: 0.001) , D_A: 0.289, G_A: 0.995, cycle_A: 0.264, D_B: 0.247, G_B: 1.031, cycle_B: 0.326, gp: 0.240
+
+[Rank 0] (epoch: 30, iters: 21248, time: 0.001, data: 0.001) , D_A: 0.266, G_A: 0.966, cycle_A: 0.268, D_B: 0.237, G_B: 0.859, cycle_B: 0.328, gp: 0.231
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1867
+End of epoch 30 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 31, iters: 960, time: 0.001, data: 0.001) , D_A: 0.150, G_A: 0.982, cycle_A: 0.270, D_B: 0.221, G_B: 1.104, cycle_B: 0.329, gp: 0.213
+
+[Rank 0] (epoch: 31, iters: 2560, time: 0.001, data: 0.000) , D_A: 0.216, G_A: 0.963, cycle_A: 0.265, D_B: 0.303, G_B: 1.095, cycle_B: 0.332, gp: 0.298
+
+[Rank 0] (epoch: 31, iters: 4160, time: 0.001, data: 0.001) , D_A: 0.224, G_A: 0.971, cycle_A: 0.247, D_B: 0.391, G_B: 1.055, cycle_B: 0.335, gp: 0.379
+
+[Rank 0] (epoch: 31, iters: 5760, time: 0.001, data: 0.001) , D_A: 0.241, G_A: 1.061, cycle_A: 0.235, D_B: 0.237, G_B: 0.923, cycle_B: 0.329, gp: 0.222
+
+[Rank 0] (epoch: 31, iters: 7360, time: 0.001, data: 0.001) , D_A: 0.177, G_A: 0.997, cycle_A: 0.262, D_B: 0.246, G_B: 1.129, cycle_B: 0.332, gp: 0.237
+
+[Rank 0] (epoch: 31, iters: 8960, time: 0.001, data: 0.001) , D_A: 0.244, G_A: 0.992, cycle_A: 0.257, D_B: 0.248, G_B: 0.905, cycle_B: 0.314, gp: 0.241
+
+[Rank 0] (epoch: 31, iters: 10560, time: 0.001, data: 0.001) , D_A: 0.234, G_A: 0.933, cycle_A: 0.251, D_B: 0.436, G_B: 0.969, cycle_B: 0.327, gp: 0.431
+
+[Rank 0] (epoch: 31, iters: 12160, time: 0.001, data: 0.001) , D_A: 0.188, G_A: 1.031, cycle_A: 0.219, D_B: 0.185, G_B: 0.945, cycle_B: 0.326, gp: 0.180
+
+[Rank 0] (epoch: 31, iters: 13760, time: 0.001, data: 0.001) , D_A: 0.291, G_A: 1.022, cycle_A: 0.223, D_B: 0.287, G_B: 0.972, cycle_B: 0.336, gp: 0.283
+
+[Rank 0] (epoch: 31, iters: 15360, time: 0.001, data: 0.001) , D_A: 0.278, G_A: 0.919, cycle_A: 0.254, D_B: 0.259, G_B: 0.968, cycle_B: 0.332, gp: 0.254
+
+[Rank 0] (epoch: 31, iters: 16960, time: 0.001, data: 0.001) , D_A: 0.299, G_A: 1.003, cycle_A: 0.258, D_B: 0.212, G_B: 0.868, cycle_B: 0.326, gp: 0.200
+
+[Rank 0] (epoch: 31, iters: 18560, time: 0.001, data: 0.001) , D_A: 0.200, G_A: 1.030, cycle_A: 0.225, D_B: 0.288, G_B: 0.988, cycle_B: 0.326, gp: 0.282
+
+[Rank 0] (epoch: 31, iters: 20160, time: 0.001, data: 0.001) , D_A: 0.150, G_A: 0.985, cycle_A: 0.249, D_B: 0.288, G_B: 0.883, cycle_B: 0.327, gp: 0.280
+
+[Rank 0] (epoch: 31, iters: 21760, time: 0.001, data: 0.001) , D_A: 0.221, G_A: 0.883, cycle_A: 0.217, D_B: 0.137, G_B: 0.988, cycle_B: 0.324, gp: 0.134
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1806
+End of epoch 31 / 50 	 Time Taken: 19 sec
+--- iter tau=0.1806 ---
+  cipher in : ibdcbehbadbcdbehbdi ibe baicabadbaebcigdhbdeegbaibadi adi bfbeic
+  decrypted : ac hcdhci ch cdhc agacdgciahici cidchae hc ddeciaci agi agc cdah
+  real plain:  ih he ae e f hi fai he hagh hie gi ed a diigihed hafaced a adig
+  cipher in : dbehbfdbebi dbadbebdhbcabdbi baebibibdhbeebibdhbfbdicebedieidbfb
+  decrypted :  cdhc  cdcag ci cdc hchic cagcidcacac hcddcac hc c ahdcd ada c c
+  real plain: ae feig hgh he ig f befe a e ie i ecic acii ge de a he ece i bab
+[Rank 0] (epoch: 32, iters: 1472, time: 0.001, data: 0.001) , D_A: 0.297, G_A: 0.963, cycle_A: 0.261, D_B: 0.252, G_B: 1.019, cycle_B: 0.317, gp: 0.249
+
+saving the latest model (epoch 32, total_iters 680000)
+[Rank 0] (epoch: 32, iters: 3072, time: 0.001, data: 0.001) , D_A: 0.226, G_A: 0.984, cycle_A: 0.233, D_B: 0.361, G_B: 1.076, cycle_B: 0.333, gp: 0.344
+
+[Rank 0] (epoch: 32, iters: 4672, time: 0.001, data: 0.001) , D_A: 0.227, G_A: 0.954, cycle_A: 0.255, D_B: 0.312, G_B: 0.877, cycle_B: 0.322, gp: 0.297
+
+[Rank 0] (epoch: 32, iters: 6272, time: 0.001, data: 0.001) , D_A: 0.212, G_A: 0.981, cycle_A: 0.259, D_B: 0.211, G_B: 0.980, cycle_B: 0.328, gp: 0.207
+
+[Rank 0] (epoch: 32, iters: 7872, time: 0.001, data: 0.001) , D_A: 0.176, G_A: 0.974, cycle_A: 0.254, D_B: 0.390, G_B: 0.961, cycle_B: 0.328, gp: 0.382
+
+[Rank 0] (epoch: 32, iters: 9472, time: 0.001, data: 0.001) , D_A: 0.240, G_A: 0.964, cycle_A: 0.256, D_B: 0.316, G_B: 0.973, cycle_B: 0.336, gp: 0.312
+
+[Rank 0] (epoch: 32, iters: 11072, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 0.989, cycle_A: 0.256, D_B: 0.363, G_B: 0.735, cycle_B: 0.327, gp: 0.356
+
+[Rank 0] (epoch: 32, iters: 12672, time: 0.001, data: 0.001) , D_A: 0.221, G_A: 0.989, cycle_A: 0.260, D_B: 0.331, G_B: 0.877, cycle_B: 0.331, gp: 0.312
+
+[Rank 0] (epoch: 32, iters: 14272, time: 0.001, data: 0.001) , D_A: 0.142, G_A: 0.994, cycle_A: 0.262, D_B: 0.283, G_B: 1.030, cycle_B: 0.316, gp: 0.279
+
+[Rank 0] (epoch: 32, iters: 15872, time: 0.001, data: 0.001) , D_A: 0.235, G_A: 1.024, cycle_A: 0.243, D_B: 0.310, G_B: 0.976, cycle_B: 0.322, gp: 0.305
+
+[Rank 0] (epoch: 32, iters: 17472, time: 0.001, data: 0.001) , D_A: 0.265, G_A: 0.943, cycle_A: 0.267, D_B: 0.149, G_B: 0.990, cycle_B: 0.331, gp: 0.137
+
+[Rank 0] (epoch: 32, iters: 19072, time: 0.001, data: 0.001) , D_A: 0.281, G_A: 1.062, cycle_A: 0.225, D_B: 0.347, G_B: 0.969, cycle_B: 0.325, gp: 0.340
+
+[Rank 0] (epoch: 32, iters: 20672, time: 0.001, data: 0.001) , D_A: 0.176, G_A: 1.072, cycle_A: 0.231, D_B: 0.284, G_B: 1.036, cycle_B: 0.332, gp: 0.276
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1748
+End of epoch 32 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 33, iters: 384, time: 0.001, data: 0.001) , D_A: 0.312, G_A: 0.949, cycle_A: 0.228, D_B: 0.333, G_B: 0.935, cycle_B: 0.324, gp: 0.327
+
+[Rank 0] (epoch: 33, iters: 1984, time: 0.001, data: 0.000) , D_A: 0.261, G_A: 0.907, cycle_A: 0.212, D_B: 0.347, G_B: 1.191, cycle_B: 0.327, gp: 0.332
+
+[Rank 0] (epoch: 33, iters: 3584, time: 0.001, data: 0.001) , D_A: 0.204, G_A: 0.974, cycle_A: 0.225, D_B: 0.262, G_B: 0.792, cycle_B: 0.313, gp: 0.259
+
+[Rank 0] (epoch: 33, iters: 5184, time: 0.001, data: 0.001) , D_A: 0.242, G_A: 0.998, cycle_A: 0.224, D_B: 0.353, G_B: 0.941, cycle_B: 0.331, gp: 0.347
+
+[Rank 0] (epoch: 33, iters: 6784, time: 0.001, data: 0.001) , D_A: 0.199, G_A: 0.909, cycle_A: 0.260, D_B: 0.208, G_B: 0.927, cycle_B: 0.327, gp: 0.199
+
+[Rank 0] (epoch: 33, iters: 8384, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 0.934, cycle_A: 0.250, D_B: 0.311, G_B: 1.037, cycle_B: 0.321, gp: 0.307
+
+[Rank 0] (epoch: 33, iters: 9984, time: 0.001, data: 0.001) , D_A: 0.128, G_A: 1.069, cycle_A: 0.255, D_B: 0.413, G_B: 0.971, cycle_B: 0.330, gp: 0.409
+
+[Rank 0] (epoch: 33, iters: 11584, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 0.967, cycle_A: 0.256, D_B: 0.200, G_B: 0.978, cycle_B: 0.330, gp: 0.194
+
+[Rank 0] (epoch: 33, iters: 13184, time: 0.001, data: 0.001) , D_A: 0.222, G_A: 1.252, cycle_A: 0.230, D_B: 0.223, G_B: 0.973, cycle_B: 0.323, gp: 0.212
+
+[Rank 0] (epoch: 33, iters: 14784, time: 0.001, data: 0.001) , D_A: 0.250, G_A: 1.049, cycle_A: 0.266, D_B: 0.127, G_B: 0.991, cycle_B: 0.323, gp: 0.117
+
+[Rank 0] (epoch: 33, iters: 16384, time: 0.001, data: 0.001) , D_A: 0.265, G_A: 1.028, cycle_A: 0.260, D_B: 0.461, G_B: 1.015, cycle_B: 0.324, gp: 0.452
+
+[Rank 0] (epoch: 33, iters: 17984, time: 0.001, data: 0.001) , D_A: 0.876, G_A: 0.629, cycle_A: 0.268, D_B: 0.227, G_B: 0.987, cycle_B: 0.329, gp: 0.217
+
+--- iter tau=0.1748 ---
+  cipher in : fbadbddbaibcebdbehbfei bebadbedhbadbidhbaibfbiibfbaidfbeibfbaebc
+  decrypted :  ei e  eiaehde edhe dagedei ed hei ea heiae eaae eia  edae eideh
+  real plain:  he i he ee he he cae bac he chhe hi id a ade he i d hi aiheic b
+  cipher in : ehbfbie iebcdedbggdbicdedbihici bebcaihbfbgdi befeihbfci baibddb
+  decrypted : dhe eadgadeh d eee eah d eahahagedehiahe ee aged dahe hageiae  e
+  real plain: ibe if he ce i a a a caii gee ceibe f ci diai eed adiiai icie a 
+[Rank 0] (epoch: 33, iters: 19584, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 0.978, cycle_A: 0.222, D_B: 0.335, G_B: 1.020, cycle_B: 0.329, gp: 0.330
+
+saving the latest model (epoch 33, total_iters 720000)
+[Rank 0] (epoch: 33, iters: 21184, time: 0.001, data: 0.001) , D_A: 0.205, G_A: 0.930, cycle_A: 0.269, D_B: 0.243, G_B: 0.854, cycle_B: 0.331, gp: 0.238
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1691
+End of epoch 33 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 34, iters: 896, time: 0.001, data: 0.001) , D_A: 0.304, G_A: 0.997, cycle_A: 0.264, D_B: 0.263, G_B: 0.942, cycle_B: 0.361, gp: 0.259
+
+[Rank 0] (epoch: 34, iters: 2496, time: 0.001, data: 0.000) , D_A: 0.314, G_A: 0.990, cycle_A: 0.238, D_B: 0.348, G_B: 0.988, cycle_B: 0.369, gp: 0.343
+
+[Rank 0] (epoch: 34, iters: 4096, time: 0.001, data: 0.001) , D_A: 0.311, G_A: 1.024, cycle_A: 0.270, D_B: 0.345, G_B: 1.032, cycle_B: 0.353, gp: 0.332
+
+[Rank 0] (epoch: 34, iters: 5696, time: 0.001, data: 0.001) , D_A: 0.264, G_A: 0.972, cycle_A: 0.226, D_B: 0.168, G_B: 1.000, cycle_B: 0.362, gp: 0.165
+
+[Rank 0] (epoch: 34, iters: 7296, time: 0.001, data: 0.001) , D_A: 0.228, G_A: 0.976, cycle_A: 0.240, D_B: 0.329, G_B: 0.953, cycle_B: 0.362, gp: 0.317
+
+[Rank 0] (epoch: 34, iters: 8896, time: 0.001, data: 0.001) , D_A: 0.162, G_A: 0.916, cycle_A: 0.214, D_B: 0.207, G_B: 0.971, cycle_B: 0.343, gp: 0.203
+
+[Rank 0] (epoch: 34, iters: 10496, time: 0.001, data: 0.001) , D_A: 0.234, G_A: 0.907, cycle_A: 0.222, D_B: 0.345, G_B: 1.015, cycle_B: 0.353, gp: 0.339
+
+[Rank 0] (epoch: 34, iters: 12096, time: 0.001, data: 0.001) , D_A: 0.267, G_A: 0.986, cycle_A: 0.227, D_B: 0.306, G_B: 0.874, cycle_B: 0.347, gp: 0.301
+
+[Rank 0] (epoch: 34, iters: 13696, time: 0.001, data: 0.001) , D_A: 0.219, G_A: 1.009, cycle_A: 0.231, D_B: 0.303, G_B: 0.959, cycle_B: 0.360, gp: 0.297
+
+[Rank 0] (epoch: 34, iters: 15296, time: 0.001, data: 0.001) , D_A: 0.176, G_A: 0.981, cycle_A: 0.259, D_B: 0.204, G_B: 0.881, cycle_B: 0.349, gp: 0.196
+
+[Rank 0] (epoch: 34, iters: 16896, time: 0.001, data: 0.001) , D_A: 0.197, G_A: 1.077, cycle_A: 0.232, D_B: 0.263, G_B: 1.039, cycle_B: 0.355, gp: 0.253
+
+[Rank 0] (epoch: 34, iters: 18496, time: 0.001, data: 0.001) , D_A: 0.168, G_A: 0.898, cycle_A: 0.211, D_B: 0.473, G_B: 1.075, cycle_B: 0.354, gp: 0.465
+
+[Rank 0] (epoch: 34, iters: 20096, time: 0.001, data: 0.001) , D_A: 0.223, G_A: 0.952, cycle_A: 0.262, D_B: 0.292, G_B: 0.977, cycle_B: 0.349, gp: 0.284
+
+[Rank 0] (epoch: 34, iters: 21696, time: 0.001, data: 0.001) , D_A: 0.190, G_A: 1.012, cycle_A: 0.268, D_B: 0.304, G_B: 1.017, cycle_B: 0.346, gp: 0.298
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1637
+End of epoch 34 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 35, iters: 1408, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 0.991, cycle_A: 0.221, D_B: 0.335, G_B: 0.970, cycle_B: 0.322, gp: 0.329
+
+[Rank 0] (epoch: 35, iters: 3008, time: 0.001, data: 0.001) , D_A: 0.230, G_A: 0.969, cycle_A: 0.263, D_B: 0.322, G_B: 0.925, cycle_B: 0.333, gp: 0.319
+
+[Rank 0] (epoch: 35, iters: 4608, time: 0.001, data: 0.001) , D_A: 0.173, G_A: 0.954, cycle_A: 0.220, D_B: 0.328, G_B: 1.091, cycle_B: 0.334, gp: 0.314
+
+[Rank 0] (epoch: 35, iters: 6208, time: 0.001, data: 0.001) , D_A: 0.285, G_A: 1.025, cycle_A: 0.272, D_B: 0.216, G_B: 0.994, cycle_B: 0.328, gp: 0.210
+
+[Rank 0] (epoch: 35, iters: 7808, time: 0.001, data: 0.001) , D_A: 0.305, G_A: 0.944, cycle_A: 0.211, D_B: 0.417, G_B: 1.054, cycle_B: 0.329, gp: 0.410
+
+[Rank 0] (epoch: 35, iters: 9408, time: 0.001, data: 0.001) , D_A: 0.160, G_A: 0.974, cycle_A: 0.266, D_B: 0.337, G_B: 0.963, cycle_B: 0.337, gp: 0.332
+
+[Rank 0] (epoch: 35, iters: 11008, time: 0.001, data: 0.001) , D_A: 0.277, G_A: 1.006, cycle_A: 0.217, D_B: 0.308, G_B: 1.151, cycle_B: 0.328, gp: 0.294
+
+[Rank 0] (epoch: 35, iters: 12608, time: 0.001, data: 0.001) , D_A: 0.246, G_A: 1.016, cycle_A: 0.255, D_B: 0.138, G_B: 1.010, cycle_B: 0.331, gp: 0.129
+
+[Rank 0] (epoch: 35, iters: 14208, time: 0.001, data: 0.001) , D_A: 0.312, G_A: 1.021, cycle_A: 0.266, D_B: 0.346, G_B: 1.066, cycle_B: 0.316, gp: 0.339
+
+--- iter tau=0.1637 ---
+  cipher in : ea abi ificebdbigbadibciibeb bd abcedbadbgihbadibcdbcdcdbibadbae
+  decrypted : digieaga ahde eaeei aehaaedege giehd ei eeahei aeh eh h eaei eid
+  real plain: h haf fii ad haf fi eaig a fii ied f ega h fa hi be added he ega
+  cipher in : bd abfbdehbidbadhbdeaidbedbfbaibcdbcdbibebebdehbidbcicabaddbebeb
+  decrypted : e gie e dhea ei he dia ed e eiaeh eh eaedede dhea ehahiei  edede
+  real plain: e gig hae a chace ii hi aie he ee he eea i i he ca bee he effec 
+[Rank 0] (epoch: 35, iters: 15808, time: 0.001, data: 0.001) , D_A: 0.171, G_A: 1.013, cycle_A: 0.225, D_B: 0.361, G_B: 0.977, cycle_B: 0.321, gp: 0.357
+
+saving the latest model (epoch 35, total_iters 760000)
+[Rank 0] (epoch: 35, iters: 17408, time: 0.001, data: 0.001) , D_A: 0.218, G_A: 0.968, cycle_A: 0.261, D_B: 0.241, G_B: 0.984, cycle_B: 0.325, gp: 0.236
+
+[Rank 0] (epoch: 35, iters: 19008, time: 0.001, data: 0.001) , D_A: 0.242, G_A: 1.007, cycle_A: 0.248, D_B: 0.328, G_B: 0.921, cycle_B: 0.324, gp: 0.322
+
+[Rank 0] (epoch: 35, iters: 20608, time: 0.001, data: 0.001) , D_A: 0.191, G_A: 1.048, cycle_A: 0.220, D_B: 0.281, G_B: 0.927, cycle_B: 0.331, gp: 0.273
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1584
+End of epoch 35 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 36, iters: 320, time: 0.001, data: 0.001) , D_A: 0.201, G_A: 1.026, cycle_A: 0.243, D_B: 0.233, G_B: 0.904, cycle_B: 0.324, gp: 0.222
+
+[Rank 0] (epoch: 36, iters: 1920, time: 0.001, data: 0.000) , D_A: 0.198, G_A: 0.978, cycle_A: 0.259, D_B: 0.252, G_B: 0.937, cycle_B: 0.326, gp: 0.245
+
+[Rank 0] (epoch: 36, iters: 3520, time: 0.001, data: 0.001) , D_A: 0.203, G_A: 0.950, cycle_A: 0.236, D_B: 0.371, G_B: 0.691, cycle_B: 0.313, gp: 0.331
+
+[Rank 0] (epoch: 36, iters: 5120, time: 0.001, data: 0.001) , D_A: 0.266, G_A: 0.948, cycle_A: 0.223, D_B: 0.273, G_B: 0.919, cycle_B: 0.323, gp: 0.263
+
+[Rank 0] (epoch: 36, iters: 6720, time: 0.001, data: 0.001) , D_A: 0.233, G_A: 0.987, cycle_A: 0.233, D_B: 0.396, G_B: 1.078, cycle_B: 0.328, gp: 0.391
+
+[Rank 0] (epoch: 36, iters: 8320, time: 0.001, data: 0.002) , D_A: 0.244, G_A: 0.999, cycle_A: 0.230, D_B: 0.353, G_B: 1.050, cycle_B: 0.322, gp: 0.348
+
+[Rank 0] (epoch: 36, iters: 9920, time: 0.001, data: 0.001) , D_A: 0.181, G_A: 0.894, cycle_A: 0.258, D_B: 0.294, G_B: 1.095, cycle_B: 0.330, gp: 0.284
+
+[Rank 0] (epoch: 36, iters: 11520, time: 0.001, data: 0.001) , D_A: 0.157, G_A: 0.968, cycle_A: 0.227, D_B: 0.282, G_B: 0.985, cycle_B: 0.330, gp: 0.278
+
+[Rank 0] (epoch: 36, iters: 13120, time: 0.001, data: 0.001) , D_A: 0.225, G_A: 0.937, cycle_A: 0.263, D_B: 0.493, G_B: 0.948, cycle_B: 0.321, gp: 0.490
+
+[Rank 0] (epoch: 36, iters: 14720, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 0.926, cycle_A: 0.254, D_B: 0.252, G_B: 0.815, cycle_B: 0.322, gp: 0.233
+
+[Rank 0] (epoch: 36, iters: 16320, time: 0.001, data: 0.001) , D_A: 0.223, G_A: 0.952, cycle_A: 0.234, D_B: 0.366, G_B: 1.044, cycle_B: 0.325, gp: 0.352
+
+[Rank 0] (epoch: 36, iters: 17920, time: 0.001, data: 0.002) , D_A: 0.280, G_A: 0.976, cycle_A: 0.242, D_B: 0.283, G_B: 0.976, cycle_B: 0.332, gp: 0.277
+
+[Rank 0] (epoch: 36, iters: 19520, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 0.931, cycle_A: 0.266, D_B: 0.328, G_B: 1.043, cycle_B: 0.328, gp: 0.320
+
+[Rank 0] (epoch: 36, iters: 21120, time: 0.001, data: 0.001) , D_A: 0.281, G_A: 0.995, cycle_A: 0.251, D_B: 0.304, G_B: 0.945, cycle_B: 0.328, gp: 0.300
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1533
+End of epoch 36 / 50 	 Time Taken: 18 sec
+[Rank 0] (epoch: 37, iters: 832, time: 0.001, data: 0.001) , D_A: 0.196, G_A: 0.932, cycle_A: 0.222, D_B: 0.277, G_B: 0.980, cycle_B: 0.330, gp: 0.274
+
+[Rank 0] (epoch: 37, iters: 2432, time: 0.001, data: 0.001) , D_A: 0.184, G_A: 1.052, cycle_A: 0.236, D_B: 0.339, G_B: 0.974, cycle_B: 0.333, gp: 0.334
+
+[Rank 0] (epoch: 37, iters: 4032, time: 0.001, data: 0.001) , D_A: 0.283, G_A: 0.906, cycle_A: 0.232, D_B: 0.425, G_B: 1.075, cycle_B: 0.329, gp: 0.321
+
+[Rank 0] (epoch: 37, iters: 5632, time: 0.001, data: 0.001) , D_A: 0.187, G_A: 0.970, cycle_A: 0.207, D_B: 0.274, G_B: 0.938, cycle_B: 0.330, gp: 0.269
+
+[Rank 0] (epoch: 37, iters: 7232, time: 0.001, data: 0.001) , D_A: 0.182, G_A: 0.766, cycle_A: 0.221, D_B: 0.272, G_B: 0.996, cycle_B: 0.332, gp: 0.258
+
+[Rank 0] (epoch: 37, iters: 8832, time: 0.001, data: 0.001) , D_A: 0.160, G_A: 0.991, cycle_A: 0.261, D_B: 0.220, G_B: 0.857, cycle_B: 0.315, gp: 0.209
+
+[Rank 0] (epoch: 37, iters: 10432, time: 0.001, data: 0.001) , D_A: 0.279, G_A: 0.908, cycle_A: 0.267, D_B: 0.452, G_B: 0.939, cycle_B: 0.328, gp: 0.447
+
+--- iter tau=0.1533 ---
+  cipher in : dedbehbibihddhdbfbddbdbibadbhbifbebihdeb ebibcddhbehbdbebcebdded
+  decrypted :  d cdhcacah  h c c  c caci chca cdcah dcgdcach  hcdhc cdchdc  d 
+  real plain: e ic i be eh i he ei c b e ad bed he ceig eed f a bidig ecede de
+  cipher in : dhbfbebifdidbibcedbdbddbhbibadbadbgdb i biabadbadhbgddbdbibibeb 
+  decrypted :  hc cdca  a cachd c c  chcaci ci ce cgagcaici ci hce  c cacacdcg
+  real plain:  a cce f he aeica ca acica ae aa heeafe f ce if d ae he aeica a 
+[Rank 0] (epoch: 37, iters: 12032, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.940, cycle_A: 0.245, D_B: 0.318, G_B: 0.954, cycle_B: 0.325, gp: 0.312
+
+saving the latest model (epoch 37, total_iters 800000)
+[Rank 0] (epoch: 37, iters: 13632, time: 0.001, data: 0.001) , D_A: 0.260, G_A: 0.917, cycle_A: 0.218, D_B: 0.275, G_B: 0.987, cycle_B: 0.335, gp: 0.271
+
+[Rank 0] (epoch: 37, iters: 15232, time: 0.001, data: 0.001) , D_A: 0.139, G_A: 0.978, cycle_A: 0.268, D_B: 0.199, G_B: 0.991, cycle_B: 0.332, gp: 0.189
+
+[Rank 0] (epoch: 37, iters: 16832, time: 0.001, data: 0.001) , D_A: 0.210, G_A: 0.954, cycle_A: 0.194, D_B: 0.511, G_B: 1.051, cycle_B: 0.266, gp: 0.501
+
+[Rank 0] (epoch: 37, iters: 18432, time: 0.001, data: 0.001) , D_A: 0.298, G_A: 0.942, cycle_A: 0.177, D_B: 0.312, G_B: 0.978, cycle_B: 0.251, gp: 0.302
+
+[Rank 0] (epoch: 37, iters: 20032, time: 0.001, data: 0.001) , D_A: 0.295, G_A: 0.958, cycle_A: 0.177, D_B: 0.349, G_B: 1.056, cycle_B: 0.257, gp: 0.340
+
+[Rank 0] (epoch: 37, iters: 21632, time: 0.001, data: 0.001) , D_A: 0.187, G_A: 1.021, cycle_A: 0.172, D_B: 0.467, G_B: 1.025, cycle_B: 0.236, gp: 0.458
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1483
+End of epoch 37 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 38, iters: 1344, time: 0.001, data: 0.001) , D_A: 0.270, G_A: 0.901, cycle_A: 0.168, D_B: 0.384, G_B: 1.007, cycle_B: 0.235, gp: 0.376
+
+[Rank 0] (epoch: 38, iters: 2944, time: 0.001, data: 0.001) , D_A: 0.234, G_A: 0.968, cycle_A: 0.172, D_B: 0.396, G_B: 1.019, cycle_B: 0.257, gp: 0.390
+
+[Rank 0] (epoch: 38, iters: 4544, time: 0.001, data: 0.001) , D_A: 0.187, G_A: 1.090, cycle_A: 0.169, D_B: 0.258, G_B: 0.940, cycle_B: 0.256, gp: 0.244
+
+[Rank 0] (epoch: 38, iters: 6144, time: 0.001, data: 0.001) , D_A: 0.193, G_A: 0.957, cycle_A: 0.173, D_B: 0.296, G_B: 0.886, cycle_B: 0.248, gp: 0.286
+
+[Rank 0] (epoch: 38, iters: 7744, time: 0.001, data: 0.001) , D_A: 0.215, G_A: 0.978, cycle_A: 0.181, D_B: 0.340, G_B: 0.988, cycle_B: 0.248, gp: 0.335
+
+[Rank 0] (epoch: 38, iters: 9344, time: 0.001, data: 0.001) , D_A: 0.307, G_A: 0.947, cycle_A: 0.177, D_B: 0.398, G_B: 1.083, cycle_B: 0.254, gp: 0.391
+
+[Rank 0] (epoch: 38, iters: 10944, time: 0.001, data: 0.001) , D_A: 0.219, G_A: 0.942, cycle_A: 0.191, D_B: 0.396, G_B: 0.865, cycle_B: 0.248, gp: 0.389
+
+[Rank 0] (epoch: 38, iters: 12544, time: 0.001, data: 0.001) , D_A: 0.227, G_A: 0.946, cycle_A: 0.169, D_B: 0.190, G_B: 0.967, cycle_B: 0.249, gp: 0.186
+
+[Rank 0] (epoch: 38, iters: 14144, time: 0.001, data: 0.001) , D_A: 0.198, G_A: 1.010, cycle_A: 0.174, D_B: 0.192, G_B: 0.947, cycle_B: 0.249, gp: 0.187
+
+[Rank 0] (epoch: 38, iters: 15744, time: 0.001, data: 0.001) , D_A: 0.301, G_A: 0.944, cycle_A: 0.174, D_B: 0.433, G_B: 0.996, cycle_B: 0.252, gp: 0.428
+
+[Rank 0] (epoch: 38, iters: 17344, time: 0.001, data: 0.001) , D_A: 0.243, G_A: 1.047, cycle_A: 0.178, D_B: 0.191, G_B: 0.929, cycle_B: 0.248, gp: 0.185
+
+[Rank 0] (epoch: 38, iters: 18944, time: 0.001, data: 0.001) , D_A: 0.312, G_A: 1.024, cycle_A: 0.175, D_B: 0.283, G_B: 0.948, cycle_B: 0.247, gp: 0.277
+
+[Rank 0] (epoch: 38, iters: 20544, time: 0.001, data: 0.001) , D_A: 0.267, G_A: 0.935, cycle_A: 0.157, D_B: 0.338, G_B: 0.979, cycle_B: 0.260, gp: 0.333
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1435
+End of epoch 38 / 50 	 Time Taken: 21 sec
+[Rank 0] (epoch: 39, iters: 256, time: 0.001, data: 0.001) , D_A: 0.187, G_A: 1.089, cycle_A: 0.166, D_B: 0.327, G_B: 0.877, cycle_B: 0.249, gp: 0.323
+
+[Rank 0] (epoch: 39, iters: 1856, time: 0.001, data: 0.003) , D_A: 0.228, G_A: 0.806, cycle_A: 0.175, D_B: 0.322, G_B: 0.940, cycle_B: 0.247, gp: 0.318
+
+[Rank 0] (epoch: 39, iters: 3456, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 0.994, cycle_A: 0.174, D_B: 0.332, G_B: 0.991, cycle_B: 0.239, gp: 0.328
+
+[Rank 0] (epoch: 39, iters: 5056, time: 0.001, data: 0.001) , D_A: 0.272, G_A: 0.956, cycle_A: 0.181, D_B: 0.174, G_B: 1.073, cycle_B: 0.249, gp: 0.164
+
+[Rank 0] (epoch: 39, iters: 6656, time: 0.001, data: 0.001) , D_A: 0.315, G_A: 0.896, cycle_A: 0.177, D_B: 0.285, G_B: 0.985, cycle_B: 0.242, gp: 0.278
+
+--- iter tau=0.1435 ---
+  cipher in : bccbebiedhbebeibgbadbadbgiahebadbhddhbehbdhbhbadbcdhbgdbddbe dbe
+  decrypted : ehhedead hededaebei ei ebaihdei eh  hedhe hehei eh heb e  edg ed
+  real plain: a cai ad ecig iced hgh hee cai ee he geaig e f i ife a aied bi i
+  cipher in : eibibebfbadbfbcba abaicabaibcedb ddhbaebadbcae dbaehbhdidhbaibeb
+  decrypted : daeaede ei e eheigieiahieiaehd eg  heidei ehidg eidheh a heiaede
+  real plain: i eei f e eee e id ad ae ieded ce he age f acica ahig f cecia ce
+[Rank 0] (epoch: 39, iters: 8256, time: 0.001, data: 0.001) , D_A: 0.171, G_A: 0.846, cycle_A: 0.172, D_B: 0.431, G_B: 1.086, cycle_B: 0.246, gp: 0.424
+
+saving the latest model (epoch 39, total_iters 840000)
+[Rank 0] (epoch: 39, iters: 9856, time: 0.001, data: 0.001) , D_A: 0.237, G_A: 0.950, cycle_A: 0.183, D_B: 0.330, G_B: 0.901, cycle_B: 0.253, gp: 0.321
+
+[Rank 0] (epoch: 39, iters: 11456, time: 0.001, data: 0.001) , D_A: 0.292, G_A: 0.998, cycle_A: 0.191, D_B: 0.546, G_B: 1.168, cycle_B: 0.248, gp: 0.530
+
+[Rank 0] (epoch: 39, iters: 13056, time: 0.001, data: 0.001) , D_A: 0.300, G_A: 0.965, cycle_A: 0.163, D_B: 0.259, G_B: 0.878, cycle_B: 0.248, gp: 0.242
+
+[Rank 0] (epoch: 39, iters: 14656, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 0.980, cycle_A: 0.201, D_B: 0.529, G_B: 1.012, cycle_B: 0.247, gp: 0.521
+
+[Rank 0] (epoch: 39, iters: 16256, time: 0.001, data: 0.001) , D_A: 0.247, G_A: 1.095, cycle_A: 0.187, D_B: 0.538, G_B: 0.944, cycle_B: 0.252, gp: 0.532
+
+[Rank 0] (epoch: 39, iters: 17856, time: 0.001, data: 0.001) , D_A: 0.283, G_A: 0.863, cycle_A: 0.183, D_B: 0.229, G_B: 0.955, cycle_B: 0.249, gp: 0.220
+
+[Rank 0] (epoch: 39, iters: 19456, time: 0.001, data: 0.001) , D_A: 0.228, G_A: 0.890, cycle_A: 0.175, D_B: 0.356, G_B: 1.010, cycle_B: 0.246, gp: 0.351
+
+[Rank 0] (epoch: 39, iters: 21056, time: 0.001, data: 0.001) , D_A: 0.153, G_A: 0.983, cycle_A: 0.177, D_B: 0.325, G_B: 0.771, cycle_B: 0.250, gp: 0.315
+
+learning rate 0.0002000 -> 0.0002000
+temperature tau = 0.1389
+End of epoch 39 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 40, iters: 768, time: 0.001, data: 0.001) , D_A: 0.142, G_A: 0.907, cycle_A: 0.164, D_B: 0.264, G_B: 0.951, cycle_B: 0.259, gp: 0.261
+
+[Rank 0] (epoch: 40, iters: 2368, time: 0.001, data: 0.000) , D_A: 0.256, G_A: 0.934, cycle_A: 0.168, D_B: 0.351, G_B: 0.929, cycle_B: 0.248, gp: 0.349
+
+[Rank 0] (epoch: 40, iters: 3968, time: 0.001, data: 0.001) , D_A: 0.273, G_A: 0.962, cycle_A: 0.187, D_B: 0.467, G_B: 0.835, cycle_B: 0.260, gp: 0.446
+
+[Rank 0] (epoch: 40, iters: 5568, time: 0.001, data: 0.001) , D_A: 0.251, G_A: 0.880, cycle_A: 0.182, D_B: 0.312, G_B: 0.964, cycle_B: 0.238, gp: 0.302
+
+[Rank 0] (epoch: 40, iters: 7168, time: 0.001, data: 0.001) , D_A: 0.323, G_A: 0.840, cycle_A: 0.183, D_B: 0.526, G_B: 1.026, cycle_B: 0.247, gp: 0.521
+
+[Rank 0] (epoch: 40, iters: 8768, time: 0.001, data: 0.001) , D_A: 0.212, G_A: 0.970, cycle_A: 0.187, D_B: 0.320, G_B: 0.954, cycle_B: 0.240, gp: 0.314
+
+[Rank 0] (epoch: 40, iters: 10368, time: 0.001, data: 0.001) , D_A: 0.183, G_A: 0.862, cycle_A: 0.172, D_B: 0.390, G_B: 0.901, cycle_B: 0.258, gp: 0.384
+
+[Rank 0] (epoch: 40, iters: 11968, time: 0.001, data: 0.001) , D_A: 0.127, G_A: 0.944, cycle_A: 0.175, D_B: 0.328, G_B: 0.946, cycle_B: 0.247, gp: 0.323
+
+[Rank 0] (epoch: 40, iters: 13568, time: 0.001, data: 0.001) , D_A: 0.254, G_A: 0.991, cycle_A: 0.173, D_B: 0.288, G_B: 0.946, cycle_B: 0.258, gp: 0.282
+
+[Rank 0] (epoch: 40, iters: 15168, time: 0.001, data: 0.001) , D_A: 0.189, G_A: 0.999, cycle_A: 0.177, D_B: 0.320, G_B: 0.944, cycle_B: 0.255, gp: 0.313
+
+[Rank 0] (epoch: 40, iters: 16768, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 0.982, cycle_A: 0.176, D_B: 0.218, G_B: 0.987, cycle_B: 0.255, gp: 0.208
+
+[Rank 0] (epoch: 40, iters: 18368, time: 0.001, data: 0.001) , D_A: 0.247, G_A: 0.994, cycle_A: 0.180, D_B: 0.449, G_B: 1.042, cycle_B: 0.249, gp: 0.445
+
+[Rank 0] (epoch: 40, iters: 19968, time: 0.001, data: 0.001) , D_A: 0.214, G_A: 0.982, cycle_A: 0.164, D_B: 0.362, G_B: 0.934, cycle_B: 0.253, gp: 0.357
+
+[Rank 0] (epoch: 40, iters: 21568, time: 0.001, data: 0.001) , D_A: 0.203, G_A: 0.997, cycle_A: 0.173, D_B: 0.349, G_B: 0.955, cycle_B: 0.237, gp: 0.343
+
+learning rate 0.0002000 -> 0.0001818
+temperature tau = 0.1344
+End of epoch 40 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 41, iters: 1280, time: 0.001, data: 0.001) , D_A: 0.296, G_A: 0.979, cycle_A: 0.170, D_B: 0.295, G_B: 0.958, cycle_B: 0.235, gp: 0.292
+
+[Rank 0] (epoch: 41, iters: 2880, time: 0.001, data: 0.001) , D_A: 0.194, G_A: 0.994, cycle_A: 0.168, D_B: 0.334, G_B: 0.979, cycle_B: 0.256, gp: 0.329
+
+--- iter tau=0.1344 ---
+  cipher in : ecabdbceibhedhbdbe i bdbddebhdcehdbidbhbebidbdebadbideb eieibedb
+  decrypted : dhic chdachd hc cdgagc c  dch hdh ca chcdca c dci ca dcgdadacd c
+  real plain: ig he bec i he ha ae aaiabe hed ie igh he egi f ehice idicae ha 
+  cipher in : eibgbabebdb dbfbadbdbfbeieii bideiebdecdbehbi badbehecddbfbebddb
+  decrypted : dacbcicdc cg c ci c c cdadaagca dadc dh cdhcagci cdhdh  c cdc  c
+  real plain: e f f ad ca eed he hef ife a f f feh beef f da ee hee he be f ce
+[Rank 0] (epoch: 41, iters: 4480, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 0.980, cycle_A: 0.169, D_B: 0.232, G_B: 0.846, cycle_B: 0.253, gp: 0.215
+
+saving the latest model (epoch 41, total_iters 880000)
+[Rank 0] (epoch: 41, iters: 6080, time: 0.001, data: 0.001) , D_A: 0.223, G_A: 0.954, cycle_A: 0.180, D_B: 0.362, G_B: 0.947, cycle_B: 0.248, gp: 0.357
+
+[Rank 0] (epoch: 41, iters: 7680, time: 0.001, data: 0.001) , D_A: 0.192, G_A: 0.952, cycle_A: 0.179, D_B: 0.192, G_B: 1.035, cycle_B: 0.246, gp: 0.184
+
+[Rank 0] (epoch: 41, iters: 9280, time: 0.001, data: 0.001) , D_A: 0.201, G_A: 0.947, cycle_A: 0.181, D_B: 0.242, G_B: 0.978, cycle_B: 0.253, gp: 0.239
+
+[Rank 0] (epoch: 41, iters: 10880, time: 0.001, data: 0.001) , D_A: 0.172, G_A: 0.953, cycle_A: 0.169, D_B: 0.314, G_B: 1.000, cycle_B: 0.247, gp: 0.306
+
+[Rank 0] (epoch: 41, iters: 12480, time: 0.001, data: 0.001) , D_A: 0.247, G_A: 1.000, cycle_A: 0.169, D_B: 0.221, G_B: 1.032, cycle_B: 0.249, gp: 0.218
+
+[Rank 0] (epoch: 41, iters: 14080, time: 0.001, data: 0.001) , D_A: 0.191, G_A: 0.957, cycle_A: 0.175, D_B: 0.276, G_B: 0.979, cycle_B: 0.248, gp: 0.273
+
+[Rank 0] (epoch: 41, iters: 15680, time: 0.001, data: 0.001) , D_A: 0.190, G_A: 0.996, cycle_A: 0.171, D_B: 0.430, G_B: 0.983, cycle_B: 0.252, gp: 0.426
+
+[Rank 0] (epoch: 41, iters: 17280, time: 0.001, data: 0.001) , D_A: 0.105, G_A: 0.945, cycle_A: 0.171, D_B: 0.449, G_B: 1.005, cycle_B: 0.249, gp: 0.445
+
+[Rank 0] (epoch: 41, iters: 18880, time: 0.001, data: 0.001) , D_A: 0.238, G_A: 0.998, cycle_A: 0.174, D_B: 0.376, G_B: 0.971, cycle_B: 0.245, gp: 0.371
+
+[Rank 0] (epoch: 41, iters: 20480, time: 0.001, data: 0.001) , D_A: 0.266, G_A: 0.981, cycle_A: 0.176, D_B: 0.359, G_B: 0.917, cycle_B: 0.256, gp: 0.355
+
+learning rate 0.0001818 -> 0.0001636
+temperature tau = 0.1301
+End of epoch 41 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 42, iters: 192, time: 0.001, data: 0.001) , D_A: 0.257, G_A: 0.997, cycle_A: 0.168, D_B: 0.245, G_B: 0.963, cycle_B: 0.250, gp: 0.238
+
+[Rank 0] (epoch: 42, iters: 1792, time: 0.001, data: 0.001) , D_A: 0.229, G_A: 0.990, cycle_A: 0.168, D_B: 0.313, G_B: 0.916, cycle_B: 0.246, gp: 0.309
+
+[Rank 0] (epoch: 42, iters: 3392, time: 0.001, data: 0.001) , D_A: 0.178, G_A: 0.946, cycle_A: 0.177, D_B: 0.292, G_B: 0.912, cycle_B: 0.240, gp: 0.288
+
+[Rank 0] (epoch: 42, iters: 4992, time: 0.001, data: 0.001) , D_A: 0.194, G_A: 0.980, cycle_A: 0.170, D_B: 0.541, G_B: 1.031, cycle_B: 0.248, gp: 0.538
+
+[Rank 0] (epoch: 42, iters: 6592, time: 0.001, data: 0.001) , D_A: 0.310, G_A: 0.942, cycle_A: 0.176, D_B: 0.326, G_B: 0.911, cycle_B: 0.241, gp: 0.321
+
+[Rank 0] (epoch: 42, iters: 8192, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 0.955, cycle_A: 0.181, D_B: 0.375, G_B: 1.023, cycle_B: 0.245, gp: 0.371
+
+[Rank 0] (epoch: 42, iters: 9792, time: 0.001, data: 0.001) , D_A: 0.242, G_A: 0.924, cycle_A: 0.166, D_B: 0.420, G_B: 0.939, cycle_B: 0.253, gp: 0.415
+
+[Rank 0] (epoch: 42, iters: 11392, time: 0.001, data: 0.001) , D_A: 0.214, G_A: 0.988, cycle_A: 0.174, D_B: 0.258, G_B: 1.082, cycle_B: 0.247, gp: 0.245
+
+[Rank 0] (epoch: 42, iters: 12992, time: 0.001, data: 0.001) , D_A: 0.142, G_A: 0.798, cycle_A: 0.182, D_B: 0.368, G_B: 0.916, cycle_B: 0.248, gp: 0.360
+
+[Rank 0] (epoch: 42, iters: 14592, time: 0.001, data: 0.001) , D_A: 0.163, G_A: 0.897, cycle_A: 0.193, D_B: 0.416, G_B: 0.914, cycle_B: 0.246, gp: 0.405
+
+[Rank 0] (epoch: 42, iters: 16192, time: 0.001, data: 0.001) , D_A: 0.309, G_A: 1.026, cycle_A: 0.166, D_B: 0.263, G_B: 0.918, cycle_B: 0.250, gp: 0.260
+
+[Rank 0] (epoch: 42, iters: 17792, time: 0.001, data: 0.001) , D_A: 0.305, G_A: 0.960, cycle_A: 0.175, D_B: 0.304, G_B: 1.117, cycle_B: 0.248, gp: 0.292
+
+[Rank 0] (epoch: 42, iters: 19392, time: 0.001, data: 0.001) , D_A: 0.341, G_A: 0.984, cycle_A: 0.176, D_B: 0.454, G_B: 0.935, cycle_B: 0.245, gp: 0.447
+
+[Rank 0] (epoch: 42, iters: 20992, time: 0.001, data: 0.001) , D_A: 0.197, G_A: 0.963, cycle_A: 0.161, D_B: 0.320, G_B: 1.040, cycle_B: 0.260, gp: 0.315
+
+learning rate 0.0001636 -> 0.0001455
+temperature tau = 0.1258
+End of epoch 42 / 50 	 Time Taken: 18 sec
+--- iter tau=0.1258 ---
+  cipher in : badehbhbdbaehbei biabadbidbaibecdbaehbd abgeibcebebebebchbhbibeg
+  decrypted : ei dhehe eidhedageaiei ea eiaedh eidhe giebdaehdedededehheheaedb
+  real plain: i f he cec i f caa i i i eh he icaae ee ehe ei caa ad he addiie 
+  cipher in : dbibadbfeibhehebdebadeabehbciebfcii bebddbibadbgbfeibaddbgdbebed
+  decrypted :  eaei e daehdhde dei diedhehade haagede  eaei ebe daei  eb eded 
+  real plain: e ih cideai he gee aea f he diia f i hea ac aegai i eed i decii 
+[Rank 0] (epoch: 43, iters: 704, time: 0.001, data: 0.001) , D_A: 0.209, G_A: 0.987, cycle_A: 0.176, D_B: 0.374, G_B: 0.888, cycle_B: 0.260, gp: 0.368
+
+saving the latest model (epoch 43, total_iters 920000)
+[Rank 0] (epoch: 43, iters: 2304, time: 0.001, data: 0.000) , D_A: 0.211, G_A: 0.960, cycle_A: 0.173, D_B: 0.411, G_B: 0.993, cycle_B: 0.249, gp: 0.409
+
+[Rank 0] (epoch: 43, iters: 3904, time: 0.001, data: 0.001) , D_A: 0.229, G_A: 0.942, cycle_A: 0.194, D_B: 0.601, G_B: 0.778, cycle_B: 0.261, gp: 0.583
+
+[Rank 0] (epoch: 43, iters: 5504, time: 0.001, data: 0.001) , D_A: 0.182, G_A: 0.957, cycle_A: 0.174, D_B: 0.258, G_B: 1.013, cycle_B: 0.239, gp: 0.247
+
+[Rank 0] (epoch: 43, iters: 7104, time: 0.001, data: 0.001) , D_A: 0.335, G_A: 0.951, cycle_A: 0.174, D_B: 0.276, G_B: 0.968, cycle_B: 0.246, gp: 0.265
+
+[Rank 0] (epoch: 43, iters: 8704, time: 0.001, data: 0.001) , D_A: 0.176, G_A: 0.925, cycle_A: 0.170, D_B: 0.286, G_B: 0.987, cycle_B: 0.245, gp: 0.281
+
+[Rank 0] (epoch: 43, iters: 10304, time: 0.001, data: 0.001) , D_A: 0.292, G_A: 0.857, cycle_A: 0.173, D_B: 0.309, G_B: 0.988, cycle_B: 0.258, gp: 0.303
+
+[Rank 0] (epoch: 43, iters: 11904, time: 0.001, data: 0.001) , D_A: 0.224, G_A: 1.003, cycle_A: 0.166, D_B: 0.321, G_B: 0.956, cycle_B: 0.246, gp: 0.317
+
+[Rank 0] (epoch: 43, iters: 13504, time: 0.001, data: 0.001) , D_A: 0.173, G_A: 0.963, cycle_A: 0.178, D_B: 0.373, G_B: 0.929, cycle_B: 0.260, gp: 0.370
+
+[Rank 0] (epoch: 43, iters: 15104, time: 0.001, data: 0.001) , D_A: 0.094, G_A: 1.008, cycle_A: 0.180, D_B: 0.313, G_B: 0.968, cycle_B: 0.254, gp: 0.304
+
+[Rank 0] (epoch: 43, iters: 16704, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.906, cycle_A: 0.190, D_B: 0.202, G_B: 0.960, cycle_B: 0.255, gp: 0.192
+
+[Rank 0] (epoch: 43, iters: 18304, time: 0.001, data: 0.001) , D_A: 0.175, G_A: 1.016, cycle_A: 0.177, D_B: 0.408, G_B: 1.043, cycle_B: 0.248, gp: 0.403
+
+[Rank 0] (epoch: 43, iters: 19904, time: 0.001, data: 0.001) , D_A: 0.177, G_A: 1.018, cycle_A: 0.191, D_B: 0.407, G_B: 1.073, cycle_B: 0.254, gp: 0.394
+
+[Rank 0] (epoch: 43, iters: 21504, time: 0.001, data: 0.001) , D_A: 0.161, G_A: 0.956, cycle_A: 0.176, D_B: 0.367, G_B: 0.945, cycle_B: 0.251, gp: 0.362
+
+learning rate 0.0001455 -> 0.0001273
+temperature tau = 0.1218
+End of epoch 43 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 44, iters: 1216, time: 0.001, data: 0.001) , D_A: 0.198, G_A: 0.970, cycle_A: 0.181, D_B: 0.328, G_B: 0.960, cycle_B: 0.235, gp: 0.324
+
+[Rank 0] (epoch: 44, iters: 2816, time: 0.001, data: 0.001) , D_A: 0.270, G_A: 0.943, cycle_A: 0.170, D_B: 0.386, G_B: 0.991, cycle_B: 0.256, gp: 0.383
+
+[Rank 0] (epoch: 44, iters: 4416, time: 0.001, data: 0.001) , D_A: 0.182, G_A: 0.969, cycle_A: 0.175, D_B: 0.307, G_B: 0.959, cycle_B: 0.253, gp: 0.296
+
+[Rank 0] (epoch: 44, iters: 6016, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 0.926, cycle_A: 0.173, D_B: 0.203, G_B: 0.927, cycle_B: 0.248, gp: 0.193
+
+[Rank 0] (epoch: 44, iters: 7616, time: 0.001, data: 0.001) , D_A: 0.189, G_A: 0.994, cycle_A: 0.175, D_B: 0.222, G_B: 1.011, cycle_B: 0.245, gp: 0.217
+
+[Rank 0] (epoch: 44, iters: 9216, time: 0.001, data: 0.001) , D_A: 0.268, G_A: 0.849, cycle_A: 0.178, D_B: 0.345, G_B: 1.006, cycle_B: 0.238, gp: 0.341
+
+[Rank 0] (epoch: 44, iters: 10816, time: 0.001, data: 0.001) , D_A: 0.248, G_A: 0.993, cycle_A: 0.171, D_B: 0.385, G_B: 0.959, cycle_B: 0.247, gp: 0.380
+
+[Rank 0] (epoch: 44, iters: 12416, time: 0.001, data: 0.001) , D_A: 0.211, G_A: 0.981, cycle_A: 0.173, D_B: 0.431, G_B: 0.998, cycle_B: 0.248, gp: 0.426
+
+[Rank 0] (epoch: 44, iters: 14016, time: 0.001, data: 0.001) , D_A: 0.241, G_A: 0.934, cycle_A: 0.163, D_B: 0.350, G_B: 0.951, cycle_B: 0.247, gp: 0.344
+
+[Rank 0] (epoch: 44, iters: 15616, time: 0.001, data: 0.001) , D_A: 0.197, G_A: 0.984, cycle_A: 0.178, D_B: 0.230, G_B: 1.018, cycle_B: 0.252, gp: 0.222
+
+[Rank 0] (epoch: 44, iters: 17216, time: 0.001, data: 0.001) , D_A: 0.368, G_A: 0.920, cycle_A: 0.163, D_B: 0.208, G_B: 0.953, cycle_B: 0.248, gp: 0.203
+
+--- iter tau=0.1218 ---
+  cipher in : edhbgibebcaeidbchbfehbebebdbibebebeeibehicabfbcabehbebdbhbe dbif
+  decrypted : d hebaedehida ehhe dhedede eaedededdaedhahie ehiedhede ehedg ea 
+  real plain:  hi aifeai a be a ea ig f ie cei he begiig f ee ca bace f ciaica
+  cipher in : bhcdebidbifbibi abgdbabaidbei bebfdbebabebhiffddbhdedbdbiabd abc
+  decrypted : ehh dea ea eaeagieb eieia edagede  edeiedeha    eh d e eaie gieh
+  real plain: ig ce he e afe ha ad ded hi e he baie ad bee hiic i ha ha g a ae
+[Rank 0] (epoch: 44, iters: 18816, time: 0.001, data: 0.001) , D_A: 0.190, G_A: 0.986, cycle_A: 0.174, D_B: 0.394, G_B: 1.004, cycle_B: 0.246, gp: 0.389
+
+saving the latest model (epoch 44, total_iters 960000)
+[Rank 0] (epoch: 44, iters: 20416, time: 0.001, data: 0.001) , D_A: 0.267, G_A: 0.999, cycle_A: 0.181, D_B: 0.333, G_B: 0.976, cycle_B: 0.257, gp: 0.329
+
+learning rate 0.0001273 -> 0.0001091
+temperature tau = 0.1178
+End of epoch 44 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 45, iters: 128, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 0.902, cycle_A: 0.169, D_B: 0.422, G_B: 0.929, cycle_B: 0.250, gp: 0.419
+
+[Rank 0] (epoch: 45, iters: 1728, time: 0.001, data: 0.001) , D_A: 0.224, G_A: 0.962, cycle_A: 0.160, D_B: 0.390, G_B: 0.978, cycle_B: 0.246, gp: 0.386
+
+[Rank 0] (epoch: 45, iters: 3328, time: 0.001, data: 0.001) , D_A: 0.200, G_A: 0.980, cycle_A: 0.180, D_B: 0.373, G_B: 0.928, cycle_B: 0.240, gp: 0.368
+
+[Rank 0] (epoch: 45, iters: 4928, time: 0.001, data: 0.001) , D_A: 0.185, G_A: 0.974, cycle_A: 0.177, D_B: 0.215, G_B: 0.988, cycle_B: 0.248, gp: 0.208
+
+[Rank 0] (epoch: 45, iters: 6528, time: 0.001, data: 0.001) , D_A: 0.313, G_A: 0.967, cycle_A: 0.183, D_B: 0.191, G_B: 0.994, cycle_B: 0.241, gp: 0.186
+
+[Rank 0] (epoch: 45, iters: 8128, time: 0.001, data: 0.001) , D_A: 0.163, G_A: 0.951, cycle_A: 0.173, D_B: 0.285, G_B: 1.017, cycle_B: 0.246, gp: 0.280
+
+[Rank 0] (epoch: 45, iters: 9728, time: 0.001, data: 0.001) , D_A: 0.193, G_A: 0.931, cycle_A: 0.165, D_B: 0.453, G_B: 0.949, cycle_B: 0.252, gp: 0.448
+
+[Rank 0] (epoch: 45, iters: 11328, time: 0.001, data: 0.001) , D_A: 0.161, G_A: 0.956, cycle_A: 0.181, D_B: 0.235, G_B: 0.848, cycle_B: 0.246, gp: 0.229
+
+[Rank 0] (epoch: 45, iters: 12928, time: 0.001, data: 0.001) , D_A: 0.183, G_A: 0.970, cycle_A: 0.169, D_B: 0.263, G_B: 0.969, cycle_B: 0.248, gp: 0.253
+
+[Rank 0] (epoch: 45, iters: 14528, time: 0.001, data: 0.001) , D_A: 0.247, G_A: 1.013, cycle_A: 0.167, D_B: 0.318, G_B: 0.626, cycle_B: 0.246, gp: 0.307
+
+[Rank 0] (epoch: 45, iters: 16128, time: 0.001, data: 0.001) , D_A: 0.198, G_A: 0.975, cycle_A: 0.171, D_B: 0.384, G_B: 0.994, cycle_B: 0.251, gp: 0.378
+
+[Rank 0] (epoch: 45, iters: 17728, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 0.959, cycle_A: 0.174, D_B: 0.246, G_B: 0.967, cycle_B: 0.248, gp: 0.238
+
+[Rank 0] (epoch: 45, iters: 19328, time: 0.001, data: 0.001) , D_A: 0.179, G_A: 0.948, cycle_A: 0.180, D_B: 0.375, G_B: 0.980, cycle_B: 0.245, gp: 0.370
+
+[Rank 0] (epoch: 45, iters: 20928, time: 0.001, data: 0.001) , D_A: 0.215, G_A: 0.955, cycle_A: 0.170, D_B: 0.402, G_B: 1.045, cycle_B: 0.259, gp: 0.397
+
+learning rate 0.0001091 -> 0.0000909
+temperature tau = 0.1140
+End of epoch 45 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 46, iters: 640, time: 0.001, data: 0.001) , D_A: 0.220, G_A: 0.996, cycle_A: 0.164, D_B: 0.369, G_B: 0.945, cycle_B: 0.260, gp: 0.364
+
+[Rank 0] (epoch: 46, iters: 2240, time: 0.001, data: 0.000) , D_A: 0.213, G_A: 0.992, cycle_A: 0.160, D_B: 0.291, G_B: 0.956, cycle_B: 0.248, gp: 0.288
+
+[Rank 0] (epoch: 46, iters: 3840, time: 0.001, data: 0.001) , D_A: 0.251, G_A: 0.953, cycle_A: 0.187, D_B: 0.284, G_B: 0.717, cycle_B: 0.260, gp: 0.272
+
+[Rank 0] (epoch: 46, iters: 5440, time: 0.001, data: 0.001) , D_A: 0.184, G_A: 0.940, cycle_A: 0.170, D_B: 0.384, G_B: 0.941, cycle_B: 0.239, gp: 0.379
+
+[Rank 0] (epoch: 46, iters: 7040, time: 0.001, data: 0.001) , D_A: 0.245, G_A: 0.988, cycle_A: 0.176, D_B: 0.236, G_B: 0.937, cycle_B: 0.247, gp: 0.229
+
+[Rank 0] (epoch: 46, iters: 8640, time: 0.001, data: 0.001) , D_A: 0.262, G_A: 0.935, cycle_A: 0.184, D_B: 0.349, G_B: 0.955, cycle_B: 0.245, gp: 0.347
+
+[Rank 0] (epoch: 46, iters: 10240, time: 0.001, data: 0.001) , D_A: 0.158, G_A: 0.908, cycle_A: 0.176, D_B: 0.413, G_B: 0.988, cycle_B: 0.252, gp: 0.411
+
+[Rank 0] (epoch: 46, iters: 11840, time: 0.001, data: 0.001) , D_A: 0.211, G_A: 1.008, cycle_A: 0.181, D_B: 0.448, G_B: 1.002, cycle_B: 0.246, gp: 0.445
+
+[Rank 0] (epoch: 46, iters: 13440, time: 0.001, data: 0.001) , D_A: 0.177, G_A: 0.874, cycle_A: 0.167, D_B: 0.426, G_B: 1.008, cycle_B: 0.259, gp: 0.419
+
+--- iter tau=0.1140 ---
+  cipher in : adbgdeifbebfbaebidbidcdbfbedbadbddbedbadibadbgbadbciibhdbaedbcab
+  decrypted : i cb da cdc cidca ca h c cd ci c  cd ci aci cbci chaach cid chic
+  real plain:  h he eeg afeed f he ac he ade a a fed bac i he ac i a h ha b e 
+  cipher in : ihb di bgecbaibadbegdbadbebadbadbadbhdbadbcfbadbebidbfeadbe badb
+  decrypted : ahcg agcbdhciaci cdb ci cdci ci ci ch ci ch ci cdca c di cdgci c
+  real plain: e fficia aaied he e f he ffice ee h hee b hi ie d had g ad ha a 
+[Rank 0] (epoch: 46, iters: 15040, time: 0.001, data: 0.001) , D_A: 0.147, G_A: 0.953, cycle_A: 0.174, D_B: 0.260, G_B: 0.947, cycle_B: 0.254, gp: 0.250
+
+saving the latest model (epoch 46, total_iters 1000000)
+[Rank 0] (epoch: 46, iters: 16640, time: 0.001, data: 0.001) , D_A: 0.228, G_A: 0.936, cycle_A: 0.173, D_B: 0.320, G_B: 1.009, cycle_B: 0.255, gp: 0.316
+
+[Rank 0] (epoch: 46, iters: 18240, time: 0.001, data: 0.001) , D_A: 0.318, G_A: 0.975, cycle_A: 0.180, D_B: 0.265, G_B: 0.978, cycle_B: 0.248, gp: 0.254
+
+[Rank 0] (epoch: 46, iters: 19840, time: 0.001, data: 0.001) , D_A: 0.196, G_A: 0.984, cycle_A: 0.188, D_B: 0.387, G_B: 1.005, cycle_B: 0.253, gp: 0.384
+
+[Rank 0] (epoch: 46, iters: 21440, time: 0.001, data: 0.001) , D_A: 0.211, G_A: 0.950, cycle_A: 0.175, D_B: 0.432, G_B: 0.988, cycle_B: 0.251, gp: 0.427
+
+learning rate 0.0000909 -> 0.0000727
+temperature tau = 0.1104
+End of epoch 46 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 47, iters: 1152, time: 0.001, data: 0.001) , D_A: 0.312, G_A: 0.960, cycle_A: 0.171, D_B: 0.367, G_B: 0.976, cycle_B: 0.235, gp: 0.362
+
+[Rank 0] (epoch: 47, iters: 2752, time: 0.001, data: 0.001) , D_A: 0.243, G_A: 0.939, cycle_A: 0.162, D_B: 0.372, G_B: 0.974, cycle_B: 0.256, gp: 0.369
+
+[Rank 0] (epoch: 47, iters: 4352, time: 0.001, data: 0.001) , D_A: 0.256, G_A: 0.951, cycle_A: 0.169, D_B: 0.342, G_B: 1.037, cycle_B: 0.253, gp: 0.335
+
+[Rank 0] (epoch: 47, iters: 5952, time: 0.001, data: 0.001) , D_A: 0.355, G_A: 0.930, cycle_A: 0.182, D_B: 0.345, G_B: 0.956, cycle_B: 0.248, gp: 0.341
+
+[Rank 0] (epoch: 47, iters: 7552, time: 0.001, data: 0.001) , D_A: 0.206, G_A: 0.909, cycle_A: 0.179, D_B: 0.167, G_B: 0.906, cycle_B: 0.246, gp: 0.159
+
+[Rank 0] (epoch: 47, iters: 9152, time: 0.001, data: 0.001) , D_A: 0.200, G_A: 0.961, cycle_A: 0.172, D_B: 0.316, G_B: 0.958, cycle_B: 0.238, gp: 0.311
+
+[Rank 0] (epoch: 47, iters: 10752, time: 0.001, data: 0.001) , D_A: 0.239, G_A: 0.950, cycle_A: 0.170, D_B: 0.439, G_B: 0.919, cycle_B: 0.258, gp: 0.434
+
+[Rank 0] (epoch: 47, iters: 12352, time: 0.001, data: 0.001) , D_A: 0.252, G_A: 0.831, cycle_A: 0.172, D_B: 0.258, G_B: 0.958, cycle_B: 0.248, gp: 0.253
+
+[Rank 0] (epoch: 47, iters: 13952, time: 0.001, data: 0.001) , D_A: 0.255, G_A: 0.980, cycle_A: 0.176, D_B: 0.442, G_B: 0.964, cycle_B: 0.248, gp: 0.438
+
+[Rank 0] (epoch: 47, iters: 15552, time: 0.001, data: 0.001) , D_A: 0.231, G_A: 0.923, cycle_A: 0.168, D_B: 0.272, G_B: 0.888, cycle_B: 0.252, gp: 0.263
+
+[Rank 0] (epoch: 47, iters: 17152, time: 0.001, data: 0.001) , D_A: 0.203, G_A: 0.973, cycle_A: 0.173, D_B: 0.192, G_B: 0.955, cycle_B: 0.249, gp: 0.186
+
+[Rank 0] (epoch: 47, iters: 18752, time: 0.001, data: 0.001) , D_A: 0.257, G_A: 0.982, cycle_A: 0.183, D_B: 0.438, G_B: 1.022, cycle_B: 0.245, gp: 0.432
+
+[Rank 0] (epoch: 47, iters: 20352, time: 0.001, data: 0.001) , D_A: 0.232, G_A: 0.987, cycle_A: 0.167, D_B: 0.415, G_B: 0.913, cycle_B: 0.257, gp: 0.409
+
+learning rate 0.0000727 -> 0.0000545
+temperature tau = 0.1068
+End of epoch 47 / 50 	 Time Taken: 21 sec
+[Rank 0] (epoch: 48, iters: 64, time: 0.001, data: 0.001) , D_A: 0.201, G_A: 0.994, cycle_A: 0.172, D_B: 0.343, G_B: 0.959, cycle_B: 0.251, gp: 0.339
+
+[Rank 0] (epoch: 48, iters: 1664, time: 0.001, data: 0.002) , D_A: 0.182, G_A: 0.894, cycle_A: 0.176, D_B: 0.414, G_B: 0.953, cycle_B: 0.245, gp: 0.409
+
+[Rank 0] (epoch: 48, iters: 3264, time: 0.001, data: 0.001) , D_A: 0.230, G_A: 0.995, cycle_A: 0.174, D_B: 0.405, G_B: 0.976, cycle_B: 0.240, gp: 0.402
+
+[Rank 0] (epoch: 48, iters: 4864, time: 0.001, data: 0.001) , D_A: 0.148, G_A: 0.910, cycle_A: 0.172, D_B: 0.310, G_B: 1.025, cycle_B: 0.248, gp: 0.306
+
+[Rank 0] (epoch: 48, iters: 6464, time: 0.001, data: 0.001) , D_A: 0.223, G_A: 0.887, cycle_A: 0.170, D_B: 0.258, G_B: 0.961, cycle_B: 0.241, gp: 0.255
+
+[Rank 0] (epoch: 48, iters: 8064, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 0.937, cycle_A: 0.170, D_B: 0.334, G_B: 0.994, cycle_B: 0.246, gp: 0.331
+
+[Rank 0] (epoch: 48, iters: 9664, time: 0.001, data: 0.001) , D_A: 0.208, G_A: 0.972, cycle_A: 0.172, D_B: 0.391, G_B: 0.963, cycle_B: 0.252, gp: 0.386
+
+--- iter tau=0.1068 ---
+  cipher in : dbidbadbhbdeibibadbdbeii bieidbccidhbgbdbiiebebgdcabibfdcabdbadb
+  decrypted :  ea ei ehe daeaei e edaageada ehha hebe eaadedeb hieae  hie ei e
+  real plain: f a daic iidai ce e ii ed iia ee igh he aid ad egiee ad i i ehig
+  cipher in : ibdbdbifdbaebebeibfbebeificiebcidhbhdbadbcdebeidbdhbhdicbadbccdd
+  decrypted : ae e ea  eidededae ededa ahadeha heh ei eh deda e heh ahei ehh  
+  real plain: ee fce age becae f he aed edci i egh f he a eee ce dig adiia ae 
+[Rank 0] (epoch: 48, iters: 11264, time: 0.001, data: 0.001) , D_A: 0.221, G_A: 0.988, cycle_A: 0.173, D_B: 0.349, G_B: 0.921, cycle_B: 0.247, gp: 0.344
+
+saving the latest model (epoch 48, total_iters 1040000)
+[Rank 0] (epoch: 48, iters: 12864, time: 0.001, data: 0.001) , D_A: 0.249, G_A: 0.966, cycle_A: 0.178, D_B: 0.293, G_B: 0.809, cycle_B: 0.248, gp: 0.287
+
+[Rank 0] (epoch: 48, iters: 14464, time: 0.001, data: 0.001) , D_A: 0.293, G_A: 0.895, cycle_A: 0.179, D_B: 0.316, G_B: 0.934, cycle_B: 0.246, gp: 0.313
+
+[Rank 0] (epoch: 48, iters: 16064, time: 0.001, data: 0.001) , D_A: 0.147, G_A: 0.965, cycle_A: 0.178, D_B: 0.402, G_B: 0.996, cycle_B: 0.250, gp: 0.399
+
+[Rank 0] (epoch: 48, iters: 17664, time: 0.001, data: 0.001) , D_A: 0.170, G_A: 0.973, cycle_A: 0.163, D_B: 0.426, G_B: 0.894, cycle_B: 0.248, gp: 0.422
+
+[Rank 0] (epoch: 48, iters: 19264, time: 0.001, data: 0.001) , D_A: 0.222, G_A: 0.982, cycle_A: 0.176, D_B: 0.378, G_B: 1.035, cycle_B: 0.245, gp: 0.375
+
+[Rank 0] (epoch: 48, iters: 20864, time: 0.001, data: 0.001) , D_A: 0.217, G_A: 0.929, cycle_A: 0.177, D_B: 0.334, G_B: 0.948, cycle_B: 0.260, gp: 0.331
+
+learning rate 0.0000545 -> 0.0000364
+temperature tau = 0.1033
+End of epoch 48 / 50 	 Time Taken: 20 sec
+[Rank 0] (epoch: 49, iters: 576, time: 0.001, data: 0.001) , D_A: 0.122, G_A: 0.943, cycle_A: 0.173, D_B: 0.343, G_B: 0.915, cycle_B: 0.260, gp: 0.337
+
+[Rank 0] (epoch: 49, iters: 2176, time: 0.001, data: 0.000) , D_A: 0.229, G_A: 0.964, cycle_A: 0.164, D_B: 0.430, G_B: 0.945, cycle_B: 0.249, gp: 0.427
+
+[Rank 0] (epoch: 49, iters: 3776, time: 0.001, data: 0.001) , D_A: 0.147, G_A: 0.971, cycle_A: 0.176, D_B: 0.388, G_B: 0.923, cycle_B: 0.260, gp: 0.382
+
+[Rank 0] (epoch: 49, iters: 5376, time: 0.001, data: 0.001) , D_A: 0.204, G_A: 0.893, cycle_A: 0.174, D_B: 0.395, G_B: 0.998, cycle_B: 0.238, gp: 0.392
+
+[Rank 0] (epoch: 49, iters: 6976, time: 0.001, data: 0.001) , D_A: 0.285, G_A: 0.865, cycle_A: 0.175, D_B: 0.277, G_B: 0.805, cycle_B: 0.246, gp: 0.269
+
+[Rank 0] (epoch: 49, iters: 8576, time: 0.001, data: 0.001) , D_A: 0.189, G_A: 0.971, cycle_A: 0.172, D_B: 0.186, G_B: 0.963, cycle_B: 0.245, gp: 0.180
+
+[Rank 0] (epoch: 49, iters: 10176, time: 0.001, data: 0.001) , D_A: 0.259, G_A: 0.947, cycle_A: 0.178, D_B: 0.430, G_B: 0.995, cycle_B: 0.252, gp: 0.426
+
+[Rank 0] (epoch: 49, iters: 11776, time: 0.001, data: 0.001) , D_A: 0.189, G_A: 0.930, cycle_A: 0.163, D_B: 0.387, G_B: 0.932, cycle_B: 0.246, gp: 0.381
+
+[Rank 0] (epoch: 49, iters: 13376, time: 0.001, data: 0.001) , D_A: 0.180, G_A: 0.953, cycle_A: 0.174, D_B: 0.362, G_B: 1.009, cycle_B: 0.259, gp: 0.358
+
+[Rank 0] (epoch: 49, iters: 14976, time: 0.001, data: 0.001) , D_A: 0.308, G_A: 0.914, cycle_A: 0.172, D_B: 0.207, G_B: 0.868, cycle_B: 0.253, gp: 0.201
+
+[Rank 0] (epoch: 49, iters: 16576, time: 0.001, data: 0.001) , D_A: 0.247, G_A: 0.913, cycle_A: 0.167, D_B: 0.263, G_B: 0.885, cycle_B: 0.255, gp: 0.256
+
+[Rank 0] (epoch: 49, iters: 18176, time: 0.001, data: 0.001) , D_A: 0.179, G_A: 0.988, cycle_A: 0.180, D_B: 0.271, G_B: 0.935, cycle_B: 0.249, gp: 0.267
+
+[Rank 0] (epoch: 49, iters: 19776, time: 0.001, data: 0.001) , D_A: 0.239, G_A: 0.878, cycle_A: 0.167, D_B: 0.306, G_B: 0.949, cycle_B: 0.253, gp: 0.302
+
+[Rank 0] (epoch: 49, iters: 21376, time: 0.001, data: 0.001) , D_A: 0.153, G_A: 0.925, cycle_A: 0.183, D_B: 0.363, G_B: 0.946, cycle_B: 0.250, gp: 0.357
+
+learning rate 0.0000364 -> 0.0000182
+temperature tau = 0.1000
+End of epoch 49 / 50 	 Time Taken: 19 sec
+[Rank 0] (epoch: 50, iters: 1088, time: 0.001, data: 0.001) , D_A: 0.297, G_A: 0.924, cycle_A: 0.183, D_B: 0.390, G_B: 0.959, cycle_B: 0.236, gp: 0.386
+
+[Rank 0] (epoch: 50, iters: 2688, time: 0.001, data: 0.001) , D_A: 0.213, G_A: 0.917, cycle_A: 0.160, D_B: 0.377, G_B: 0.965, cycle_B: 0.256, gp: 0.372
+
+[Rank 0] (epoch: 50, iters: 4288, time: 0.001, data: 0.001) , D_A: 0.250, G_A: 0.897, cycle_A: 0.178, D_B: 0.287, G_B: 0.892, cycle_B: 0.253, gp: 0.281
+
+[Rank 0] (epoch: 50, iters: 5888, time: 0.001, data: 0.001) , D_A: 0.234, G_A: 0.963, cycle_A: 0.169, D_B: 0.252, G_B: 0.896, cycle_B: 0.248, gp: 0.247
+
+--- iter tau=0.1000 ---
+  cipher in : ddbhidhbddebabefdbadbddccbhidbgegbehbihi ab idbedbebabdiadbebei 
+  decrypted :   cha hc  dcicd  ci c  hhcha cbdbcdhcahagicga cd cdcic ai cdcdag
+  real plain: ech i achieed he e ade he geae ech becae hde bade i ch a ee he f
+  cipher in : dbibadbcdbfbaibdidbdibeii bfbadbghbfbediebedehbibibdibibhdhbidbe
+  decrypted :  caci ch c ciac a c acdaagc ci cbhc cd adcd dhcacac acach hca cd
+  real plain: ae i a cgahic ece a a ae hee e f a ia b ce ae eied c d ia ga eag
+[Rank 0] (epoch: 50, iters: 7488, time: 0.001, data: 0.001) , D_A: 0.122, G_A: 0.911, cycle_A: 0.175, D_B: 0.210, G_B: 0.865, cycle_B: 0.246, gp: 0.200
+
+saving the latest model (epoch 50, total_iters 1080000)
+[Rank 0] (epoch: 50, iters: 9088, time: 0.001, data: 0.001) , D_A: 0.167, G_A: 0.985, cycle_A: 0.172, D_B: 0.296, G_B: 1.005, cycle_B: 0.238, gp: 0.293
+
+[Rank 0] (epoch: 50, iters: 10688, time: 0.001, data: 0.001) , D_A: 0.195, G_A: 0.917, cycle_A: 0.177, D_B: 0.365, G_B: 1.021, cycle_B: 0.258, gp: 0.361
+
+[Rank 0] (epoch: 50, iters: 12288, time: 0.001, data: 0.001) , D_A: 0.163, G_A: 0.974, cycle_A: 0.179, D_B: 0.341, G_B: 0.958, cycle_B: 0.246, gp: 0.336
+
+[Rank 0] (epoch: 50, iters: 13888, time: 0.001, data: 0.001) , D_A: 0.194, G_A: 0.919, cycle_A: 0.163, D_B: 0.360, G_B: 0.989, cycle_B: 0.247, gp: 0.355
+
+[Rank 0] (epoch: 50, iters: 15488, time: 0.001, data: 0.001) , D_A: 0.282, G_A: 0.950, cycle_A: 0.177, D_B: 0.285, G_B: 0.916, cycle_B: 0.253, gp: 0.281
+
+[Rank 0] (epoch: 50, iters: 17088, time: 0.001, data: 0.001) , D_A: 0.190, G_A: 0.981, cycle_A: 0.168, D_B: 0.245, G_B: 0.929, cycle_B: 0.249, gp: 0.240
+
+[Rank 0] (epoch: 50, iters: 18688, time: 0.001, data: 0.001) , D_A: 0.226, G_A: 0.961, cycle_A: 0.171, D_B: 0.299, G_B: 0.939, cycle_B: 0.245, gp: 0.294
+
+[Rank 0] (epoch: 50, iters: 20288, time: 0.001, data: 0.001) , D_A: 0.174, G_A: 0.972, cycle_A: 0.170, D_B: 0.322, G_B: 1.005, cycle_B: 0.257, gp: 0.318
+
+[Rank 0] (epoch: 50, iters: 21888, time: 0.001, data: 0.001) , D_A: 0.243, G_A: 0.941, cycle_A: 0.177, D_B: 0.290, G_B: 0.982, cycle_B: 0.234, gp: 0.285
+
+learning rate 0.0000182 -> 0.0000000
+temperature tau = 0.1000
+saving the model at the end of epoch 50, iters 1094400
+End of epoch 50 / 50 	 Time Taken: 19 sec
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 64                            
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: .                             	[default: None]
+             dataset_mode: cipher                        
+                direction: AtoB                          
+               display_id: 0                             
+          display_winsize: 256                           
+                embed_dim: 256                           	[default: 64]
+                    epoch: latest                        
+                     eval: False                         
+                 gan_mode: lsgan                         
+                   gumbel: False                         
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                     kw_D: 15                            	[default: 4]
+                 lambda_A: 10.0                          
+                 lambda_B: 10.0                          
+                lambda_gp: 10.0                          
+          lambda_identity: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+                       lr: 0.0002                        
+         matched_softness: True                          	[default: False]
+         max_dataset_size: inf                           
+                    model: cipher_cycle_gan              	[default: test]
+               n_blocks_G: 5                             	[default: 4]
+                 n_critic: 1                             
+               n_layers_D: 5                             	[default: 3]
+                     name: a10_s1_gp1                    	[default: experiment_name]
+                      ndf: 32                            	[default: 128]
+                     netD: seq                           
+                     netG: seq                           
+                      ngf: 128                           
+               no_dropout: True                          
+                  no_flip: True                          
+                     norm: layer                         	[default: instance]
+                 npz_path: data/a10/dataset.npz          	[default: None]
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                pair_seed: 0                             
+                    phase: test                          
+              pointwise_G: True                          	[default: False]
+               preprocess: none                          
+         real_logit_scale: 5.0                           
+              results_dir: ./results/                    
+           serial_batches: False                         
+         straight_through: True                          	[default: False]
+                   suffix:                               
+                  tau_end: 0.1                           
+                tau_start: 1.0                           
+                   use_gp: False                         
+                use_wandb: False                         
+                  verbose: False                         
+               vocab_size: -1                            
+       wandb_project_name: CycleGAN-and-pix2pix          
+----------------- End -------------------
+[cipher] eval: A(cipher)=(4863, 64) B(plain)=(4863, 64) vocab=11 cipher=substitution paired=True
+dataset [CipherDataset] was created
+Initialized with device cuda:0
+initialize network with normal
+Initialized with device cuda:0
+initialize network with normal
+model [CipherCycleGANModel] was created
+Initialized with device cuda:0
+initialize network with normal
+loading the model from checkpoints/a10_s1_gp1/latest_net_G_A.pth
+Initialized with device cuda:0
+initialize network with normal
+loading the model from checkpoints/a10_s1_gp1/latest_net_G_B.pth
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 0.205 M
+[Network G_B] Total number of parameters : 0.205 M
+-----------------------------------------------
+
+==============================================================
+cipher              substitution (key=perm-seed0)
+samples             4863 x 64
+character accuracy  0.0541   (chance ~0.1000)
+character error     0.9459
+key recovery        0.2000   (coverage 1.000)
+==============================================================
+cipher in : ebddi baedbedbaiebhdbebedhbedbabibebidbaebeb ibebaebebebedbgdebh
+decrypted : dc  agcid cd ciadch cdcd hcd cicacdca cidcdcgacdcidcdcdcd cb dch
+truth     : a eeig hae ae hia de a aed ae h i a ie ha a gi a ha a a ae bea d
+
+wrote ./checkpoints/a10_s1_gp1/eval_metrics.json
+wrote ./checkpoints/a10_s1_gp1/curves_a10_s1_gp1.png
+
+loss             first      last       min       max
+D_A              0.770     0.243     0.094     0.876
+G_A              0.312     0.941     0.048     2.177
+cycle_A          0.715     0.177     0.157     1.411
+D_B              0.725     0.290     0.089     1.270
+G_B              0.755     0.982     0.422     2.254
+cycle_B          1.167     0.234     0.234     1.574
+gp               0.499     0.285     0.087     1.228
+
+D_A over the final window: 0.213
+  -> at LSGAN equilibrium: the two networks are balanced.

@@ -1,0 +1,350 @@
+--- iter tau=0.5000 ---
+  cipher in :  shall prefer emigrating to some country where they make no pret
+  decrypted : t iaggtdnblbntbaofna orft ht habtph r nmtdibnbt ibmtaacbtrhtdnb 
+  real plain: yes at a share there was even a cable in french from a bank in s
+  cipher in : onsoon from the southwest the slim pirogues in harmony with the 
+  decrypted : hr hhrtlnhat ibt h  idb  t ibt goatdonhf b tortianahrmtdo it ibt
+  real plain: f manufacturers of other appealing consumer products many indust
+--- iter tau=0.4838 ---
+  cipher in :  genii with the keys to unlock the gates of the wine world are o
+  decrypted : tfwrootdo it iwtcwm t ht rghpct iwtfa w thlt iwtdorwtdhngytanwth
+  real plain: e of international law and order we believe that the list of vit
+  cipher in :  ps alone palindromes paraphrases and parodies the tyranny of tr
+  decrypted : td taghrwtdagorynhaw tdanadina w tarytdanhyow t iwt mnarrmthlt n
+  real plain:  the twentysix boys made some lovely sounds in an opening group 
+--- iter tau=0.4682 ---
+  cipher in : usic hall amidst thundering applause pay ransom to the owner and
+  decrypted :   opeiaggeaaou  e i rubnorfeaddga  bedamenar hae he ibehdrbnearu
+  real plain:  her stepson adrian son of george bardell a place in london with
+  cipher in :  magnetisms a variety of hand movements helps dramatize the mora
+  decrypted : eaafrb o a eae anob mehleiarueah babr  eibgd eunaaa olbe ibeahna
+  real plain: nd all the palazzos are crummy palasts that ought to draw a laug
+--- iter tau=0.4531 ---
+  cipher in : ill necessitating a fire for warmth after scouring around a bit 
+  decrypted : onneispscconanoineaelonsel nedan nrealnsnecp nnoinean niueaerone
+  real plain: he was being queer and careful pawing about in the drawer and ho
+  cipher in : ncisco examiner man who was now his chicago kingpin and once to 
+  decrypted : ipocp esca oisne aiedr edacei derocepropan ecoindoieaiue ipsen e
+  real plain: e class if the superintendents do not receive more cooperation f
+--- iter tau=0.4384 ---
+  cipher in : into the pine woods separating the th and first fairways having 
+  decrypted : oiz ezrsedoised  ucecsdanazoifezrsezreaiuelonczelaondamcerazoife
+  real plain:  experimentation with multipurpose agencies especially those tha
+  cipher in : ous and dramatic precious and i allow each other absolute freedo
+  decrypted :  kceaiueunavazopednspo kceaiueoeaff desapre zrsnearc fkzselnssu 
+  real plain: hings for his country he improved public facilities such as road
+--- iter tau=0.4243 ---
+  cipher in : back along the intervening fairways in reply the boldness of cha
+  decrypted : rapceaf ifegrseoigsnzsioifelaondamceoiensdfmegrser fyiscce lepra
+  real plain: e both painters they were they are what should one say well anyh
+  cipher in : the general delivery window never hearing from him again i remem
+  decrypted : grsefsisnafeysfozsnmedoiy deiszsnersanoifeln veroveafaoieoensvsv
+  real plain: x the federal lawyers according to their witnesses also were tra
+--- iter tau=0.4106 ---
+  cipher in : and in fig the portion of the spine shows as the black area in t
+  decrypted : aiueoielofegrsed ngo ie legrsecdoisecr dceacegrserfapceansaeoieg
+  real plain: i have just seen debonnie and prompt time work a mile in last qu
+  cipher in : hrough down here it all did look very efficient and shipshape th
+  decrypted : rn kfreu diersnseogeaffeuouef  cezsnmeslloposigeaiuecrodcradsegr
+  real plain: stness in the formation of the ear lappets all search was ended 
+--- iter tau=0.3973 ---
+  cipher in : whirl if you cant think of a thing to do try something anything 
+  decrypted : dronfeolem kepaigegroice leaegroifeg eu egnmec vsgroifeaimgroife
+  real plain: ime of movies by ten the great train robbery is a onereel film o
+  cipher in : cules the detection and study of such line spectra would add con
+  decrypted : pkfscegrseusgspgo ieaiuecgkume leckprefoisecdspgnaed kfueauuep i
+  real plain: ibody activity could be detected apart from the honeybee practic
+--- iter tau=0.3845 ---
+  cipher in : y both came out alfred was dressed for his trip to the hospital 
+  decrypted : mer grepavse kgeaflnsuedaceunsccsuel nerocegnodeg egrser cdogafe
+  real plain: ime of movies by ten the great train robbery is a onereel film o
+  cipher in :  could wish of the extent to which attitudes have changed i do n
+  decrypted : ep kfuedocre legrsesrgsigeg edropreaggogkuscerazsepraifsueoeu ei
+  real plain: ibody activity could be detected apart from the honeybee practic
+--- iter tau=0.3720 ---
+  cipher in : ntury from to the law of nations became international law severa
+  decrypted : igknmeln veg egrsefade leiago icerspavseoigsniago iafefadecszsna
+  real plain: some daughters by his first wife came from the house and tried t
+  cipher in :  fact that in the business community prestige and status are con
+  decrypted : elapgegrageoiegrserkcoisccep vvkiogmednscgofseaiuecgagkceansep i
+  real plain: hough general motors owned a majority of its stock followed an i
+--- iter tau=0.3600 ---
+  cipher in : nd when this is done it will be found that the principles govern
+  decrypted : iuedrsiegroceoceu iseogedoffersel kiuegragegrsednoipodfscef zsni
+  real plain: lly an optimal freedom of action to maintain the flexibility of 
+  cipher in : the compact type i have never seen caper off his feet he seems t
+  decrypted : grsep vdapgegmdseoerazseiszsnecssiepadsne llerocelssgersecssvceg
+  real plain: its from louisiana the natchez indians revolted they destroyed a
+--- iter tau=0.3484 ---
+  cipher in : g to get on the side of the few at the same time the usefulness 
+  decrypted : reb ersbe iebisecouse lebiselsde bebisec vsebovsebiseacslaaiscce
+  real plain: ware of the existence of lowerclass values and consequently fail
+  cipher in : the area for a long time may have valuable knowledge regarding t
+  decrypted : bise ns el ne ea irebovsev mei asea aa iase i dasursensr nuoireb
+  real plain:  malta or ireland but carlas eyes were on agnese whose glowing f
+--- iter tau=0.3371 ---
+  cipher in : erformance the quality of a presidents leadership is measured fi
+  decrypted : snl nv ipsegise a fogme le ednscousigcefs usnciodeocevs cansuelo
+  real plain:  worthless continental currency in his dealings with offenders h
+  cipher in : d the society of his time both ecclesiastical and social was a r
+  decrypted : uegisec posgme leiocegovsei giesppfsco cgop fe iuec po fed ce en
+  real plain: scant flesh grew cool beneath her frantic hands the child was go
+--- iter tau=0.3262 ---
+  cipher in : ting trips and on the other an anecdote of the village of hardsc
+  decrypted : boirebnodce iue iebise bisne ie ispu bse lebisekoff rse lei nucp
+  real plain: onately to be a great officer it came to him as he wept there ab
+  cipher in : rs of concentrated effort roy and his brother max finally establ
+  decrypted : nce lep ipsibn bsuesll nben me iueiocein bisnev  eloi ffmescb if
+  real plain: sembled that the secretary of the interior is hereby authorized 
+--- iter tau=0.3157 ---
+  cipher in : e name of this town i aint kidding you vince how could she she m
+  decrypted : sei vse lebioceb dieoe oibe ouuoirem aekoipsei dep afuecisecisev
+  real plain: ry radiation in the centimeter and decimeterwavelength range the
+  cipher in :  miles north of here youd have starved to death if youd missed b
+  decrypted : evofscei nbie leisnsem auei ksecb nksueb eus bieolem auevoccsuei
+  real plain: estant country one of the ironies of the present crusade for chr
+--- iter tau=0.3055 ---
+  cipher in : s looking fine she had on her easter suit blue with lavender bin
+  decrypted : cef   oireloisecisei ue ieisnes cgsnecaogeifasedogief ksiusneioi
+  real plain: s just sitting there gave you the illusion of being wealthy your
+  cipher in : are of three a mere mathematical puzzle was able to exert a cons
+  decrypted :  nse leginsse evsnsev gisv gop feda  fsed ce ifseg es snge ep ic
+  real plain: rd stafford who is undergoing treatment for a leg injury suffere
+--- iter tau=0.2956 ---
+  cipher in : it yet a moment did come that night when the adventurous letter 
+  decrypted : obemsbe ev vsibeuouep vsebi beioribedisiebise uksiban acefsbbsne
+  real plain: s just sitting there gave you the illusion of being wealthy your
+  cipher in :  former colonial areas has equally beneficial aspects are other 
+  decrypted : el nvsnep f io fe ns cei ces a ffmeisislopo fe cdspbce nse bisne
+  real plain: rd stafford who is undergoing treatment for a leg injury suffere
+--- iter tau=0.2861 ---
+  cipher in : o leave for the fuzz whenever the body gets found this happened 
+  decrypted :  efs ksel nebisela  edisisksnebisei ymersbcel aiyebiocei ddsisye
+  real plain: write with authority either about musicians or as a musician pat
+  cipher in : me of the host country expenses of peace corps personnel the ext
+  decrypted : vse lebisei cbep aibnmes dsicsce leds psep ndcedsnc iisfebises b
+  real plain: d complete superiority in the eighth armys sector so captain jen
+--- iter tau=0.2768 ---
+  cipher in : nterest certified pursuant to section of this title in accordanc
+  decrypted : igsnscgepsngolosuedanca igeg ecspgo ie legiocegogfseoie pp nu ip
+  real plain: arance of a russian nihilist we are ready for your next mysterio
+  cipher in : rged particle will be very strongly attracted to a surface exhib
+  decrypted : nrsued ngopfsedoffeiseksnmecgn irfme ggn pgsueg e ecanl pses ioi
+  real plain: s squabbling will be disastrous for all american labor whether i
+--- iter tau=0.2679 ---
+  cipher in : that young queens begin to appear simultaneously males or drones
+  decrypted : gi gem aire assiceisroieg e dds necovafg is acfmev fsce neun isc
+  real plain: centralized their intelligence reports and the fighters were dis
+  cipher in : got to assume theyll decide he was murdered and weve got to keep
+  decrypted : r geg e ccavsegismffeuspouseised cevanusnsue iuedskser geg e ssd
+  real plain:  husbands and wives should not be subjected to such a risk or th
+--- iter tau=0.2592 ---
+  cipher in :  hundreds of years the evidence available consisted of the capta
+  decrypted : eiaiunsuce lems ncegiseskousipse k of ifsep icocgsue legisep dg 
+  real plain: g in urban conditions away from the deadweight of village constr
+  cipher in : nd took the cane he limped my god how much more do you want his 
+  decrypted : iueg   egisep iseisefovdsuevmer uei devapiev nseu em aed igeioce
+  real plain: blessed are the poor in spirit for theirs is the kingdom of heav
+--- iter tau=0.2508 ---
+  cipher in : ms are used as the basis for matching text occurrences with dict
+  decrypted : vct nstacsut ctbisti coctl ntv bpioirtbs bt ppannsipsctdobituopb
+  real plain: men started shooting tilghman flung himself aside dropped on one
+  cipher in : d everyone agreed that if he kept up with a certain amount of wo
+  decrypted : utsksnm ist rnssutbi btoltist sdbtadtdobit tpsnb oit v aibt ltd 
+  real plain: ssed in a sound and equitable program at both the state and loca
+--- iter tau=0.2427 ---
+  cipher in : observed with a big military and civic parade from west warwick 
+  decrypted :  icsnksuedobie eiorevofob nme iuepokoped n useln vedscbed ndop e
+  real plain: whose roundtipped spurs were picked off and eaten for the honey 
+  cipher in : of the masters the contest between palmer and player developed i
+  decrypted :  lebisev cbsncebisep ibscbeisbdssied fvsne iuedf msneusksf dsueo
+  real plain: nothing to draw cartoons about i do mean however that i take the
+--- iter tau=0.2349 ---
+  cipher in : red neither the prisoner nor the redhaired captain they would be
+  decrypted : nsyeisowisnewisednoc isnei newisensyi onsyep dw oiewismed afyeis
+  real plain: activities as a means of promoting physical efficiency sportsman
+  cipher in :  for the many things that make the world go round would not have
+  decrypted : el newisev imewioircewi wev  sewised nfyer en aiyed afyei wei ks
+  real plain: n point may be reduced to miles of travel per year table shows o
+--- iter tau=0.2273 ---
+  cipher in : ions with members of the faculty and student body attempting to 
+  decrypted : o icedowtevsv snce lewtsel pafwme iuecwausiwe  ume wwsvdwoirew e
+  real plain: activities as a means of promoting physical efficiency sportsman
+  cipher in : out an instants transition the green light that meant full fusio
+  decrypted :  awe ieoicw iwcewn icowo iewtsernssiefortwewt wevs iwelaffelaco 
+  real plain: n point may be reduced to miles of travel per year table shows o
+--- iter tau=0.2200 ---
+  cipher in : ake their entrance in the final scene apparently their origin is
+  decrypted :   sebtsonesibn ipseoiebtseloi fecpsise dd nsibfmebtsone noroieoc
+  real plain: ffith when he came to the movies more or less by accident they w
+  cipher in : d built in the hope of keeping letch away from public beaches wh
+  decrypted : uejaofbeoiebtset dse le ssdoirefsbpte d meln vedajfopejs ptscedt
+  real plain: as been fostered by manufacturers distributors and dealers despi
+--- iter tau=0.2129 ---
+  cipher in :  fact that in the business community prestige and status are con
+  decrypted : hl pghgt ghoihgtshjacoiscchp vvaiogmhdnscgorsh iuhcg gach nshp i
+  real plain: uld make it necessary to proclaim it to the whole world obliging
+  cipher in : krogers selfserve he explained i selfserved when they had licked
+  decrypted :  n rsnchcsflcsnkshtshs df oisuhohcsflcsnksuhdtsihgtsmht uhfop su
+  real plain:  rendered regarding the potential buyers income educational leve
+--- iter tau=0.2060 ---
+  cipher in : se women and others i had met in catatonia were distinguished on
+  decrypted : csed vsie iue wtsnceoet uevsweoiep w w io edsnseuocwoiraoctsue i
+  real plain: s any retaliatory gas attack would be airborne it would be made 
+  cipher in : der the circumstances probably wont duplicate it there are some 
+  decrypted : usnewtseponpavcw ipscedn j jfmed iweuadfop wseowewtsnse nsec vse
+  real plain:  began to motor out by themselves my friend often breakfasted wi
+--- iter tau=0.1993 ---
+  cipher in : e reassuringly concerned by the pinched look around her mouth li
+  decrypted : sens ccanoirfmep ipsnisyejmewtsedoiptsyef   e n aiyetsnev awtefo
+  real plain:  into focus and said to the two ladies who lay pinkly nude besid
+  cipher in : cial groups to which they belong yet they have accepted most of 
+  decrypted : po fern adcew edtoptewtsmejsf iremswewtsmet kse ppsdwsyev cwe le
+  real plain: ome or commercial laundry it is possible to identify the test pr
+--- iter tau=0.1929 ---
+  cipher in : r than in another optimistic sign this one from the labor depart
+  decrypted : nhwt ihoih i wtsnh dwovocwophcorihwtoch ishln vhwtshf j nhysd nw
+  real plain:  numerical aperture should be in general close to unity this con
+  cipher in : e interpretations that have been given are inferences only they 
+  decrypted : shoiwsndnsw wo ichwt wht kshjssihroksih nshoilsnsipsch ifmhwtsmh
+  real plain: d made to write another book the manchester guardian wondered ho
+--- iter tau=0.1867 ---
+  cipher in : the compact type i have never seen caper off his feet he seems t
+  decrypted : btsep vd pbebmdseoet kseisksnecssiep dsne lletocelssbetsecssvceb
+  real plain:  be possible however to put useful limits on the diameters of th
+  cipher in : emed colicky boneweary fatigue repeated crying episodes and shor
+  decrypted : svsyep fop mej isds nmel borasensds bsyepnmoiresdoc ysce iyect n
+  real plain: ple its much too explosive for small edible game it can cut a re
+--- iter tau=0.1806 ---
+  cipher in :  influence ever has and in converse with you i have always felt 
+  decrypted : eoilfasipsesksnet ce iueoiep iksncsedobtem aeoet kse fd mcelsfbe
+  real plain: tration and led his unions battle against the teamsters which be
+  cipher in : open in about microseconds the shutter aperture may be made larg
+  decrypted :  dsieoie j abevopn csp iucebtsectabbsne dsnbansev mejsev usef nr
+  real plain: at the reverend cottons lecture as an example and sent to prison
+--- iter tau=0.1748 ---
+  cipher in : ch on the floods dont bother mike answered ill carry the tray he
+  decrypted : pth ihgtshlf  ychy ighj gtsnhvo sh icdsnsyhoffhp nnmhgtshgn mhts
+  real plain: tration and led his unions battle against the teamsters which be
+  cipher in : sponding oscillation in a column of mercury which closes an elec
+  decrypted : cd iyoirh cpoff go ihoih hp favih lhvsnpanmhdtopthpf csch ihsfsp
+  real plain: at the reverend cottons lecture as an example and sent to prison
+--- iter tau=0.1691 ---
+  cipher in : that the news had reached the superintendent of the kings amusem
+  decrypted : wt whwtshisdcht yhns ptsyhwtshcadsnoiwsiysiwh lhwtsh oirch vacsv
+  real plain: y eyes could flash with anger her quiet competence the gentlenes
+  cipher in : he mayor visited mr buckley at the bronx leaders home for a disc
+  decrypted : tshv m nhkocowsyhvnhjap fsmh whwtshjn i hfs ysncht vshl nh hyocp
+  real plain: al that is in the dock at this historical trial said ben gurion 
+--- iter tau=0.1637 ---
+  cipher in : nds on the actual methods to be employed in the transition to co
+  decrypted : iuce iebtse pba fevsbt uceb ejsesvdf msueoiebtsebn icobo ieb ep 
+  real plain: orced by the lines of communication years ago this was true but 
+  cipher in : stanley kitti had come into the office on somebodys recommendati
+  decrypted : cb ifsme obboet uep vseoib ebtse llopse iec vsj umcensp vvsiu bo
+  real plain: ub will be formally recognized by commissioner ford c frick shea
+--- iter tau=0.1584 ---
+  cipher in : elow twenty vaults tunnel through the understructure of the brid
+  decrypted : sf debdsibmek afbcebaiisfebtn artebtseaiusncbnapbanse lebtsejnou
+  real plain: pes were not raised in connection with it it would give him an o
+  cipher in :  was already considerably concerned over her daughters future bu
+  decrypted : ed ce fns umep icousn jfmep ipsnisue ksnetsneu artbsncelabanseja
+  real plain:  rates in the form of a mere service charge they are more freque
+--- iter tau=0.1533 ---
+  cipher in : m billy when the boat had touched the weaker ones and the two wo
+  decrypted : vejoffmedtsiebtsej  bet yeb aptsyebtseds  sne isce iyebtsebd ed 
+  real plain: rocky hills south of grass valley they had spent a million dolla
+  cipher in : an equal share of pleasure and joy at its most ecstatic moments 
+  decrypted :  ies a fect nse ledfs canse iyea me beobcev cbespcb bopev vsibce
+  real plain: he place where he last had seen the fierce nihilist he stood the
+--- iter tau=0.1483 ---
+  cipher in : liams debutante miss lady helen hardy will be feted at luncheon 
+  decrypted : fo vceusjag igsevoccef umetsfsiet numedoffejselsgsue gefaipts ie
+  real plain: lexibility as possible a steering committee of students was orga
+  cipher in : ly of the canopy what follows is therefore a description of thre
+  decrypted : fme legtsep i dmedt gel ff dceocegtsnsl nse euscpnodgo ie legtns
+  real plain: sk of california has devised a series of questions which the joi
+--- iter tau=0.1435 ---
+  cipher in :  his shoulder at the thin dotting of pursuers they neither gaine
+  decrypted : etocect afusne bebtsebtoieu bboire ledancasncebtsmeisobtsner ois
+  real plain: that rationalize contemporary beliefs and excuse contemporary ac
+  cipher in : es but new life and promise for his sons grandsons he poured his
+  decrypted : scerabeisdefolse iuedn vocsel netocec icern iuc icetsed ansuetoc
+  real plain: ering influence he remained young at heart with an overdeveloped
+--- iter tau=0.1389 ---
+  cipher in : effort and devotion achieved stardom a fortune and a worldrenown
+  decrypted : sll nge iueusk go ie ptosksuecg nu ve el ngaise iue ed nfunsi di
+  real plain: ain number of minutes hed be over the broad meadows of the merri
+  cipher in : irtatious or funny but the only thing they seem unable to be is 
+  decrypted : ong go ace nelaiimeragegtse ifmegtoiregtsmecssveai rfseg erseoce
+  real plain: emography this agency accepted responsibility for medical servic
+--- iter tau=0.1344 ---
+  cipher in : e was living at whiteleaf near aylesbury and he showed me beside
+  decrypted : sed cefokoire gedtogsfs leis ne mfscranme iyetsect dsyevserscoys
+  real plain: ain number of minutes hed be over the broad meadows of the merri
+  cipher in : ional list he said meaning its market price would be quoted regu
+  decrypted : o i fefocgetsec oyevs ioireogcev n sgednopsed afyerse a gsyensra
+  real plain: emography this agency accepted responsibility for medical servic
+--- iter tau=0.1301 ---
+  cipher in : independence with the first steps to organize rural communes all
+  decrypted : oiusdsiusipsedowtewtseloncwecwsdcew e nr io senan fep vvaisce ff
+  real plain: bsentee rate eating facilities consider using vending machines r
+  cipher in :  is due mainly to international wars both hot and cold in every 
+  decrypted : eoceuasev oifmew eoiwsni wo i fed ncer wtet we iuep fueoiesksnme
+  real plain:  keep him from the clutches of lucille warren and though at the 
+--- iter tau=0.1258 ---
+  cipher in : ger fire in their house on dogtown common a desolate place even 
+  decrypted : rsnelonseoiebtsonet acse ieu rb diep vv ie eusc f bsedf psesksie
+  real plain: ually omitted from performances and rarely included in a publish
+  cipher in : hich she and some other girls had seemed to have had contact wit
+  decrypted : toptectse iuec vse btsneronfcet uecssvsueb et kset uep ib pbedob
+  real plain: ad alone for example if you are a reasonably welladjusted person
+--- iter tau=0.1218 ---
+  cipher in : cannot place the employment service in california in jeopardy of
+  decrypted : p ii wedf psewtsesvdf mvsiwecsnkopseoiep fol nio eoieas d nyme l
+  real plain: tea tray the elephants and the giant tortoise science has develo
+  cipher in : ary artery anastomoses were demonstrated were accomplished by in
+  decrypted :  nme nwsnme i cw v cscedsnseysv icwn wsyedsnse pp vdfoctsyermeoi
+  real plain: all protozoan activity ceased but as the temperature rose the nu
+--- iter tau=0.1178 ---
+  cipher in : ell as her womens song and mr nagrins indeterminate figure eugen
+  decrypted : sffe cetsned vsicec ire iuevnei rnoiceoiuswsnvoi wseloransesarsi
+  real plain: city hall f morris cochran university vice president and busines
+  cipher in : north and did his military training in the south he did not as f
+  decrypted : i nwte iueuouetocevofow nmewn oioireoiewtsec awtetseuouei we cel
+  real plain: to a series of reaction cells on a manifold on a vacuum line the
+--- iter tau=0.1140 ---
+  cipher in : nother essay against culture such was the impromptu that voltair
+  decrypted : i gtsnescc me r oicgepafgansecapted cegtseovdn vdgaegt gek fg on
+  real plain: he music of the voice i said i would pam said they wont talk abo
+  cipher in : rs from spilling out in front of the crawling traffic the night 
+  decrypted : nceln vecdoffoire ageoieln ige legtsepn dfoiregn llopegtseiortge
+  real plain: a pakistan damascus beirut and to rome london and paris to look 
+--- iter tau=0.1104 ---
+  cipher in : them as lester pearson wrote in nato cannot live on fear alone i
+  decrypted : gtsve cefscgsneds nc iedn gseoiei g ep ii gefokse iels ne f iseo
+  real plain: unk all his money in a real estate venture stacy said he left he
+  cipher in : elasco theater over which many people had grown sentimental was 
+  decrypted : sf cp egts gsne ksnedtoptev imeds dfset uern diecsigovsig fed ce
+  real plain: velopment of such deficiencies while the personality factors tha
+--- iter tau=0.1068 ---
+  cipher in :  this country for which myself have in christs name withstood hi
+  decrypted : ewtocep aiwnmel nedtoptevmcsflet kseoieptnocwcei vsedowtcw  yeto
+  real plain: ss the standing or rank of an actor in a given social system is 
+  cipher in : ing as he used to husky young man he said with mock distaste i i
+  decrypted : oire cetseacsyew etac mem airev ietsec oyedowtev p eyocw cwseoeo
+  real plain: his work his use of noncolor is startling and skillful the sweep
+--- iter tau=0.1033 ---
+  cipher in : g supply town had the appearance of being far busier and more pr
+  decrypted : recaddfmeg diet uegtse dds n ipse lersoirel neracosne iuev nsedn
+  real plain: ss the standing or rank of an actor in a given social system is 
+  cipher in : re you gonna do phil phil did not answer why not try another clu
+  decrypted : nsem aer ii eu edtofedtofeuouei ge icdsnedtmei gegnme i gtsnepfa
+  real plain: his work his use of noncolor is startling and skillful the sweep
+--- iter tau=0.1000 ---
+  cipher in : onal publications that it vies with the old john brown fort at h
+  decrypted :  i fedarfop wo icewt weowekoscedowtewtse fyea tiern diel nwe wet
+  real plain: omozygous af and homozygous af cells will be presented here the 
+  cipher in : f administration policies first the republicans some weeks ago s
+  decrypted : le yvoiocwn wo ied foposceloncwewtsensdarfop icec vsedss ce r ec
+  real plain: osed of the men of the college who have won an official letter i

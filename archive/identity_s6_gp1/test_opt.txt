@@ -1,0 +1,62 @@
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 64                            
+          checkpoints_dir: ./checkpoints                 
+                crop_size: 256                           
+                 dataroot: .                             	[default: None]
+             dataset_mode: cipher                        
+                direction: AtoB                          
+               display_id: 0                             
+          display_winsize: 256                           
+                embed_dim: 256                           	[default: 64]
+                    epoch: latest                        
+                     eval: False                         
+                 gan_mode: lsgan                         
+                   gumbel: False                         
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                     kw_D: 15                            	[default: 4]
+                 lambda_A: 10.0                          
+                 lambda_B: 10.0                          
+                lambda_gp: 10.0                          
+          lambda_identity: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+                       lr: 0.0002                        
+         matched_softness: True                          	[default: False]
+         max_dataset_size: inf                           
+                    model: cipher_cycle_gan              	[default: test]
+               n_blocks_G: 5                             	[default: 4]
+                 n_critic: 1                             
+               n_layers_D: 5                             	[default: 3]
+                     name: identity_s6_gp1               	[default: experiment_name]
+                      ndf: 32                            	[default: 128]
+                     netD: seq                           
+                     netG: seq                           
+                      ngf: 128                           
+               no_dropout: True                          
+                  no_flip: True                          
+                     norm: layer                         	[default: instance]
+                 npz_path: data/identity/dataset.npz     	[default: None]
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                pair_seed: 0                             
+                    phase: test                          
+              pointwise_G: True                          	[default: False]
+               preprocess: none                          
+         real_logit_scale: 5.0                           
+              results_dir: ./results/                    
+           serial_batches: False                         
+         straight_through: True                          	[default: False]
+                   suffix:                               
+                  tau_end: 0.1                           
+                tau_start: 1.0                           
+                   use_gp: False                         
+                use_wandb: False                         
+                  verbose: False                         
+               vocab_size: -1                            
+       wandb_project_name: CycleGAN-and-pix2pix          
+----------------- End -------------------

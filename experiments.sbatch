@@ -90,7 +90,8 @@ else
   J=$((I - 15))
   DATA=${FRONTIER[$((J / 3))]}
 fi
-S=${SEEDS[$((I % 3))]}
+S=${SEED:-${SEEDS[$((I % 3))]}}
+DATA=${DATA_OVERRIDE:-$DATA}
 NAME="${DATA}_s${S}_gp${LAMBDA_GP:-10}"
 
 echo "=== task $I : dataset=$DATA seed=$S ==="
