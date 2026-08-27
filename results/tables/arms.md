@@ -1,0 +1,18 @@
+| arm | epoch | char acc | key recovery |
+|---|---|---|---|
+| arm_nogp | 5 | 0.7964 | 0.5185 |
+| arm_nogp | 10 | 0.9983 | 0.9259 |
+| arm_nogp | 20 | 1.0000 | 1.0000 |
+| arm_nogp | 40 | 0.7598 | 0.8519 |
+| arm_nogp | 60 | 0.7514 | 0.8519 |
+| arm_nogp | 80 | 0.7514 | 0.8519 |
+| arm_nogp | 100 | 0.7514 | 0.8519 |
+| arm_nogp | latest | 0.7514 | 0.8519 |
+| arm_wgangp | 5 | 0.2959 | 0.1852 |
+| arm_wgangp | 10 | 0.9992 | 0.9630 |
+| arm_wgangp | 20 | 1.0000 | 1.0000 |
+| arm_wgangp | 40 | 0.9612 | 0.8148 |
+| arm_wgangp | 60 | 0.9970 | 0.8889 |
+| arm_wgangp | 80 | 0.9970 | 0.8889 |
+| arm_wgangp | 100 | 0.9977 | 0.9259 |
+| arm_wgangp | latest | 0.9977 | 0.9259 |

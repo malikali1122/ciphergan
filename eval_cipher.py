@@ -108,8 +108,14 @@ def main():
 
     out_dir = os.path.join(opt.checkpoints_dir, opt.name)
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "eval_metrics.json"), "w") as fh:
-        json.dump({
+
+    # Raw outputs, for unsupervised checkpoint selection. cin is the ciphertext
+    # the model was given, pred is what it produced. truth is deliberately NOT
+    # saved: the selector must not be able to reach it even by accident.
+    pred_dump = os.path.join(out_dir, f"pred_{opt.epoch}.npz")
+    np.savez_compressed(pred_dump, pred=pred.astype(np.int16),
+                        cin=cin.astype(np.int16))
+    metrics = {
             "cipher": cipher.name,
             "key": cipher.key_repr,
             "n_samples": int(len(pred)),
@@ -118,8 +124,14 @@ def main():
             "key_recovery_accuracy": float(key_acc),
             "key_recovery_coverage": float(coverage),
             "chance_accuracy": float(1 / (ds.vocab_size - 1)),
-        }, fh, indent=2)
-    print(f"\nwrote {out_dir}/eval_metrics.json")
+            "epoch": str(opt.epoch),
+    }
+    # Both: the flat name for anything already reading it, and a per-epoch name
+    # so a sweep does not overwrite its own earlier results.
+    for fname in ("eval_metrics.json", f"eval_metrics_{opt.epoch}.json"):
+        with open(os.path.join(out_dir, fname), "w") as fh:
+            json.dump(metrics, fh, indent=2)
+    print(f"\nwrote {out_dir}/eval_metrics_{opt.epoch}.json and {pred_dump}")
 
 
 if __name__ == "__main__":

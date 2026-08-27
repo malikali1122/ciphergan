@@ -75,6 +75,10 @@ class CipherDataset(BaseDataset):
 
         # train.py builds the dataset before the model, so publishing the size
         # here means the user never has to pass --vocab_size by hand.
+        # The model warns when a periodic cipher is trained without
+        # positional encoding, which it can only do if it knows the period.
+        opt.cipher_period = int(c.get("period", 1))
+
         if getattr(opt, "vocab_size", -1) in (None, -1):
             opt.vocab_size = self.vocab_size
         elif opt.vocab_size != self.vocab_size:

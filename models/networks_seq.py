@@ -99,11 +99,23 @@ class SeqGenerator(nn.Module):
 
     def __init__(self, vocab_size, embed_dim=64, ngf=128, n_blocks=4,
                  dilations=(1, 2, 4, 8), norm_layer=nn.InstanceNorm1d,
-                 pointwise=False):
+                 pointwise=False, embedding=None, pos_dim=0, max_len=512):
         super().__init__()
-        self.embedding = SoftEmbedding(vocab_size, embed_dim)
+        # CipherGAN uses ONE table W_Emb shared by both generators and both
+        # discriminators, trained adversarially. Accepting it as an argument
+        # rather than constructing it here is what makes that sharing possible.
+        self.embedding = embedding or SoftEmbedding(vocab_size, embed_dim)
+        self.owns_embedding = embedding is None
+        # Absolute position, so the network can recover position % period for
+        # any period. Concatenated rather than added: the token embedding is
+        # shared with the discriminators under --share_embedding, and adding
+        # would push positional information into a table that is also being
+        # trained adversarially.
+        self.pos_dim = int(pos_dim)
+        self.pos_embedding = (nn.Embedding(int(max_len), self.pos_dim)
+                              if self.pos_dim > 0 else None)
         self.inp = nn.Sequential(
-            nn.Conv1d(embed_dim, ngf, 1 if pointwise else 5,
+            nn.Conv1d(embed_dim + self.pos_dim, ngf, 1 if pointwise else 5,
                       padding=0 if pointwise else 2),
             norm_layer(ngf),
             nn.ReLU(inplace=True),
@@ -117,7 +129,12 @@ class SeqGenerator(nn.Module):
 
     def forward(self, x, tau=None):
         h = self.embedding(x, tau=tau)          # [B, L, E]
-        h = h.transpose(1, 2)                   # [B, E, L]
+        if self.pos_embedding is not None:
+            idx = torch.arange(h.shape[1], device=h.device)
+            p = self.pos_embedding(idx)         # [L, P]
+            h = torch.cat([h, p.unsqueeze(0).expand(h.shape[0], -1, -1)],
+                          dim=-1)               # [B, L, E+P]
+        h = h.transpose(1, 2)                   # [B, E+P, L]
         h = self.out(self.body(self.inp(h)))    # [B, V, L]
         return h.transpose(1, 2)                # [B, L, V] logits
 
@@ -154,9 +171,10 @@ class SeqDiscriminator(nn.Module):
     """
 
     def __init__(self, vocab_size, embed_dim=64, ndf=128, n_layers=3, kw=4,
-                 norm_layer=nn.InstanceNorm1d):
+                 norm_layer=nn.InstanceNorm1d, embedding=None):
         super().__init__()
-        self.embedding = SoftEmbedding(vocab_size, embed_dim)
+        self.embedding = embedding or SoftEmbedding(vocab_size, embed_dim)
+        self.owns_embedding = embedding is None
         layers = [nn.Conv1d(embed_dim, ndf, kw, stride=2, padding=kw // 2),
                   nn.LeakyReLU(0.2, inplace=True)]
         mult = 1

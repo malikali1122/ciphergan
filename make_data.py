@@ -28,7 +28,7 @@ import os
 
 import numpy as np
 
-from cipher_engine import Vocab, build_dataset, DEFAULT_ALPHABET
+from cipher_engine import WordVocab, Vocab, build_dataset, DEFAULT_ALPHABET
 import cipher_stats as cs
 
 
@@ -55,8 +55,18 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--corpus", default=None, help="path to a plain text file")
     p.add_argument("--cipher", default="substitution",
-                   choices=["identity", "shift", "substitution", "vigenere"])
+                   choices=["identity", "shift", "substitution", "vigenere",
+                            "atbash", "affine", "keyword", "composed",
+                            "polysub"])
     p.add_argument("--alphabet", default=DEFAULT_ALPHABET)
+    p.add_argument("--token_level", default="char", choices=["char", "word"],
+                   help="word-level tokens lift the 27-symbol cap")
+    p.add_argument("--vocab_words", type=int, default=200,
+                   help="vocabulary size for --token_level word")
+    p.add_argument("--oov", default="drop", choices=["drop", "unk"],
+                   help="drop out-of-vocabulary tokens, or map them to a "
+                        "single <unk>. Use unk: dropping destroys word order "
+                        "and with it the bigram statistics the task needs.")
     p.add_argument("--sample_length", type=int, default=100)
     p.add_argument("--shift", type=int, default=3)
     p.add_argument("--key", default="345", help="vigenere key, digits")
@@ -67,13 +77,37 @@ def main() -> None:
                    choices=["disjoint", "parity"])
     p.add_argument("--eval_fraction", type=float, default=0.1)
     p.add_argument("--min_chars", type=int, default=200_000)
+    p.add_argument("--max_chars", type=int, default=0,
+                   help="truncate the corpus to this many characters; "
+                        "0 uses all of it. For the corpus-size sweep.")
+    p.add_argument("--affine_a", type=int, default=5)
+    p.add_argument("--affine_b", type=int, default=8)
+    p.add_argument("--keyword", default="cryptogam")
+    p.add_argument("--period", type=int, default=3,
+                   help="period for the polysub cipher")
     p.add_argument("--out_dir", default="data/run")
     p.add_argument("--no_plot", action="store_true")
     args = p.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
-    vocab = Vocab(tuple(args.alphabet))
+    if args.token_level == "word":
+        vocab = WordVocab.from_corpus(
+            load_corpus(args.corpus, args.min_chars)[:args.max_chars or None],
+            args.vocab_words, oov=args.oov)
+        if args.oov == "drop":
+            print("[cipher] WARNING: --oov drop removes tokens and therefore "
+                  "breaks word order. Bigram statistics will not reflect the "
+                  "source text. Use --oov unk for anything reported.")
+        print(f"[cipher] word-level vocabulary, {vocab.n_usable} types, "
+              f"most frequent: {' '.join(vocab.symbols[1:9])}")
+    else:
+        vocab = Vocab(tuple(args.alphabet))
     text = load_corpus(args.corpus, args.min_chars)
+    if args.max_chars:
+        # Truncate from the start, so a smaller corpus is a strict prefix of a
+        # larger one and the sweep varies quantity alone.
+        text = text[:args.max_chars]
+        print(f"[cipher] corpus truncated to {len(text)} characters")
 
     ds = build_dataset(
         text,
@@ -87,6 +121,10 @@ def main() -> None:
         key=[int(c) for c in args.key],
         cipher_seed=args.cipher_seed,
         shuffle_seed=args.shuffle_seed,
+        affine_a=args.affine_a,
+        affine_b=args.affine_b,
+        keyword=args.keyword,
+        period=args.period,
     )
     print(ds.summary())
 

@@ -1,0 +1,41 @@
+{
+  "method": "metropolis-hastings, bigram LM on unpaired plaintext",
+  "cipher": "substitution",
+  "key": "perm-seed0",
+  "period": 1,
+  "vocab_size": 201,
+  "steps": 160800,
+  "restarts": 3,
+  "init": "freq",
+  "seeds": [
+    {
+      "seed": 0,
+      "character_accuracy": 0.9296785304247991,
+      "key_recovery_accuracy": 0.765,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -3.9685994611089646
+    },
+    {
+      "seed": 1,
+      "character_accuracy": 0.9229692881745121,
+      "key_recovery_accuracy": 0.725,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -3.9776029567649394
+    },
+    {
+      "seed": 2,
+      "character_accuracy": 0.9116676234213548,
+      "key_recovery_accuracy": 0.69,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -4.005476647530949
+    }
+  ],
+  "key_recovery_best": 0.765,
+  "key_recovery_mean": 0.7266666666666666,
+  "character_accuracy_best": 0.9296785304247991,
+  "character_accuracy_mean": 0.9214384806735554,
+  "n_solved": 0,
+  "majority_class_accuracy": 0.1290183696900115,
+  "chance_accuracy": 0.005,
+  "seconds": 256.8293581008911
+}

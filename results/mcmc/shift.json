@@ -1,0 +1,90 @@
+{
+  "method": "metropolis-hastings, bigram LM on unpaired plaintext",
+  "cipher": "shift",
+  "key": "3",
+  "period": 1,
+  "vocab_size": 28,
+  "steps": 20000,
+  "restarts": 3,
+  "init": "freq",
+  "seeds": [
+    {
+      "seed": 0,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 1,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 2,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 3,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 4,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 5,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 6,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 7,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 8,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    },
+    {
+      "seed": 9,
+      "character_accuracy": 1.0,
+      "key_recovery_accuracy": 1.0,
+      "key_recovery_coverage": 1.0,
+      "logprob_per_bigram": -2.3438002261354867
+    }
+  ],
+  "key_recovery_best": 1.0,
+  "key_recovery_mean": 1.0,
+  "character_accuracy_best": 1.0,
+  "character_accuracy_mean": 1.0,
+  "n_solved": 10,
+  "majority_class_accuracy": 0.17470057589583798,
+  "chance_accuracy": 0.037037037037037035,
+  "seconds": 12.912316083908081
+}

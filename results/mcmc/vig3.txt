@@ -1,0 +1,28 @@
+
+leakage audit
+  eval_plain_in_train_plain              0
+  train_cipher_content_in_train_plain    0
+  split_mode                             disjoint
+  clean                                  True
+  seed  0  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  1  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  2  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  3  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  4  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  5  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  6  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  7  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  8  key 1.0000  char 1.0000  logP/bigram -2.3438
+  seed  9  key 1.0000  char 1.0000  logP/bigram -2.3438
+
+==============================================================
+cipher              vigenere (key=345) period=3
+alphabet            27 usable symbols
+eval samples        8986 x 64
+key recovery        best 1.0000  mean 1.0000  sd 0.0000
+character accuracy  best 1.0000  mean 1.0000
+majority-class      0.1747   (uniform chance 0.0370)
+solved (key = 1.0)  10/10
+wall clock          54.3 s on CPU for 10 seeds
+==============================================================
+wrote results/mcmc/vig3.json

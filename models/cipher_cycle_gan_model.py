@@ -43,6 +43,24 @@ from models.networks_seq import SeqGenerator, SeqDiscriminator, get_norm_layer_1
 from util.image_pool import ImagePool
 
 
+def _unique_params(*iterables):
+    """Deduplicate parameters by identity.
+
+    A shared embedding is reachable from several networks, so naive chaining
+    passes the same tensor to the optimiser more than once. PyTorch accepts
+    that with a warning and applies one update per occurrence, silently
+    multiplying the learning rate for exactly the parameter whose controlled
+    movement the paper's mechanism depends on.
+    """
+    seen, out = set(), []
+    for it in iterables:
+        for p in it:
+            if id(p) not in seen:
+                seen.add(id(p))
+                out.append(p)
+    return out
+
+
 class CipherCycleGANModel(CycleGANModel):
     """A (ciphertext) <-> B (plaintext). G_A is the decryption model."""
 
@@ -53,6 +71,19 @@ class CipherCycleGANModel(CycleGANModel):
                             help="inferred from the dataset; do not set by hand")
         parser.add_argument("--embed_dim", type=int, default=64)
         parser.add_argument("--n_blocks_G", type=int, default=4)
+        parser.add_argument("--pos_dim", type=int, default=0,
+                            help="width of the generator's positional "
+                                 "embedding; 0 disables it. Required for any "
+                                 "cipher whose key depends on position.")
+        parser.add_argument("--max_len", type=int, default=512,
+                            help="positional table size; must exceed the "
+                                 "sample length")
+        parser.add_argument("--share_embedding", action="store_true",
+                            help="one embedding table across all four networks")
+        parser.add_argument("--warmup_steps", type=int, default=2500,
+                            help="exponential LR warmup; paper uses 2500")
+        parser.add_argument("--beta2", type=float, default=0.9,
+                            help="Adam beta2; paper 0.9, torch default 0.999")
         parser.add_argument("--kw_D", type=int, default=4)
         parser.add_argument("--pointwise_G", action="store_true",
                             help="context-free generator: a pure lookup table")
@@ -79,7 +110,7 @@ class CipherCycleGANModel(CycleGANModel):
         parser.add_argument("--straight_through", action="store_true")
         if is_train:
             parser.add_argument("--cycle_loss", type=str, default="ce",
-                                choices=["ce", "l1"],
+                                choices=["ce", "l1", "simplex_l1"],
                                 help="ce = cross-entropy on tokens (correct for "
                                      "discrete data); l1 = CycleGAN's original")
         parser.set_defaults(
@@ -115,7 +146,14 @@ class CipherCycleGANModel(CycleGANModel):
         # backward_D_* and optimize_parameters find the attributes they expect.
         BaseModel.__init__(self, opt)
 
-        self.loss_names = ["D_A", "G_A", "cycle_A", "D_B", "G_B", "cycle_B", "gp"]
+        self.loss_names = ["D_A", "G_A", "cycle_A",
+                           "D_B", "G_B", "cycle_B",
+                           # adversarial loss WITHOUT the gradient penalty;
+                           # D_A above still includes it, as it always has
+                           "Dadv_A", "Dadv_B",
+                           "gp_A", "gp_B",
+                           # mean raw D output on real / generated input
+                           "pr_A", "pf_A", "pr_B", "pf_B"]
         self.visual_names = []  # util.tensor2im cannot render token sequences
         self.model_names = ["G_A", "G_B", "D_A", "D_B"] if self.isTrain \
             else ["G_A", "G_B"]
@@ -123,13 +161,24 @@ class CipherCycleGANModel(CycleGANModel):
         V, E = opt.vocab_size, opt.embed_dim
         norm_layer = get_norm_layer_1d(opt.norm)
 
+        if getattr(opt, "pos_dim", 0) > 0:
+            print(f"[cipher] positional encoding on, width {opt.pos_dim}")
+        elif int(getattr(opt, "cipher_period", 1) or 1) > 1:
+            print("[cipher] WARNING: periodic cipher with --pos_dim 0. The "
+                  "generator has no positional signal and cannot represent a "
+                  "position-dependent key.")
+
         self.netG_A = networks.init_net(
             SeqGenerator(V, E, opt.ngf, opt.n_blocks_G, norm_layer=norm_layer,
-                         pointwise=getattr(opt, "pointwise_G", False)),
+                         pointwise=getattr(opt, "pointwise_G", False),
+                         pos_dim=getattr(opt, "pos_dim", 0),
+                         max_len=getattr(opt, "max_len", 512)),
             opt.init_type, opt.init_gain).to(self.device)
         self.netG_B = networks.init_net(
             SeqGenerator(V, E, opt.ngf, opt.n_blocks_G, norm_layer=norm_layer,
-                         pointwise=getattr(opt, "pointwise_G", False)),
+                         pointwise=getattr(opt, "pointwise_G", False),
+                         pos_dim=getattr(opt, "pos_dim", 0),
+                         max_len=getattr(opt, "max_len", 512)),
             opt.init_type, opt.init_gain).to(self.device)
 
         if self.isTrain:
@@ -142,6 +191,25 @@ class CipherCycleGANModel(CycleGANModel):
                                  norm_layer=norm_layer),
                 opt.init_type, opt.init_gain).to(self.device)
 
+            # The gradient penalty interpolates between real and generated
+            # inputs, so they must share a shape. In the paper both arrive as
+            # embeddings (one-hot @ W and softmax @ W); here that presentation
+            # comes from --matched_softness.
+            if (getattr(opt, "use_gp", False) or opt.gan_mode == "wgangp") \
+                    and not getattr(opt, "matched_softness", False):
+                opt.matched_softness = True
+                print("[cipher] auto-enabling --matched_softness for the "
+                      "gradient penalty")
+
+            if getattr(opt, "share_embedding", False):
+                _src = (self.netG_A.module if hasattr(self.netG_A, "module")
+                        else self.netG_A).embedding
+                for _n in ["netG_B", "netD_A", "netD_B"]:
+                    _m = getattr(self, _n)
+                    _m = _m.module if hasattr(_m, "module") else _m
+                    _m.embedding = _src
+                print("[cipher] embedding table shared across all networks")
+
             self.fake_A_pool = ImagePool(opt.pool_size)
             self.fake_B_pool = ImagePool(opt.pool_size)
 
@@ -150,13 +218,19 @@ class CipherCycleGANModel(CycleGANModel):
             self.criterionL1 = nn.L1Loss()
 
             self.optimizer_G = torch.optim.Adam(
-                itertools.chain(self.netG_A.parameters(),
-                                self.netG_B.parameters()),
-                lr=opt.lr, betas=(opt.beta1, 0.999))
+                _unique_params(self.netG_A.parameters(),
+                               self.netG_B.parameters()),
+                lr=opt.lr, betas=(opt.beta1, getattr(opt, 'beta2', 0.9)))
+            _dp = [self.netD_A.parameters(), self.netD_B.parameters()]
+            if getattr(opt, "share_embedding", False):
+                # the shared table also receives the discriminator objective,
+                # i.e. it is trained to MAXIMISE the GAN loss, per the paper
+                _emb = (self.netG_A.module if hasattr(self.netG_A, "module")
+                        else self.netG_A).embedding
+                _dp = _dp + [_emb.parameters()]
             self.optimizer_D = torch.optim.Adam(
-                itertools.chain(self.netD_A.parameters(),
-                                self.netD_B.parameters()),
-                lr=opt.lr, betas=(opt.beta1, 0.999))
+                _unique_params(*_dp),
+                lr=opt.lr, betas=(opt.beta1, getattr(opt, 'beta2', 0.9)))
             self.optimizers = [self.optimizer_G, self.optimizer_D]
 
         self.set_tau(opt.tau_start)
@@ -172,7 +246,7 @@ class CipherCycleGANModel(CycleGANModel):
             module = net.module if hasattr(net, "module") else net
             yield module.embedding
 
-    def backward_D_basic(self, netD, real, fake):
+    def backward_D_basic(self, netD, real, fake, tag=""):
         """CycleGAN's version plus the WGAN-GP term.
 
         Gomez et al. (2018) report that their CycleGAN-derived architecture was
@@ -191,7 +265,8 @@ class CipherCycleGANModel(CycleGANModel):
         loss_D_real = self.criterionGAN(pred_real, True)
         pred_fake = netD(fake.detach())
         loss_D_fake = self.criterionGAN(pred_fake, False)
-        loss_D = (loss_D_real + loss_D_fake) * 0.5
+        loss_D_adv = (loss_D_real + loss_D_fake) * 0.5
+        loss_D = loss_D_adv
         self.loss_gp = torch.zeros((), device=self.device)
 
         if self.opt.gan_mode == "wgangp" or getattr(self.opt, "use_gp", False):
@@ -205,11 +280,40 @@ class CipherCycleGANModel(CycleGANModel):
             loss_D = loss_D + gp
             self.loss_gp = gp.detach()
 
+        if tag:
+            # Recorded before backward so the numbers describe the state the
+            # gradients were computed from. Detached: these are diagnostics.
+            setattr(self, "loss_Dadv_" + tag, loss_D_adv.detach())
+            setattr(self, "loss_gp_" + tag, self.loss_gp)
+            setattr(self, "loss_pr_" + tag, pred_real.detach().mean())
+            setattr(self, "loss_pf_" + tag, pred_fake.detach().mean())
+
         loss_D.backward()
         return loss_D
 
+    def _apply_warmup(self):
+        """tensor2tensor exponential warmup, per iteration.
+
+        lr_t = lr * 0.01 ** ((W - t) / W): starts at one hundredth of the
+        target and rises to it over W steps. GAN training is unusually
+        sensitive to the first few hundred updates, and the bimodal outcome
+        seen in this project - half the runs converging, half settling on
+        arbitrary bijections - is the signature of an unstable start.
+        """
+        W = int(getattr(self.opt, "warmup_steps", 0))
+        if W <= 0:
+            return
+        self._gstep = getattr(self, "_gstep", 0) + 1
+        if self._gstep > W:
+            return
+        f = 0.01 ** ((W - self._gstep) / W)
+        for o in self.optimizers:
+            for g in o.param_groups:
+                g["lr"] = self.opt.lr * f
+
     def optimize_parameters(self):
         """n_critic discriminator steps per generator step (WGAN-GP wants 5)."""
+        self._apply_warmup()
         self.forward()
         for i in range(max(1, self.opt.n_critic)):
             if i > 0:
@@ -221,6 +325,21 @@ class CipherCycleGANModel(CycleGANModel):
             self.optimizer_D.step()
 
         self.set_requires_grad([self.netD_A, self.netD_B], False)
+        if getattr(self.opt, "share_embedding", False):
+            # keep the shared table trainable: set_requires_grad walks
+            # netD_*.parameters(), which now reaches W_Emb, so the line above
+            # would otherwise freeze it for the whole generator step. The paper
+            # trains W_Emb on the cycle objective as well as the adversarial
+            # one, so it has to stay live here.
+            self.set_requires_grad(
+                [(self.netG_A.module if hasattr(self.netG_A, "module")
+                  else self.netG_A).embedding], True)
+        if getattr(self.opt, "share_embedding", False):
+            # rebuild the generator graph. optimizer_D.step() has just mutated
+            # W_Emb in place, and the graph from the forward() above still
+            # references the pre-step version of it. Autograd refuses to
+            # backprop through that. Costs one forward pass per iteration.
+            self.forward()
         self.optimizer_G.zero_grad()
         self.backward_G()
         self.optimizer_G.step()
@@ -249,12 +368,12 @@ class CipherCycleGANModel(CycleGANModel):
     def backward_D_A(self):
         fake_B = self.fake_B_pool.query(self.fake_B)
         self.loss_D_A = self.backward_D_basic(
-            self.netD_A, self._real_for_D(self.real_B), fake_B)
+            self.netD_A, self._real_for_D(self.real_B), fake_B, tag="A")
 
     def backward_D_B(self):
         fake_A = self.fake_A_pool.query(self.fake_A)
         self.loss_D_B = self.backward_D_basic(
-            self.netD_B, self._real_for_D(self.real_A), fake_A)
+            self.netD_B, self._real_for_D(self.real_A), fake_A, tag="B")
 
     def set_tau(self, tau):
         self.current_tau = float(tau)
@@ -307,6 +426,15 @@ class CipherCycleGANModel(CycleGANModel):
         self.rec_B = self.netG_A(self.fake_A)
 
     def _cycle(self, logits, target_idx):
+        if getattr(self.opt, "cycle_loss", "ce") == "simplex_l1":
+            # The paper's term: L1 between the softmax distribution and the
+            # original one-hot, on the probability simplex. This is not the
+            # degenerate case of an L1 on embeddings, which could be minimised
+            # by shrinking embedding norms.
+            probs = torch.softmax(logits / max(self.current_tau, 1e-6), dim=-1)
+            oh = torch.nn.functional.one_hot(target_idx, self.opt.vocab_size)
+            mask = (target_idx != 0).unsqueeze(-1).float()
+            return ((probs - oh.float()).abs() * mask).sum(-1).mean()
         # getattr: --cycle_loss is only registered at train time, but this
         # method is reachable from test.py through a loaded checkpoint.
         if getattr(self.opt, "cycle_loss", "ce") == "l1":

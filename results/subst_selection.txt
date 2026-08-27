@@ -1,0 +1,70 @@
+##### seed 0 #####
+     100      -2.3900    4.103    0.9922  0.8889
+
+selected epoch 10 (logP/bigram -2.3431), on ciphertext only
+best possible was epoch 10 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/subst_s0/selection.json
+##### seed 1 #####
+      80      -2.3431    4.111    1.0000  1.0000
+     100      -2.3525    4.108    0.9984  0.9630
+
+selected epoch 10 (logP/bigram -2.3424), on ciphertext only
+best possible was epoch 15 at 1.0000; selection cost +0.0008
+wrote ./checkpoints/subst_s1/selection.json
+##### seed 2 #####
+      80      -2.7117    4.010    0.9047  0.8148
+     100      -2.7117    4.010    0.9047  0.8148
+
+selected epoch 15 (logP/bigram -2.3415), on ciphertext only
+best possible was epoch 20 at 1.0000; selection cost +0.0014
+wrote ./checkpoints/subst_s2/selection.json
+##### seed 3 #####
+      80      -3.3185    3.455    0.0503  0.1111
+     100      -3.4310    3.568    0.1009  0.1852
+
+selected epoch 5 (logP/bigram -3.0448), on ciphertext only
+best possible was epoch 50 at 0.3598; selection cost +0.3443
+wrote ./checkpoints/subst_s3/selection.json
+##### seed 4 #####
+      80      -3.0489    4.095    0.8681  0.8148
+     100      -2.4542    4.101    0.8681  0.8148
+
+selected epoch 50 (logP/bigram -2.4443), on ciphertext only
+best possible was epoch 80 at 0.8681; selection cost +0.0101
+wrote ./checkpoints/subst_s4/selection.json
+##### seed 5 #####
+     100      -2.9314    3.965    0.5217  0.3704
+
+selected epoch 50 (logP/bigram -2.8032), on ciphertext only
+best possible was epoch 50 at 0.5409; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/subst_s5/selection.json
+##### seed 6 #####
+      80      -2.3493    4.084    0.9953  0.8519
+     100      -2.3571    4.092    0.9953  0.8519
+
+selected epoch 15 (logP/bigram -2.3409), on ciphertext only
+best possible was epoch 10 at 0.9992; selection cost +0.0000
+wrote ./checkpoints/subst_s6/selection.json
+##### seed 7 #####
+      80      -2.3458    4.095    0.9970  0.9259
+     100      -2.3414    4.101    0.9986  0.9630   <-- selected
+
+selected epoch 100 (logP/bigram -2.3414), on ciphertext only
+best possible was epoch 15 at 1.0000; selection cost +0.0014
+wrote ./checkpoints/subst_s7/selection.json
+##### seed 8 #####
+      80      -3.9131    3.408    0.0000  0.0000
+     100      -3.3824    3.645    0.0000  0.0000
+
+selected epoch 10 (logP/bigram -3.2032), on ciphertext only
+best possible was epoch 30 at 0.0157; selection cost +0.0157
+wrote ./checkpoints/subst_s8/selection.json
+##### seed 9 #####
+     100      -2.3870    4.101    0.9907  0.8519
+
+selected epoch 10 (logP/bigram -2.3431), on ciphertext only
+best possible was epoch 10 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/subst_s9/selection.json

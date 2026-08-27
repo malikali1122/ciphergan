@@ -1,0 +1,140 @@
+##### pos_poly1_s0 #####
+selected epoch 15 (logP/bigram -2.3436, gap 0.0002 from the reference), on ciphertext only
+best possible was epoch 10 at 0.9992; selection cost +0.0001
+wrote ./checkpoints/pos_poly1_s0/selection.json
+##### pos_poly1_s1 #####
+selected epoch 80 (logP/bigram -2.3968, gap 0.0530 from the reference), on ciphertext only
+best possible was epoch 30 at 0.9633; selection cost +0.0004
+wrote ./checkpoints/pos_poly1_s1/selection.json
+##### pos_poly1_s2 #####
+selected epoch 25 (logP/bigram -3.0018, gap 0.6580 from the reference), on ciphertext only
+best possible was epoch 30 at 0.1189; selection cost +0.1189
+wrote ./checkpoints/pos_poly1_s2/selection.json
+##### pos_poly1_s3 #####
+selected epoch 10 (logP/bigram -3.0339, gap 0.6901 from the reference), on ciphertext only
+best possible was epoch 20 at 0.0221; selection cost +0.0104
+wrote ./checkpoints/pos_poly1_s3/selection.json
+##### pos_poly1_s4 #####
+selected epoch 25 (logP/bigram -2.3468, gap 0.0030 from the reference), on ciphertext only
+best possible was epoch 20 at 0.9979; selection cost +0.0010
+wrote ./checkpoints/pos_poly1_s4/selection.json
+##### pos_poly2_s0 #####
+selected epoch 20 (logP/bigram -3.1067, gap 0.7629 from the reference), on ciphertext only
+best possible was epoch 80 at 0.2164; selection cost +0.1981
+wrote ./checkpoints/pos_poly2_s0/selection.json
+##### pos_poly2_s1 #####
+selected epoch 10 (logP/bigram -3.2817, gap 0.9380 from the reference), on ciphertext only
+best possible was epoch 60 at 0.0176; selection cost +0.0094
+wrote ./checkpoints/pos_poly2_s1/selection.json
+##### pos_poly2_s2 #####
+selected epoch 60 (logP/bigram -3.2544, gap 0.9106 from the reference), on ciphertext only
+best possible was epoch 40 at 0.0813; selection cost +0.0330
+wrote ./checkpoints/pos_poly2_s2/selection.json
+##### pos_poly2_s3 #####
+selected epoch 15 (logP/bigram -3.3474, gap 1.0036 from the reference), on ciphertext only
+best possible was epoch 100 at 0.1169; selection cost +0.1064
+wrote ./checkpoints/pos_poly2_s3/selection.json
+##### pos_poly2_s4 #####
+best possible was epoch 15 at 0.9994; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_poly2_s4/selection.json
+##### pos_poly3_s0 #####
+selected epoch 15 (logP/bigram -2.3498, gap 0.0060 from the reference), on ciphertext only
+best possible was epoch 10 at 0.9960; selection cost +0.0006
+wrote ./checkpoints/pos_poly3_s0/selection.json
+##### pos_poly3_s1 #####
+best possible was epoch 15 at 0.9967; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_poly3_s1/selection.json
+##### pos_poly3_s2 #####
+selected epoch 40 (logP/bigram -2.3435, gap 0.0002 from the reference), on ciphertext only
+best possible was epoch 30 at 0.9972; selection cost +0.0005
+wrote ./checkpoints/pos_poly3_s2/selection.json
+##### pos_poly3_s3 #####
+selected epoch 15 (logP/bigram -3.2370, gap 0.8933 from the reference), on ciphertext only
+best possible was epoch 80 at 0.2546; selection cost +0.2112
+wrote ./checkpoints/pos_poly3_s3/selection.json
+##### pos_poly3_s4 #####
+best possible was epoch 10 at 0.9976; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_poly3_s4/selection.json
+##### pos_poly5_s0 #####
+selected epoch 60 (logP/bigram -2.4637, gap 0.1199 from the reference), on ciphertext only
+best possible was epoch 15 at 0.9425; selection cost +0.0234
+wrote ./checkpoints/pos_poly5_s0/selection.json
+##### pos_poly5_s1 #####
+selected epoch 15 (logP/bigram -3.1566, gap 0.8128 from the reference), on ciphertext only
+best possible was epoch 60 at 0.3877; selection cost +0.3348
+wrote ./checkpoints/pos_poly5_s1/selection.json
+##### pos_poly5_s2 #####
+selected epoch 15 (logP/bigram -3.3638, gap 1.0200 from the reference), on ciphertext only
+best possible was epoch 80 at 0.0764; selection cost +0.0576
+wrote ./checkpoints/pos_poly5_s2/selection.json
+##### pos_poly5_s3 #####
+selected epoch 25 (logP/bigram -3.1854, gap 0.8416 from the reference), on ciphertext only
+best possible was epoch 100 at 0.0874; selection cost +0.0278
+wrote ./checkpoints/pos_poly5_s3/selection.json
+##### pos_poly5_s4 #####
+best possible was epoch 15 at 0.9918; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_poly5_s4/selection.json
+##### pos_poly7_s0 #####
+selected epoch 15 (logP/bigram -2.4522, gap 0.1084 from the reference), on ciphertext only
+best possible was epoch 20 at 0.9619; selection cost +0.0078
+wrote ./checkpoints/pos_poly7_s0/selection.json
+##### pos_poly7_s1 #####
+selected epoch 100 (logP/bigram -2.4450, gap 0.1012 from the reference), on ciphertext only
+best possible was epoch 80 at 0.9292; selection cost +0.0017
+wrote ./checkpoints/pos_poly7_s1/selection.json
+##### pos_poly7_s2 #####
+best possible was epoch 15 at 0.9774; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_poly7_s2/selection.json
+##### pos_poly7_s3 #####
+selected epoch 80 (logP/bigram -2.4211, gap 0.0773 from the reference), on ciphertext only
+best possible was epoch 15 at 0.9736; selection cost +0.0162
+wrote ./checkpoints/pos_poly7_s3/selection.json
+##### pos_poly7_s4 #####
+best possible was epoch 15 at 0.9734; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_poly7_s4/selection.json
+##### pos_vig3_s0 #####
+selected epoch 15 (logP/bigram -2.3453, gap 0.0015 from the reference), on ciphertext only
+best possible was epoch 10 at 0.9958; selection cost +0.0014
+wrote ./checkpoints/pos_vig3_s0/selection.json
+##### pos_vig3_s1 #####
+selected epoch 20 (logP/bigram -2.3588, gap 0.0150 from the reference), on ciphertext only
+best possible was epoch 10 at 0.9949; selection cost +0.0064
+wrote ./checkpoints/pos_vig3_s1/selection.json
+##### pos_vig3_s2 #####
+best possible was epoch 10 at 0.9963; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_vig3_s2/selection.json
+##### pos_vig3_s3 #####
+best possible was epoch 30 at 0.9930; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_vig3_s3/selection.json
+##### pos_vig3_s4 #####
+best possible was epoch 15 at 0.9933; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_vig3_s4/selection.json
+##### pos_vig7_s0 #####
+best possible was epoch 15 at 0.9345; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_vig7_s0/selection.json
+##### pos_vig7_s1 #####
+best possible was epoch 15 at 0.9793; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_vig7_s1/selection.json
+##### pos_vig7_s2 #####
+best possible was epoch 20 at 0.9785; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_vig7_s2/selection.json
+##### pos_vig7_s3 #####
+best possible was epoch 15 at 0.9644; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/pos_vig7_s3/selection.json
+##### pos_vig7_s4 #####
+selected epoch 15 (logP/bigram -2.4719, gap 0.1281 from the reference), on ciphertext only
+best possible was epoch 20 at 0.9553; selection cost +0.0042
+wrote ./checkpoints/pos_vig7_s4/selection.json

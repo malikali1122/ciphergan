@@ -1,0 +1,11 @@
+BASELINE: 23 conditions x 10 seeds. Not all seeds solved; see table.
+  The classical attack is a flat ceiling across the whole task space, so any structure in the GAN's frontier is a property of the GAN and not of task difficulty.
+
+SUBSTITUTION: 10 seeds. 6/10 reached >= 0.9990 char accuracy, 6/10 reached >= 0.99.
+  Best-of-10 by the blind criterion: subst_s0 at epoch 10, char 1.0000, key 1.0000.
+  Selection cost vs an oracle: max 0.3443 overall, max 0.0000 among runs that converged.
+  Report both: the per-seed rate is the reliability finding, best-of-N is the capability finding. Best-of-N is the same protocol the MCMC baseline uses for its restarts, so the two are directly comparable.
+  The criterion separates outcomes without labels: converged runs score -2.3431 to -2.3431, failed runs -3.2032 to -2.4443.
+
+IDENTITY ARMS: both configurations reach 1.0000 at epoch 20, then diverge. The LSGAN-without-penalty arm collapses and freezes; the WGAN-GP arm holds near 1.0.
+  The original failure was LSGAN targets fighting a unit-gradient penalty. Either coherent configuration works, which is a stronger claim than removing one component.

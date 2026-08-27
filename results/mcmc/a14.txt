@@ -1,0 +1,28 @@
+
+leakage audit
+  eval_plain_in_train_plain              0
+  train_cipher_content_in_train_plain    0
+  split_mode                             disjoint
+  clean                                  True
+  seed  0  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  1  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  2  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  3  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  4  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  5  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  6  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  7  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  8  key 1.0000  char 1.0000  logP/bigram -1.9315
+  seed  9  key 1.0000  char 1.0000  logP/bigram -1.9315
+
+==============================================================
+cipher              substitution (key=perm-seed0) period=1
+alphabet            14 usable symbols
+eval samples        5443 x 64
+key recovery        best 1.0000  mean 1.0000  sd 0.0000
+character accuracy  best 1.0000  mean 1.0000
+majority-class      0.2686   (uniform chance 0.0714)
+solved (key = 1.0)  10/10
+wall clock          11.6 s on CPU for 10 seeds
+==============================================================
+wrote results/mcmc/a14.json

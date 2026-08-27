@@ -66,7 +66,10 @@ GROUPS = [
     (["D_A", "G_A"], "A: cipher -> plaintext"),
     (["D_B", "G_B"], "B: plaintext -> cipher"),
     (["cycle_A", "cycle_B"], "cycle reconstruction"),
-    (["entropy", "gp"], "diagnostics"),
+    (["Dadv_A", "Dadv_B"], "adversarial loss, penalty excluded"),
+    (["pr_A", "pf_A"], "D_A output: real vs generated"),
+    (["pr_B", "pf_B"], "D_B output: real vs generated"),
+    (["entropy", "gp_A", "gp_B"], "diagnostics"),
 ]
 
 

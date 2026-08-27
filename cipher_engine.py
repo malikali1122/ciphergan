@@ -38,6 +38,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 
+UNK_TOKEN = "<unk>"
 PAD_TOKEN = "<pad>"
 CROP_AMOUNT = 1  # number of reserved indices at the front of the vocab
 DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz "
@@ -46,6 +47,102 @@ DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz "
 # --------------------------------------------------------------------------- #
 # Vocabulary
 # --------------------------------------------------------------------------- #
+class WordVocab:
+    """Word-level vocabulary, interface-compatible with Vocab.
+
+    Symbols are word types rather than characters, which lets the alphabet
+    exceed the 27 available at character level. Tokens outside the vocabulary
+    are dropped rather than mapped to <unk>, mirroring how the character
+    pipeline discards punctuation: a shared <unk> would be a single cipher
+    symbol standing for thousands of distinct words, and the model would be
+    learning something else.
+    """
+
+    def __init__(self, words, oov="drop"):
+        self.oov = oov
+        extra = [UNK_TOKEN] if oov == "unk" else []
+        self.symbols = [PAD_TOKEN] + extra + list(words)
+        self.stoi = {s: i for i, s in enumerate(self.symbols)}
+        self.itos = {i: s for s, i in self.stoi.items()}
+
+    @staticmethod
+    def from_corpus(text: str, n_words: int, oov: str = "drop"):
+        """The n_words most frequent types, ties broken alphabetically.
+
+        Under oov="unk" the vocabulary is n_words types plus <unk>, so the
+        cipher alphabet is n_words + 1.
+        """
+        from collections import Counter
+        counts = Counter(WordVocab._tokenise(text))
+        ranked = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
+        return WordVocab([w for w, _ in ranked[:n_words]], oov=oov)
+
+    @staticmethod
+    def _tokenise(text: str):
+        """Lowercase alphabetic tokens. Punctuation and digits are dropped."""
+        out, cur = [], []
+        for ch in text.lower():
+            if ch.isalpha():
+                cur.append(ch)
+            elif cur:
+                out.append("".join(cur))
+                cur = []
+        if cur:
+            out.append("".join(cur))
+        return out
+
+    def __len__(self):
+        return len(self.symbols)
+
+    @property
+    def n_usable(self) -> int:
+        return len(self.symbols) - CROP_AMOUNT
+
+    def clean(self, text: str):
+        """Returns a token list, not a string; encode() accepts either.
+
+        Under oov="unk" every token is kept, so position is preserved and the
+        bigram statistics of the source text survive. Under oov="drop" the
+        surviving tokens are no longer adjacent in the original, which is why
+        that mode should not be used for anything reported.
+        """
+        keep = set(self.symbols[CROP_AMOUNT:])
+        toks = self._tokenise(text)
+        if self.oov == "unk":
+            return [t if t in keep else UNK_TOKEN for t in toks]
+        return [t for t in toks if t in keep]
+
+    def encode(self, tokens) -> np.ndarray:
+        if isinstance(tokens, str):
+            tokens = self.clean(tokens)
+        return np.array([self.stoi[t] for t in tokens], dtype=np.int64)
+
+    def decode(self, indices, strip_pad: bool = True) -> str:
+        out = []
+        for i in indices:
+            tok = self.itos.get(int(i), "?")
+            if tok == PAD_TOKEN:
+                if strip_pad:
+                    continue
+                tok = "_"
+            out.append(tok)
+        return " ".join(out)
+
+    def save(self, path: str, separate_domains: bool = False) -> None:
+        """Same one-token-per-line format as Vocab.save.
+
+        Word types can contain no whitespace by construction, since the
+        tokeniser splits on anything non-alphabetic, so one line per token is
+        unambiguous.
+        """
+        tokens = list(self.symbols)
+        if separate_domains:
+            tokens += [f"{t}#c" for t in self.symbols[CROP_AMOUNT:]]
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write("\n".join(tokens) + "\n")
+
+
 class Vocab:
     """Character-level vocabulary with a reserved <pad> at index 0."""
 
@@ -212,6 +309,114 @@ def make_vigenere_cipher(V: int, key: Sequence[int] = (3, 4, 5), **kw) -> Cipher
                   key_repr="".join(str(int(k)) for k in key), **kw)
 
 
+def _reversal_row(V: int) -> np.ndarray:
+    """a <-> z, b <-> y, ... over the usable indices only."""
+    row = _identity_row(V)
+    usable = np.arange(CROP_AMOUNT, V)
+    row[usable] = usable[::-1]
+    return row
+
+
+def make_atbash_cipher(V: int, **kw) -> Cipher:
+    """Atbash: reverse the alphabet. An involution, so it is self-inverse.
+
+    Key space is 1, the same as the identity cipher, but the map is not the
+    identity. Any difference in difficulty between the two therefore cannot be
+    attributed to key space.
+    """
+    return Cipher("atbash", _reversal_row(V)[None, :], V, 1,
+                  key_repr="reverse", **kw)
+
+
+def _affine_row(V: int, a: int, b: int) -> np.ndarray:
+    """x -> (a*x + b) mod n over the usable indices. Requires gcd(a, n) = 1."""
+    usable = np.arange(CROP_AMOUNT, V)
+    n = len(usable)
+    from math import gcd
+    if gcd(a, n) != 1:
+        raise ValueError(f"affine multiplier {a} is not coprime to {n}")
+    row = _identity_row(V)
+    row[usable] = usable[(a * np.arange(n) + b) % n]
+    return row
+
+
+def make_affine_cipher(V: int, a: int = 5, b: int = 8, **kw) -> Cipher:
+    """Affine cipher, a structured subgroup of the permutations.
+
+    Key space is phi(n) * n, which for a 27-symbol alphabet is 486: three
+    orders of magnitude above a shift and twenty-six below a full permutation.
+    It sits between the two on key space while preserving the unigram
+    frequency profile exactly, as every period-1 permutation does.
+    """
+    return Cipher("affine", _affine_row(V, a, b)[None, :], V, 1,
+                  key_repr=f"a{a}b{b}", **kw)
+
+
+def _keyword_row(V: int, keyword: str, alphabet: str) -> np.ndarray:
+    """Classical keyword cipher: distinct keyword letters, then the rest."""
+    seen, order = set(), []
+    for ch in list(keyword) + list(alphabet):
+        if ch in alphabet and ch not in seen:
+            seen.add(ch)
+            order.append(alphabet.index(ch))
+    row = _identity_row(V)
+    usable = np.arange(CROP_AMOUNT, V)
+    if len(order) != len(usable):
+        raise ValueError(f"keyword cipher covered {len(order)} of "
+                         f"{len(usable)} symbols")
+    row[usable] = np.array(order, dtype=np.int64) + CROP_AMOUNT
+    return row
+
+
+def make_keyword_cipher(V: int, keyword: str = "cryptogam",
+                        alphabet: str = None, **kw) -> Cipher:
+    """A permutation a human could memorise, rather than a uniform random one.
+
+    Included because a random permutation is a very particular kind of key:
+    it has no structure for a model to exploit or be misled by. A keyword key
+    leaves a long ordered tail, which is structure of exactly the sort a
+    language model prior might latch onto.
+    """
+    if alphabet is None:
+        alphabet = DEFAULT_ALPHABET
+    return Cipher("keyword", _keyword_row(V, keyword, alphabet)[None, :], V, 1,
+                  key_repr=keyword, **kw)
+
+
+def make_polysub_cipher(V: int, period: int = 3, seed: int = 0, **kw) -> Cipher:
+    """Period-p with an arbitrary permutation per position, not a rotation.
+
+    Vigenere's rows are rotations of one another. That makes two explanations
+    for a failure on Vigenere indistinguishable: the model cannot handle
+    position dependence, or it cannot handle rotation structure. Replacing the
+    rotations with independent random permutations removes the second, so a
+    failure here isolates position dependence as the cause.
+    """
+    rng = np.random.default_rng(seed)
+    usable = np.arange(CROP_AMOUNT, V)
+    rows = []
+    for _ in range(period):
+        row = _identity_row(V)
+        row[usable] = rng.permutation(usable)
+        rows.append(row)
+    return Cipher("polysub", np.stack(rows), V, period,
+                  key_repr=f"p{period}-seed{seed}", **kw)
+
+
+def make_composed_cipher(V: int, seed: int = 0, shift: int = 3, **kw) -> Cipher:
+    """A substitution followed by a shift.
+
+    The composition of two period-1 permutations is a period-1 permutation.
+    The resulting key table is indistinguishable in kind from any other
+    substitution key, so any theory under which composition depth predicts
+    difficulty has to explain why this cipher is not harder than its parts.
+    """
+    sub = make_substitution_cipher(V, seed=seed).key_table[0]
+    rot = _rotation_row(V, shift)
+    return Cipher("composed", rot[sub][None, :], V, 1,
+                  key_repr=f"sub{seed}+shift{shift}", **kw)
+
+
 def make_identity_cipher(V: int, **kw) -> Cipher:
     """Sanity-check control: the task is trivially solvable if the code is right."""
     return Cipher("identity", _identity_row(V)[None, :], V, 1, key_repr="0", **kw)
@@ -222,12 +427,21 @@ CIPHER_FACTORIES = {
     "shift": make_shift_cipher,
     "substitution": make_substitution_cipher,
     "vigenere": make_vigenere_cipher,
+    # period-1 families: all elements of the same permutation group
+    "atbash": make_atbash_cipher,
+    "affine": make_affine_cipher,
+    "keyword": make_keyword_cipher,
+    "composed": make_composed_cipher,
+    # period-p with arbitrary rows, to isolate position dependence
+    "polysub": make_polysub_cipher,
 }
 
 
 def build_cipher(name: str, vocab_size: int, separate_domains: bool = False,
                  shift: int = 3, key: Sequence[int] = (3, 4, 5),
-                 seed: Optional[int] = 0) -> Cipher:
+                 seed: Optional[int] = 0, affine_a: int = 5, affine_b: int = 8,
+                 keyword: str = "cryptogam", alphabet: str = None,
+                 period: int = 3) -> Cipher:
     if name == "shift":
         return make_shift_cipher(vocab_size, shift=shift,
                                  separate_domains=separate_domains)
@@ -239,6 +453,21 @@ def build_cipher(name: str, vocab_size: int, separate_domains: bool = False,
                                     separate_domains=separate_domains)
     if name == "identity":
         return make_identity_cipher(vocab_size, separate_domains=separate_domains)
+    if name == "atbash":
+        return make_atbash_cipher(vocab_size, separate_domains=separate_domains)
+    if name == "affine":
+        return make_affine_cipher(vocab_size, a=affine_a, b=affine_b,
+                                  separate_domains=separate_domains)
+    if name == "keyword":
+        return make_keyword_cipher(vocab_size, keyword=keyword,
+                                   alphabet=alphabet,
+                                   separate_domains=separate_domains)
+    if name == "composed":
+        return make_composed_cipher(vocab_size, seed=seed, shift=shift,
+                                    separate_domains=separate_domains)
+    if name == "polysub":
+        return make_polysub_cipher(vocab_size, period=period, seed=seed,
+                                   separate_domains=separate_domains)
     raise ValueError(f"unknown cipher {name!r}; choose from {list(CIPHER_FACTORIES)}")
 
 
@@ -309,6 +538,10 @@ def build_dataset(text: str,
                   key: Sequence[int] = (3, 4, 5),
                   cipher_seed: int = 0,
                   shuffle_seed: int = 1234,
+                  affine_a: int = 5,
+                  affine_b: int = 8,
+                  keyword: str = "cryptogam",
+                  period: int = 3,
                   deduplicate: bool = True) -> CipherDataset:
     """Turn a raw text corpus into unpaired training banks.
 
@@ -325,6 +558,9 @@ def build_dataset(text: str,
     vocab = vocab or Vocab()
     V = len(vocab)
     cipher = build_cipher(cipher_name, V, separate_domains=separate_domains,
+                          affine_a=affine_a, affine_b=affine_b,
+                          keyword=keyword, period=period,
+                          alphabet="".join(vocab.symbols[CROP_AMOUNT:]),
                           shift=shift, key=key, seed=cipher_seed)
 
     cleaned = vocab.clean(text)

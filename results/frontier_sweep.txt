@@ -1,0 +1,241 @@
+##### fr_a10_s0 #####
+
+selected epoch 10 (logP/bigram -1.7143, gap 0.0023 from the reference), on ciphertext only
+best possible was epoch 15 at 0.7661; selection cost +0.0541
+wrote ./checkpoints/fr_a10_s0/selection.json
+##### fr_a10_s1 #####
+
+selected epoch 60 (logP/bigram -1.7223, gap 0.0103 from the reference), on ciphertext only
+best possible was epoch 50 at 0.9171; selection cost +0.0000
+wrote ./checkpoints/fr_a10_s1/selection.json
+##### fr_a10_s2 #####
+
+selected epoch 40 (logP/bigram -1.7339, gap 0.0219 from the reference), on ciphertext only
+best possible was epoch 10 at 0.7661; selection cost +0.0300
+wrote ./checkpoints/fr_a10_s2/selection.json
+##### fr_a10_s3 #####
+selected epoch 20 (logP/bigram -1.7152, gap 0.0032 from the reference), on ciphertext only
+best possible was epoch 20 at 0.9459; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a10_s3/selection.json
+##### fr_a10_s4 #####
+selected epoch 10 (logP/bigram -1.7157, gap 0.0037 from the reference), on ciphertext only
+best possible was epoch 10 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a10_s4/selection.json
+##### fr_a14_s0 #####
+
+selected epoch 80 (logP/bigram -1.9650, gap 0.0312 from the reference), on ciphertext only
+best possible was epoch 40 at 0.9275; selection cost +0.0000
+wrote ./checkpoints/fr_a14_s0/selection.json
+##### fr_a14_s1 #####
+
+selected epoch 80 (logP/bigram -1.9247, gap 0.0091 from the reference), on ciphertext only
+best possible was epoch 100 at 0.7645; selection cost +0.0675
+wrote ./checkpoints/fr_a14_s1/selection.json
+##### fr_a14_s2 #####
+selected epoch 10 (logP/bigram -1.9328, gap 0.0010 from the reference), on ciphertext only
+best possible was epoch 10 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a14_s2/selection.json
+##### fr_a14_s3 #####
+
+selected epoch 25 (logP/bigram -1.9294, gap 0.0043 from the reference), on ciphertext only
+best possible was epoch 40 at 0.9887; selection cost +0.0346
+wrote ./checkpoints/fr_a14_s3/selection.json
+##### fr_a14_s4 #####
+selected epoch 10 (logP/bigram -1.9328, gap 0.0010 from the reference), on ciphertext only
+best possible was epoch 10 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a14_s4/selection.json
+##### fr_a20_s0 #####
+
+selected epoch 50 (logP/bigram -2.8564, gap 0.6100 from the reference), on ciphertext only
+best possible was epoch 20 at 0.0064; selection cost +0.0064
+wrote ./checkpoints/fr_a20_s0/selection.json
+##### fr_a20_s1 #####
+selected epoch 20 (logP/bigram -2.2813, gap 0.0349 from the reference), on ciphertext only
+best possible was epoch 20 at 0.8249; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a20_s1/selection.json
+##### fr_a20_s2 #####
+selected epoch 10 (logP/bigram -2.2464, gap 0.0000 from the reference), on ciphertext only
+best possible was epoch 10 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a20_s2/selection.json
+##### fr_a20_s3 #####
+
+selected epoch 40 (logP/bigram -2.7874, gap 0.5410 from the reference), on ciphertext only
+best possible was epoch 25 at 0.0245; selection cost +0.0245
+wrote ./checkpoints/fr_a20_s3/selection.json
+##### fr_a20_s4 #####
+
+selected epoch 5 (logP/bigram -2.9562, gap 0.7097 from the reference), on ciphertext only
+best possible was epoch 20 at 0.0726; selection cost +0.0726
+wrote ./checkpoints/fr_a20_s4/selection.json
+##### fr_a7_s0 #####
+selected epoch 30 (logP/bigram -1.3875, gap 0.0001 from the reference), on ciphertext only
+best possible was epoch 30 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a7_s0/selection.json
+##### fr_a7_s1 #####
+selected epoch 40 (logP/bigram -1.3875, gap 0.0001 from the reference), on ciphertext only
+best possible was epoch 40 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a7_s1/selection.json
+##### fr_a7_s2 #####
+selected epoch 25 (logP/bigram -1.3875, gap 0.0001 from the reference), on ciphertext only
+best possible was epoch 25 at 1.0000; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_a7_s2/selection.json
+##### fr_a7_s3 #####
+
+selected epoch 15 (logP/bigram -1.8494, gap 0.4620 from the reference), on ciphertext only
+best possible was epoch 5 at 0.0000; selection cost +0.0000
+wrote ./checkpoints/fr_a7_s3/selection.json
+##### fr_a7_s4 #####
+
+selected epoch 40 (logP/bigram -1.4183, gap 0.0309 from the reference), on ciphertext only
+best possible was epoch 10 at 0.9514; selection cost +0.0314
+wrote ./checkpoints/fr_a7_s4/selection.json
+##### fr_shift_s0 #####
+
+selected epoch 50 (logP/bigram -2.3452, gap 0.0007 from the reference), on ciphertext only
+best possible was epoch 40 at 0.9991; selection cost +0.0000
+wrote ./checkpoints/fr_shift_s0/selection.json
+##### fr_shift_s1 #####
+selected epoch 20 (logP/bigram -2.3433, gap 0.0011 from the reference), on ciphertext only
+best possible was epoch 20 at 0.9983; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_shift_s1/selection.json
+##### fr_shift_s2 #####
+selected epoch 30 (logP/bigram -2.3789, gap 0.0345 from the reference), on ciphertext only
+best possible was epoch 30 at 0.9812; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_shift_s2/selection.json
+##### fr_shift_s3 #####
+
+selected epoch 10 (logP/bigram -2.3455, gap 0.0010 from the reference), on ciphertext only
+best possible was epoch 15 at 1.0000; selection cost +0.0008
+wrote ./checkpoints/fr_shift_s3/selection.json
+##### fr_shift_s4 #####
+selected epoch 100 (logP/bigram -2.3483, gap 0.0038 from the reference), on ciphertext only
+best possible was epoch 100 at 0.9977; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_shift_s4/selection.json
+##### fr_vig3_s0 #####
+
+selected epoch 5 (logP/bigram -3.3413, gap 0.9968 from the reference), on ciphertext only
+best possible was epoch 60 at 0.3396; selection cost +0.1988
+wrote ./checkpoints/fr_vig3_s0/selection.json
+##### fr_vig3_s1 #####
+
+selected epoch 5 (logP/bigram -3.3440, gap 0.9995 from the reference), on ciphertext only
+best possible was epoch 10 at 0.4069; selection cost +0.1826
+wrote ./checkpoints/fr_vig3_s1/selection.json
+##### fr_vig3_s2 #####
+
+selected epoch 10 (logP/bigram -3.4225, gap 1.0780 from the reference), on ciphertext only
+best possible was epoch 5 at 0.3811; selection cost +0.0223
+wrote ./checkpoints/fr_vig3_s2/selection.json
+##### fr_vig3_s3 #####
+
+selected epoch 30 (logP/bigram -3.4689, gap 1.1244 from the reference), on ciphertext only
+best possible was epoch 10 at 0.2714; selection cost +0.1328
+wrote ./checkpoints/fr_vig3_s3/selection.json
+##### fr_vig3_s4 #####
+
+selected epoch 25 (logP/bigram -3.4023, gap 1.0578 from the reference), on ciphertext only
+best possible was epoch 10 at 0.3903; selection cost +0.0684
+wrote ./checkpoints/fr_vig3_s4/selection.json
+##### fr_vig3_s5 #####
+
+selected epoch 10 (logP/bigram -3.4621, gap 1.1176 from the reference), on ciphertext only
+best possible was epoch 25 at 0.2845; selection cost +0.0114
+wrote ./checkpoints/fr_vig3_s5/selection.json
+##### fr_vig3_s6 #####
+
+selected epoch 50 (logP/bigram -3.4090, gap 1.0645 from the reference), on ciphertext only
+best possible was epoch 10 at 0.0623; selection cost +0.0571
+wrote ./checkpoints/fr_vig3_s6/selection.json
+##### fr_vig3_s7 #####
+
+selected epoch 60 (logP/bigram -3.4780, gap 1.1335 from the reference), on ciphertext only
+best possible was epoch 10 at 0.2808; selection cost +0.0913
+wrote ./checkpoints/fr_vig3_s7/selection.json
+##### fr_vig3_s8 #####
+selected epoch 20 (logP/bigram -3.4357, gap 1.0912 from the reference), on ciphertext only
+best possible was epoch 20 at 0.3530; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_vig3_s8/selection.json
+##### fr_vig3_s9 #####
+
+selected epoch 50 (logP/bigram -3.5357, gap 1.1912 from the reference), on ciphertext only
+best possible was epoch 25 at 0.2212; selection cost +0.0556
+wrote ./checkpoints/fr_vig3_s9/selection.json
+##### fr_vig7_s0 #####
+
+selected epoch 50 (logP/bigram -3.4270, gap 1.0825 from the reference), on ciphertext only
+best possible was epoch 5 at 0.1459; selection cost +0.0340
+wrote ./checkpoints/fr_vig7_s0/selection.json
+##### fr_vig7_s1 #####
+selected epoch 15 (logP/bigram -3.4635, gap 1.1190 from the reference), on ciphertext only
+best possible was epoch 15 at 0.1165; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_vig7_s1/selection.json
+##### fr_vig7_s2 #####
+
+selected epoch 40 (logP/bigram -3.6250, gap 1.2805 from the reference), on ciphertext only
+best possible was epoch 5 at 0.2058; selection cost +0.0584
+wrote ./checkpoints/fr_vig7_s2/selection.json
+##### fr_vig7_s3 #####
+selected epoch 30 (logP/bigram -3.6722, gap 1.3277 from the reference), on ciphertext only
+best possible was epoch 30 at 0.1299; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_vig7_s3/selection.json
+##### fr_vig7_s4 #####
+
+selected epoch 25 (logP/bigram -3.6968, gap 1.3523 from the reference), on ciphertext only
+best possible was epoch 15 at 0.1798; selection cost +0.0904
+wrote ./checkpoints/fr_vig7_s4/selection.json
+##### fr_vig7_s5 #####
+
+selected epoch 5 (logP/bigram -3.4400, gap 1.0955 from the reference), on ciphertext only
+best possible was epoch 15 at 0.1825; selection cost +0.0196
+wrote ./checkpoints/fr_vig7_s5/selection.json
+##### fr_vig7_s6 #####
+
+selected epoch 20 (logP/bigram -3.6257, gap 1.2812 from the reference), on ciphertext only
+best possible was epoch 15 at 0.1685; selection cost +0.0169
+wrote ./checkpoints/fr_vig7_s6/selection.json
+##### fr_vig7_s7 #####
+
+selected epoch 10 (logP/bigram -3.5232, gap 1.1787 from the reference), on ciphertext only
+best possible was epoch 30 at 0.1115; selection cost +0.0244
+wrote ./checkpoints/fr_vig7_s7/selection.json
+##### fr_vig7_s8 #####
+
+selected epoch 60 (logP/bigram -3.5948, gap 1.2504 from the reference), on ciphertext only
+best possible was epoch 40 at 0.1166; selection cost +0.0745
+wrote ./checkpoints/fr_vig7_s8/selection.json
+##### fr_vig7_s9 #####
+selected epoch 10 (logP/bigram -3.4342, gap 1.0897 from the reference), on ciphertext only
+best possible was epoch 10 at 0.1563; selection cost +0.0000
+unsupervised selection found the optimum
+wrote ./checkpoints/fr_vig7_s9/selection.json
+
+building frontier table
+
+    condition |        period |      alphabet |         seeds |    GAN solved | GAN best-of-N |           key |        median |         worst |   MCMC solved |      MCMC key
+        shift |             1 |            27 |             5 |           4/5 |        0.9991 |        0.9630 |        0.9983 |        0.9812 |         10/10 |        1.0000
+           a7 |             1 |             7 |             5 |           3/5 |        1.0000 |        1.0000 |        1.0000 |        0.0000 |         10/10 |        1.0000
+          a10 |             1 |            10 |             5 |           1/5 |        0.7121 |        0.6000 |        0.9171 |        0.7121 |         10/10 |        1.0000
+          a14 |             1 |            14 |             5 |           2/5 |        1.0000 |        1.0000 |        0.9542 |        0.6970 |         10/10 |        1.0000
+          a20 |             1 |            20 |             5 |           1/5 |        1.0000 |        1.0000 |        0.0000 |        0.0000 |         10/10 |        1.0000
+ substitution |             1 |            27 |            10 |          6/10 |        0.9992 |        0.9630 |        0.9992 |        0.0000 |         10/10 |        1.0000
+         vig3 |             3 |            27 |            10 |          0/10 |        0.1408 |        0.0370 |        0.2069 |        0.0053 |         10/10 |        1.0000
+         vig7 |             7 |            27 |            10 |          0/10 |        0.1119 |        0.0423 |        0.1232 |        0.0420 |         10/10 |        1.0000
+
+wrote results/tables/frontier.csv and .md
+threshold for 'solved' is character accuracy >= 0.99
+wrote results/tables/frontier.png
