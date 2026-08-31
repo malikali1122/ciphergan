@@ -1,0 +1,11 @@
+{
+  "cipher": "identity",
+  "key": "0",
+  "n_samples": 8986,
+  "character_accuracy": 0.019674702314711773,
+  "character_error_rate": 0.9803252976852882,
+  "key_recovery_accuracy": 0.0,
+  "key_recovery_coverage": 1.0,
+  "chance_accuracy": 0.037037037037037035,
+  "epoch": "latest"
+}

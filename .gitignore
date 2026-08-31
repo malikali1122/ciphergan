@@ -10,3 +10,4 @@ results_bundle/
 __pycache__/
 *.pyc
 archive/
+*.bak_*

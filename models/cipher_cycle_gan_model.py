@@ -40,6 +40,7 @@ from models.base_model import BaseModel
 from models.cycle_gan_model import CycleGANModel
 from models import networks
 from models.networks_seq import SeqGenerator, SeqDiscriminator, get_norm_layer_1d
+from models.networks_diffusion import build_generator
 from util.image_pool import ImagePool
 
 
@@ -108,6 +109,25 @@ class CipherCycleGANModel(CycleGANModel):
                             help="straight-through Gumbel-softmax instead of "
                                  "plain soft embeddings (ablation)")
         parser.add_argument("--straight_through", action="store_true")
+        parser.add_argument("--netG_kind", type=str, default="conv",
+                            choices=["conv", "diffusion"],
+                            help="generator paradigm. conv = feed-forward "
+                                 "SeqGenerator (the default, and what every "
+                                 "result before this flag used). diffusion = "
+                                 "conditional absorbing-state reverse chain.")
+        parser.add_argument("--loopholing", action="store_true",
+                            help="carry the denoiser hidden state between "
+                                 "reverse steps on a deterministic latent "
+                                 "pathway (Jo et al., ICLR 2026). Without "
+                                 "it, each step re-embeds the previous "
+                                 "step's softmax and discards everything "
+                                 "else the denoiser computed. "
+                                 "--netG_kind diffusion only.")
+        parser.add_argument("--n_steps", type=int, default=4,
+                            help="reverse diffusion steps; --netG_kind "
+                                 "diffusion only. n_steps=1 collapses the "
+                                 "chain to a single denoising pass, which is "
+                                 "NOT a distinct paradigm - use >= 4.")
         if is_train:
             parser.add_argument("--cycle_loss", type=str, default="ce",
                                 choices=["ce", "l1", "simplex_l1"],
@@ -168,17 +188,27 @@ class CipherCycleGANModel(CycleGANModel):
                   "generator has no positional signal and cannot represent a "
                   "position-dependent key.")
 
+        _kind = getattr(opt, "netG_kind", "conv")
+        _gkw = dict(vocab_size=V, embed_dim=E, ngf=opt.ngf,
+                    n_blocks=opt.n_blocks_G, norm_layer=norm_layer,
+                    pointwise=getattr(opt, "pointwise_G", False),
+                    pos_dim=getattr(opt, "pos_dim", 0),
+                    max_len=getattr(opt, "max_len", 512))
+        if _kind == "diffusion":
+            _gkw["n_steps"] = getattr(opt, "n_steps", 4)
+            _gkw["loopholing"] = getattr(opt, "loopholing", False)
+            print(f"[cipher] generator: conditional diffusion, "
+                  f"{_gkw['n_steps']} reverse steps, "
+                  f"loopholing {'ON' if _gkw['loopholing'] else 'off'}")
+            if _gkw["n_steps"] < 2:
+                print("[cipher] WARNING: n_steps < 2 is a single denoising "
+                      "pass, not a diffusion chain. Results from this setting "
+                      "must not be reported as a second paradigm.")
         self.netG_A = networks.init_net(
-            SeqGenerator(V, E, opt.ngf, opt.n_blocks_G, norm_layer=norm_layer,
-                         pointwise=getattr(opt, "pointwise_G", False),
-                         pos_dim=getattr(opt, "pos_dim", 0),
-                         max_len=getattr(opt, "max_len", 512)),
+            build_generator(_kind, **_gkw),
             opt.init_type, opt.init_gain).to(self.device)
         self.netG_B = networks.init_net(
-            SeqGenerator(V, E, opt.ngf, opt.n_blocks_G, norm_layer=norm_layer,
-                         pointwise=getattr(opt, "pointwise_G", False),
-                         pos_dim=getattr(opt, "pos_dim", 0),
-                         max_len=getattr(opt, "max_len", 512)),
+            build_generator(_kind, **_gkw),
             opt.init_type, opt.init_gain).to(self.device)
 
         if self.isTrain:
