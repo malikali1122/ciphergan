@@ -1,6 +1,6 @@
 """Cipher dataset for pytorch-CycleGAN-and-pix2pix.
 
-Drop this file at `data/cipher_dataset.py` in your fork.
+Loaded by the framework when --dataset_mode cipher is set.
 
 The repo discovers datasets by filename convention: `--dataset_mode cipher`
 imports `data.cipher_dataset` and looks for a `BaseDataset` subclass whose
