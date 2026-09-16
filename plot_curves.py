@@ -6,9 +6,8 @@ plot_curves.py - GAN loss curves from a run's loss_log.txt
 
 Why this exists
 ---------------
-Supervisor's instruction: "GAN loss curves. When you do these things, this is
-the first thing you should actually look... otherwise you're operating in the
-blind."
+Loss curves are the first diagnostic for adversarial training. Without them,
+a failing run cannot be told apart from a slow one.
 
 The specific pathology to watch for is the discriminator winning outright: it
 separates real from generated too easily, stops providing gradient, and the
@@ -109,7 +108,7 @@ def plot_one(name, ckpt_dir, out):
     fig.savefig(out, dpi=150)
     print(f"wrote {out}")
 
-    # a compact textual summary, useful when you cannot view images over ssh
+    # a compact textual summary, for terminals without image display
     print(f"\n{'loss':<12}{'first':>10}{'last':>10}{'min':>10}{'max':>10}")
     for k, v in s.items():
         ys = [y for _, y in v]

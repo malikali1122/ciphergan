@@ -7,7 +7,7 @@ Command-line front end for the cipher engine.
     python make_data.py --corpus corpus.txt --cipher substitution \
         --sample_length 100 --out_dir data/sub-27
 
-    # cipher-complexity ablation, one command per row of your results table
+    # cipher-complexity ablation, one command per condition
     python make_data.py --corpus corpus.txt --cipher shift        --shift 3
     python make_data.py --corpus corpus.txt --cipher substitution --cipher_seed 0
     python make_data.py --corpus corpus.txt --cipher vigenere     --key 345
@@ -46,7 +46,7 @@ def load_corpus(path: str | None, min_chars: int) -> str:
     if path:
         with open(path, "r", encoding="utf-8", errors="ignore") as fh:
             return fh.read()
-    # fallback so the pipeline is runnable before you have a corpus wired up
+    # fallback so the pipeline runs before a corpus is available
     reps = 1 + min_chars // len(SAMPLE_TEXT)
     return SAMPLE_TEXT * reps
 

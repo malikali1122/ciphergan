@@ -2,9 +2,9 @@
 run_ablation.py
 ===============
 
-Produces the "cipher complexity vs statistical leakage" table. This is your
-Phase 1 deliverable: a result you can put in the report before a single network
-has been trained, and the baseline every later accuracy number is read against.
+Produces the "cipher complexity vs statistical leakage" table: a result that
+needs no trained network, and the baseline every later accuracy number is
+read against.
 
     python run_ablation.py --corpus corpus.txt --out ablation.csv
 """
@@ -36,7 +36,7 @@ FIELDS = ["config", "key_space_log10", "cipher_ioc", "cipher_entropy_bits",
 def key_space_log10(name: str, n: int) -> float:
     """Cryptographic key-space size. Deliberately contrasted with leakage:
     substitution has a vastly larger key space than a shift yet leaks just as
-    much, which is the point the report should make."""
+    much."""
     if name == "identity":
         return 0.0
     if name.startswith("shift"):

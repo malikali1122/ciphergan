@@ -25,8 +25,8 @@ plaintext index to a ciphertext index, given the position modulo ``period``:
   * substitution (mono) -> period 1, table is an arbitrary permutation
   * vigenere (poly)     -> period len(key), table row k is a rotation by key[k]
 
-This single abstraction is what makes the "cipher complexity" ablation in your
-project plan cheap: only ``period`` and the permutation structure change.
+This single abstraction is what makes the "cipher complexity" ablation
+cheap: only ``period`` and the permutation structure change.
 """
 
 from __future__ import annotations
@@ -549,7 +549,7 @@ def build_dataset(text: str,
       "disjoint" - the corpus is cut in half; half A is only ever seen as
                    plaintext, half B is only ever seen as ciphertext. No sample
                    exists in both domains. This is the strict reading of
-                   "unpaired" and is the one to defend in the write-up.
+                   "unpaired" and is the one used for all reported runs.
       "parity"   - CipherGAN's scheme: every sample is enciphered, then even
                    indices contribute their X and odd indices their Y. Cheaper
                    on data; the underlying content overlaps in distribution but
@@ -643,7 +643,7 @@ def infer_mapping_from_outputs(cipher_in: np.ndarray, plain_out: np.ndarray,
                                min_support: int = 1) -> np.ndarray:
     """Read off the model's implied key by majority vote over its own outputs.
 
-    Lets you report a recovered key table without ever giving the model labels.
+    Recovers a key table without ever giving the model labels.
     Entries with fewer than ``min_support`` observations are set to -1.
     """
     table = np.full((period, vocab_size), -1, dtype=np.int64)

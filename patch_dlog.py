@@ -11,7 +11,7 @@ The logged ``D_A`` is not the adversarial loss. ``backward_D_basic`` computes
 
 and returns that, so the penalty is folded into the number. At lambda_gp = 10
 the penalty was roughly two thirds of the reported value, which means the
-column you have been reading against LSGAN's 0.25 equilibrium was never
+logged column compared against LSGAN's 0.25 equilibrium was never
 comparable to it.
 
 Separately, ``self.loss_gp`` is written by ``backward_D_A`` and then overwritten

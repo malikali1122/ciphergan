@@ -22,7 +22,7 @@
 # at 10 seeds. Read that row into the frontier plot as the V=27 point.
 #
 # %10 throttles to ten concurrent tasks so the array does not monopolise the
-# partition. Drop it if the queue is empty and you want them all at once.
+# partition. Remove it to run all tasks at once when the queue is empty.
 
 cd /mnt/parscratch/users/acq25mha/ciphergan
 

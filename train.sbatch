@@ -75,7 +75,7 @@ echo "=== learning curve ==="
 # sweep.sbatch - the six-config sweep as an array job, six GPUs in parallel.
 # Save the block below as a separate file and submit with:
 #   sbatch --array=0-5 sweep.sbatch
-# This is where a cluster genuinely beats a laptop: the whole sweep finishes
+# On the cluster the whole sweep finishes
 # in the wall-clock time of one run.
 # ============================================================================
 : <<'SWEEP'

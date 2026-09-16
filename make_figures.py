@@ -12,8 +12,8 @@ the thesis is typeset in LaTeX).
 
 FIGURES
   fig1_diagnosis      identity accuracy against epoch: the failed configuration
-                      and the two reconfigurations. Anton's requested "prove the
-                      framework works" figure.
+                      and the two reconfigurations, showing that the
+                      framework works.
   fig2_seeds          substitution seed distribution as a strip plot. Shows
                       bimodality, which a mean and standard deviation hide.
   fig3_keyspace       best-of-N against key space on a log axis. The flat line

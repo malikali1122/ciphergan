@@ -4,11 +4,11 @@
 #   bash archive_results.sh
 #
 # Collects everything the results chapter needs into results_bundle/ and packs
-# it as a single tar.gz to bring down to your laptop. Re-runnable; the bundle
+# it as a single tar.gz for download. Re-runnable; the bundle
 # directory is rebuilt from scratch each time.
 #
 # Raw checkpoints (.pth) are deliberately NOT included - they are gigabytes and
-# nothing in the write-up needs them. Everything derived from them is here.
+# no reported result needs them. Everything derived from them is here.
 
 cd /mnt/parscratch/users/acq25mha/ciphergan
 B=results_bundle

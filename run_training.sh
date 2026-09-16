@@ -2,17 +2,17 @@
 # ============================================================================
 # run_training.sh - long training runs and sweeps for the cipher task
 #
-#   ./run_training.sh data      # build dataset from your corpus
+#   ./run_training.sh data      # build dataset from the corpus
 #   ./run_training.sh long      # single long run, resumable
 #   ./run_training.sh resume    # continue an interrupted long run
 #   ./run_training.sh sweep     # short runs over the settings that matter
 #   ./run_training.sh curve     # accuracy-vs-epoch curve from saved checkpoints
 #
-# Run from the root of your pytorch-CycleGAN-and-pix2pix fork.
+# Run from the root of the pytorch-CycleGAN-and-pix2pix fork.
 # ============================================================================
 set -euo pipefail
 
-CORPUS=${CORPUS:-corpus.txt}       # your text file
+CORPUS=${CORPUS:-corpus.txt}       # plain-text corpus
 CIPHER=${CIPHER:-substitution}
 LEN=${LEN:-128}                    # sample_length
 DATA=${DATA:-data/${CIPHER}_${LEN}}
@@ -36,8 +36,8 @@ data)
     --eval_fraction 0.1 \
     --out_dir "$DATA"
   echo
-  echo "Check stats.json before training. For a monoalphabetic cipher you"
-  echo "want unigram_profile_sym_kl_bits near 0 and mutual_information_bits"
+  echo "Check stats.json before training. For a monoalphabetic cipher,"
+  echo "unigram_profile_sym_kl_bits should be near 0 and mutual_information_bits"
   echo "equal to plain_entropy_bits. If not, the data pipeline is wrong and"
   echo "no amount of training will fix it."
   ;;
@@ -123,7 +123,7 @@ esac
 # ============================================================================
 # SLURM template - save separately as train.sbatch and submit with
 #   sbatch train.sbatch
-# Adjust partition/account names to your cluster.
+# Partition and account names are cluster-specific.
 # ============================================================================
 : <<'SLURM'
 #!/bin/bash

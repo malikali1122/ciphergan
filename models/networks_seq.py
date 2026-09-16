@@ -1,6 +1,6 @@
 """Sequence networks for the cipher task.
 
-Drop this file at `models/networks_seq.py` in your fork.
+Used by models/cipher_cycle_gan_model.py.
 
 The repo's `networks.py` builds 2D convolutional generators and PatchGAN
 discriminators for images. These are the 1D equivalents over token sequences,
@@ -90,7 +90,7 @@ class ResBlock1d(nn.Module):
 class SeqGenerator(nn.Module):
     """Tokens (or logits) -> logits over the vocabulary. Length preserved.
 
-    Length preservation is a real assumption worth stating in the write-up: a
+    Length preservation is a real assumption of this setting: a
     substitution cipher is position-wise bijective, so the output sequence has
     exactly the length of the input. That is a strictly easier setting than the
     seq2seq generation used in text style transfer, and it removes decoding,
@@ -146,7 +146,7 @@ class SeqDiscriminator(nn.Module):
     evidence that a decryption is wrong is local - an impossible bigram, a 'q'
     with no 'u' - so scoring every window gives dense gradient and makes the
     discriminator a literal learned n-gram frequency analyser. That is exactly
-    the "vulnerability scanner" framing for the second-marker write-up.
+    the sense in which the discriminator acts as a vulnerability scanner.
 
     RECEPTIVE FIELD = THE ORDER OF n-GRAM STATISTICS IT CAN SEE
     -----------------------------------------------------------
@@ -159,15 +159,14 @@ class SeqDiscriminator(nn.Module):
         --n_layers_D 3   ->  46 characters   (default)
         --n_layers_D 4   ->  94 characters
 
-    This turns a hyperparameter into a research question. Your Phase 1 analysis
-    showed a monoalphabetic cipher preserves unigram and bigram statistics
+    This turns a hyperparameter into a research question. The leakage analysis
+    shows a monoalphabetic cipher preserves unigram and bigram statistics
     exactly; a discriminator restricted to 10 characters can still exploit
     those, so it should crack substitution. A Vigenere cipher with key length k
     only reveals itself to a discriminator whose window spans multiple key
     periods, so accuracy should fall off sharply once k approaches the
-    receptive field. That is a falsifiable prediction you can state in the
-    methods chapter and test in the results chapter, which is worth
-    considerably more than reporting whichever setting happened to work.
+    receptive field. That is a falsifiable prediction, stated before the
+    experiments and tested by them.
     """
 
     def __init__(self, vocab_size, embed_dim=64, ndf=128, n_layers=3, kw=4,

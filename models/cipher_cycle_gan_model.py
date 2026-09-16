@@ -1,7 +1,6 @@
 """CycleGAN adapted to discrete cipher sequences.
 
-Drop this file at `models/cipher_cycle_gan_model.py` in your fork and run with
-`--model cipher_cycle_gan`.
+Selected with `--model cipher_cycle_gan`.
 
 WHAT IS INHERITED FROM CycleGANModel, UNCHANGED
 -----------------------------------------------
@@ -20,7 +19,7 @@ WHAT IS OVERRIDDEN, AND WHY
   forward      pass a temperature through the soft-embedding bridge
   backward_G   cross-entropy cycle loss instead of L1
 
-The last one is the substantive change and the one to defend in the report.
+The last one is the substantive change.
 CycleGAN's cycle loss is ||F(G(x)) - x||_1 over pixel intensities. Over token
 logits, an L1 reconstruction term is minimised by shrinking logit magnitudes
 towards a degenerate uniform solution: it rewards being non-committal. Token
@@ -351,8 +350,8 @@ class CipherCycleGANModel(CycleGANModel):
         generated ones as a softmax mixture, a discriminator separates them
         with accuracy 1.000 at tau=1.0 and tau=0.5 on IDENTICAL text. It never
         needs to learn English - it just detects whether the input sits on a
-        lattice point. The generator's adversarial gradient then says "sharpen
-        your distribution", not "decrypt correctly", which is why the identity
+        lattice point. The generator's adversarial gradient then rewards a
+        sharper distribution, not a correct decryption, which is why the identity
         cipher fails as badly as substitution.
 
         Routing real tokens through the same softmax makes the two paths
@@ -392,9 +391,8 @@ class CipherCycleGANModel(CycleGANModel):
         """Overridden to piggyback temperature annealing on the LR hook.
 
         train.py already calls this once per epoch, so annealing here means the
-        repo's training script needs no modification at all - which keeps the
-        diff reviewable and the "what did you change" section of the report
-        short and precise.
+        repo's training script needs no modification at all, which keeps the
+        diff against the reference implementation small.
 
         Geometric schedule from --tau_start to --tau_end. Log it alongside the
         losses: temperature is usually the difference between converging and

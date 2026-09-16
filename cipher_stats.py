@@ -2,9 +2,9 @@
 cipher_stats.py
 ===============
 
-Phase 1 of the project plan: *prove* the cipher leaks before training anything.
+Establishes that the cipher leaks before training anything.
 
-The claim your report needs to support is that a monoalphabetic substitution
+The claim to support is that a monoalphabetic substitution
 cipher is a relabelling of the alphabet, not a change to the *shape* of the
 distribution. These functions produce the numbers and the figure for that.
 
@@ -98,7 +98,7 @@ def symmetric_kl(p: np.ndarray, q: np.ndarray, eps: float = 1e-12) -> float:
 
 def profile_report(plain: np.ndarray, cipher: np.ndarray,
                    vocab_size: int) -> Dict[str, float]:
-    """One row of the vulnerability table in your report."""
+    """One row of the cipher vulnerability table."""
     up, uc = unigram_profile(plain, vocab_size), unigram_profile(cipher, vocab_size)
     n = min(len(up), len(uc))
     bp = np.sort(bigram_counts(plain, vocab_size).ravel())[::-1]

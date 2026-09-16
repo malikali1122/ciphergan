@@ -11,8 +11,8 @@ WHY CONVERT RATHER THAN CALL NLTK AT TRAIN TIME
 Calling nltk.download() from inside a batch job fails on any cluster whose
 compute nodes lack outbound network, and it fails late - after the job has
 queued and started. Converting once on the login node removes nltk from the
-runtime dependency set entirely and makes the exact corpus you trained on a
-concrete, citable artefact you can archive with your dissertation.
+runtime dependency set entirely and makes the exact training corpus a
+concrete, citable artefact that can be archived with the results.
 
 ON BROWN'S TOKENISATION
 -----------------------
@@ -35,9 +35,8 @@ CHOOSING A CORPUS
                                                  but all 19th-century literature
 
 Both give realistic English character statistics. Brown is more genre-varied;
-Gutenberg gives you roughly twice the training samples. If you want the larger
-corpus, note that its narrower register is a limitation worth one sentence in
-the methodology.
+Gutenberg gives roughly twice the training samples, at the cost of a
+narrower register.
 
 SAMPLE COUNTS
 -------------
@@ -82,7 +81,7 @@ def main():
     if not ok:
         sys.exit(
             "\nDownload failed - the login node may be behind a proxy.\n"
-            "Fallback: fetch the zip on your laptop and copy it over:\n"
+            "Fallback: fetch the zip on another machine and copy it over:\n"
             "  https://raw.githubusercontent.com/nltk/nltk_data/"
             "gh-pages/packages/corpora/brown.zip\n"
             "  scp brown.zip USER@host:~/nltk_data/corpora/\n"

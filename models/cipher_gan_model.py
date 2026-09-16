@@ -1,17 +1,17 @@
 """Plain adversarial baseline: one generator, one discriminator, no cycle.
 
-Drop this file at `models/cipher_gan_model.py` and run with `--model cipher_gan`.
+Selected with `--model cipher_gan`.
 
 WHY THIS FILE EXISTS
 --------------------
-Two reasons, and both are about the report rather than the code.
+Two reasons, both about interpreting the main results.
 
-1. It is the "minimum tier" deliverable on its own: a working GAN on the toy
-   task, independent of whether cycle-consistency ever converges.
+1. It is a working GAN on the toy task, independent of whether
+   cycle-consistency ever converges.
 
 2. It is the control that gives the cycle-consistency result meaning. Without
    it, "our CycleGAN reached 94% character accuracy" is an isolated number. With
-   it, you can show *what the cycle term buys*, and the expected failure is
+   it, the comparison shows *what the cycle term buys*, and the expected failure is
    specific and predictable rather than vague: a generator trained only to fool
    a language discriminator has no incentive to preserve information. It can map
    every ciphertext to the same fluent English sentence and win. That is mode
@@ -49,7 +49,7 @@ class CipherGANModel(CipherCycleGANModel):
         self.loss_names = ["D_A", "G_A", "entropy"]
         self.model_names = ["G_A", "D_A"] if self.isTrain else ["G_A"]
 
-        # Free the unused halves so the parameter count reported in the report
+        # Free the unused halves so the reported parameter count
         # reflects what actually trains.
         if hasattr(self, "netG_B"):
             del self.netG_B
@@ -72,7 +72,7 @@ class CipherGANModel(CipherCycleGANModel):
         # Diagnostic only - not added to the objective. Mean per-position
         # entropy of the output distribution over the batch. If the generator
         # collapses onto one token this falls towards zero while loss_G_A stays
-        # healthy, which is the signature to point at in the write-up.
+        # healthy, which is the signature of mode collapse.
         with torch.no_grad():
             p = torch.softmax(self.fake_B, dim=-1)
             self.loss_entropy = -(p * (p + 1e-12).log()).sum(-1).mean()

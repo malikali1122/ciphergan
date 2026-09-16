@@ -8,13 +8,13 @@ Presentation versions of the two main-result figures. Separate from
 make_figures.py because slides and papers need different things: large type,
 few elements, one message per figure, and no seed-level clutter.
 
-The format matters here. The presentation is given from a laptop screen to a
-table of about eight people with no projector, so anything smaller than about
+The format matters here. The slides are shown on a small screen to a
+small group without a projector, so anything smaller than about
 14pt is unreadable and anything with more than three series is unparseable in
 the ten seconds a viewer gives it.
 
 Numbers are taken from results/tables/ and hardcoded, so this runs anywhere
-matplotlib does, including a laptop with no access to the cluster.
+matplotlib does, including a machine with no access to the cluster.
 
 Outputs 1600x1000 PNG at 200 dpi, which drops into a 16:9 slide without
 rescaling.

@@ -40,7 +40,7 @@ if "embedding=None" not in s:
         self.owns_embedding = embedding is None"""
     assert gen_old in s, (
         "SeqGenerator.__init__ does not match the expected form. "
-        "Paste the output of:  sed -n '100,112p' models/networks_seq.py")
+        "Inspect lines 100-112 of models/networks_seq.py.")
     s = s.replace(gen_old, gen_new, 1)
     changed.append("SeqGenerator accepts a shared embedding")
 
@@ -54,8 +54,7 @@ if "embedding=None" not in s:
         self.owns_embedding = embedding is None"""
     assert dis_old in s, (
         "SeqDiscriminator.__init__ does not match the expected form. "
-        "Paste the output of:  grep -n 'class SeqDiscriminator' -A 8 "
-        "models/networks_seq.py")
+        "Inspect class SeqDiscriminator in models/networks_seq.py.")
     s = s.replace(dis_old, dis_new, 1)
     changed.append("SeqDiscriminator accepts a shared embedding")
 

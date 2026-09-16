@@ -37,8 +37,8 @@ plaintext bank itself achieves under the model. No evaluation data is involved.
 
 Residual error in the reference is about 0.0007 nats, which on these runs costs
 at most 0.0008 character accuracy - roughly eight characters in ten thousand.
-Below that the criterion cannot distinguish checkpoints, and the write-up
-should say so rather than presenting near-ties as discriminations.
+Below that the criterion cannot distinguish checkpoints, so near-ties are
+not treated as discriminations.
 
 This is exactly the self-verification that makes the classical attack
 legitimate. A cryptanalyst runs several chains and keeps the one whose output
@@ -56,10 +56,9 @@ REPORTING HONESTLY
 ------------------
 With --show_accuracy the table also prints the true character accuracy of each
 checkpoint, read from eval_metrics_<epoch>.json. That column plays no part in
-the choice. It is there so the write-up can state how often unsupervised
-selection landed on the accuracy-optimal checkpoint, and what it cost when it
-did not. Quote the accuracy of the SELECTED row as the result; quote the gap to
-the best row as a limitation.
+the choice. It records how often unsupervised selection landed on the
+accuracy-optimal checkpoint, and what it cost when it did not. The accuracy
+of the SELECTED row is the result; the gap to the best row is a limitation.
 """
 
 from __future__ import annotations
@@ -140,7 +139,7 @@ def main():
         raise SystemExit(
             f"no pred_*.npz in {run_dir}\n"
             "Apply patch_dump_pred.py, then re-run eval_cipher.py for each "
-            "epoch you want considered.")
+            "epoch to be considered.")
 
     rows = []
     for f in files:
@@ -194,7 +193,7 @@ def main():
     out = args.out or os.path.join(run_dir, "selection.json")
     with open(out, "w") as fh:
         json.dump({"run": args.name, "criterion":
-                   "bigram log-likelihood closest to held-out plaintext reference",
+                   "bigram log-likelihood closest to the in-sample plaintext reference",
                    "reference_logp": reference,
                    "selected_epoch": best["epoch"],
                    "selected_logp": best["logp"],
